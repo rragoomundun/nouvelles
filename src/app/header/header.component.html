@@ -1,0 +1,103 @@
+<header>
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <a class="navbar-brand app-logo" href="#">
+        {{ "GENERAL.TITLE" | translate }}
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarTogglerDemo02"
+        aria-controls="navbarTogglerDemo02"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+        <ul class="navbar-nav mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Politique</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Economie</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Science</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Tech</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Planête</a>
+          </li>
+          <li class="nav-item">
+            <form id="search-bar" class="d-flex" role="search">
+              <input
+                class="form-control"
+                type="search"
+                placeholder="{{ 'GENERAL.SEARCH' | translate }}"
+              />
+              <button class="btn" type="submit">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </button>
+            </form>
+          </li>
+        </ul>
+
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="#"> {{ "HEADER.FORUM" | translate }}</a>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <i class="fa-regular fa-circle-user"></i>
+              {{ "HEADER.ACCOUNT.ACCOUNT" | translate }}
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <a class="dropdown-item" href="#">
+                  {{ "GENERAL.REGISTER" | translate }}
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="#">
+                  {{ "GENERAL.LOGIN" | translate }}
+                </a>
+              </li>
+
+              <!-- <li>
+                <a class="dropdown-item" href="#">
+                  {{ "HEADER.ACCOUNT.MY_ACCOUNT" | translate }}
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="#">
+                  {{ "HEADER.ACCOUNT.WRITE_ARTICLE" | translate }}
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="#">
+                  {{ "HEADER.ACCOUNT.SETTINGS" | translate }}
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="#">
+                  {{ "HEADER.ACCOUNT.LOUGOUT" | translate }}
+                </a>
+              </li> -->
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>

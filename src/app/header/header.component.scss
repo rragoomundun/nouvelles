@@ -1,0 +1,26 @@
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 0 0.4rem 0.4rem 0 rgba(0, 0, 0, 0.04);
+}
+
+.navbar {
+  .container-fluid {
+    max-width: 1200px;
+    margin: auto;
+  }
+}
+
+.navbar-toggler {
+  border: none;
+}
+
+#search-bar {
+  .btn {
+    position: relative;
+    right: 42px;
+    border: none;
+  }
+}

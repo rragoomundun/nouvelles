@@ -1,0 +1,18 @@
+{
+  "GENERAL": {
+    "TITLE": "Nouvelles",
+    "SEARCH": "Rechercher",
+    "LOGIN": "Connexion",
+    "REGISTER": "Inscription"
+  },
+  "HEADER": {
+    "FORUM": "Forum",
+    "ACCOUNT": {
+      "ACCOUNT": "Compte",
+      "MY_ACCOUNT": "Mon Compte",
+      "WRITE_ARTICLE": "Écrire un article",
+      "SETTINGS": "Paramètres",
+      "LOUGOUT": "Se déconnecter"
+    }
+  }
+}
