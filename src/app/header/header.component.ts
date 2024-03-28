@@ -1,6 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 
-import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
@@ -10,4 +9,14 @@ import { TranslateModule } from '@ngx-translate/core';
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
 })
-export class HeaderComponent {}
+export class HeaderComponent {
+  @Output() registerClick: EventEmitter<void>;
+
+  constructor() {
+    this.registerClick = new EventEmitter<void>();
+  }
+
+  onRegisterClick() {
+    this.registerClick.emit();
+  }
+}

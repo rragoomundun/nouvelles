@@ -14,5 +14,24 @@
       "SETTINGS": "Paramètres",
       "LOUGOUT": "Se déconnecter"
     }
+  },
+  "REGISTER_MODAL": {
+    "ERRORS": {
+      "NAME_IN_USE": "Le nom d'utilisateur est déjà utilisé.",
+      "INVALID_EMAIL": "L'adresse e-mail est invalide.",
+      "EMAIL_IN_USE": "L'adresse e-mail est déjà utilisée.",
+      "PASSWORD_MIN_LENGTH": "Le mot de passe doit contenir au moins 12 caractères.",
+      "ACCOUNT_CREATION_FAILED": "Impossible de créer le compte. Veuillez ré-essayer plus tard."
+    },
+    "REGISTER": "S'inscrire sur Nouvelles",
+    "ACCOUNT_CREATED": "Compte crée. Vérifiez votre boite e-mail pour confirmer votre inscription."
+  },
+  "FORMS": {
+    "USERNAME": "Nom d'utilisateur",
+    "EMAIL": "Adresse E-Mail",
+    "PASSWORD": "Mot de passe",
+    "REPEAT_PASSWORD": "Répéter le mot de passe",
+    "VALIDATE": "Valider",
+    "VALIDATION": "Validation..."
   }
 }

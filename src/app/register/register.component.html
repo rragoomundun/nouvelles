@@ -1,0 +1,97 @@
+<ng-template #registerModalTemplate let-registerModal>
+  <div class="modal-header">
+    <h4 class="modal-title app-logo">{{ "GENERAL.TITLE" | translate }}</h4>
+  </div>
+  <div class="modal-body">
+    <p class="text-center">{{ "REGISTER_MODAL.REGISTER" | translate }}</p>
+
+    <hr />
+
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+      <div class="input-group mb-3">
+        <span class="input-group-text">
+          <span class="fa-regular fa-circle-user"></span>
+        </span>
+
+        <input
+          id="name"
+          class="form-control"
+          type="text"
+          placeholder="{{ 'FORMS.USERNAME' | translate }}"
+          formControlName="name"
+        />
+      </div>
+
+      <div class="input-group mb-3">
+        <span class="input-group-text">
+          <span class="fa-regular fa-envelope"></span>
+        </span>
+
+        <input
+          id="email"
+          class="form-control"
+          type="email"
+          placeholder="{{ 'FORMS.EMAIL' | translate }}"
+          formControlName="email"
+        />
+      </div>
+
+      <div class="input-group mb-3">
+        <span class="input-group-text">
+          <span class="fa-solid fa-lock"></span>
+        </span>
+
+        <input
+          id="password"
+          class="form-control"
+          type="password"
+          placeholder="{{ 'FORMS.PASSWORD' | translate }}"
+          formControlName="password"
+        />
+      </div>
+
+      <div class="input-group mb-3">
+        <span class="input-group-text">
+          <span class="fa-solid fa-lock"></span>
+        </span>
+
+        <input
+          id="repeat-password"
+          class="form-control"
+          type="password"
+          placeholder="{{ 'FORMS.REPEAT_PASSWORD' | translate }}"
+          formControlName="repeatPassword"
+        />
+      </div>
+
+      <div class="text-center">
+        @if (['false', 'error'].includes(onRegister)) {
+        <button
+          type="submit"
+          class="btn btn-primary"
+          [disabled]="isRegisterFormValid === false"
+        >
+          {{ "FORMS.VALIDATE" | translate }}
+        </button>
+        } @if (onRegister === 'true') {
+        <button type="submit" class="btn btn-primary" [disabled]="true">
+          <span class="fa-solid fa-spinner fa-spin"></span>
+          {{ "FORMS.VALIDATION" | translate }}
+        </button>
+        } @if (onRegister === 'success') {
+        <p class="text-success">
+          <span class="fa-regular fa-circle-check"></span>
+          {{ "REGISTER_MODAL.ACCOUNT_CREATED" | translate }}
+        </p>
+        }
+      </div>
+
+      @if (onRegister === 'error') {
+      <div class="text-center text-danger mt-3">
+        <span>{{ registerError | translate }}</span>
+      </div>
+      }
+    </form>
+  </div>
+  <div class="modal-footer"></div>
+</ng-template>
