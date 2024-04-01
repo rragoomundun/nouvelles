@@ -9,7 +9,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { TranslateModule } from '@ngx-translate/core';
 
-import { AuthService } from '../shared/services/auth/auth.service';
+import { AuthService } from '../../shared/services/auth/auth.service';
 
 @Component({
   selector: 'app-register',
@@ -62,11 +62,9 @@ export class RegisterComponent {
 
     this.onRegister = 'true';
 
-    this.authService.register(params).subscribe(
-      () => {
-        this.onRegister = 'success';
-      },
-      (error: HttpErrorResponse) => {
+    this.authService.register(params).subscribe({
+      complete: () => (this.onRegister = 'success'),
+      error: (error: HttpErrorResponse) => {
         const { type } = error.error;
 
         this.onRegister = 'error';
@@ -74,7 +72,7 @@ export class RegisterComponent {
         if (type) {
           this.registerError = `REGISTER_MODAL.ERRORS.${error.error.type}`;
         }
-      }
-    );
+      },
+    });
   }
 }

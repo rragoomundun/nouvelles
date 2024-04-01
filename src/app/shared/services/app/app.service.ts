@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+import { Title } from '@angular/platform-browser';
+import { TranslateService } from '@ngx-translate/core';
 
 import { appConfig } from '../../../app.config';
 
@@ -8,7 +10,18 @@ import { appConfig } from '../../../app.config';
 export class AppService {
   readonly config: any;
 
-  constructor() {
+  constructor(
+    private titleService: Title,
+    private translateService: TranslateService
+  ) {
     this.config = appConfig;
+  }
+
+  setTitle(title: string) {
+    this.titleService.setTitle(
+      `${this.translateService.instant(
+        title
+      )} - ${this.translateService.instant('GENERAL.TITLE')}`
+    );
   }
 }

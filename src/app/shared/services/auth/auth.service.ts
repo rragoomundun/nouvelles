@@ -15,4 +15,11 @@ export class AuthService {
   register(params: any): Observable<any> {
     return this.http.post(`${this.API_PREFIX}/register`, params);
   }
+
+  registerConfirm(confirmationToken: string | null): Observable<any> {
+    return this.http.put(
+      `${this.API_PREFIX}/register/confirm/${confirmationToken}`,
+      {}
+    );
+  }
 }

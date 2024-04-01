@@ -1,10 +1,12 @@
+@if (showHeader) {
 <app-header (registerClick)="onRegisterClick()"></app-header>
-
-<!-- <main>
-  <router-outlet />
-</main> -->
+}
 
 <main>
+  <router-outlet />
+</main>
+
+<!-- <main>
   <p>
     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
     tempor incididunt ut labore et dolore magna aliqua. Cras tincidunt lobortis
@@ -138,6 +140,6 @@
     quisque non tellus orci ac auctor augue mauris. Tempus quam pellentesque nec
     nam aliquam.
   </p>
-</main>
+</main> -->
 
 <app-register></app-register>

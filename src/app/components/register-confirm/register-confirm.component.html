@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12 col-md-8">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title app-logo">{{ "GENERAL.TITLE" | translate }}</h4>
+
+          <p>
+            {{ "REGISTER_CONFIRM_PAGE.CONFIRM" | translate }}
+          </p>
+
+          @if (onRegisterConfirm === 'false') {
+          <button (click)="onRegisterConfirmClick()" class="btn btn-primary">
+            {{ "REGISTER_CONFIRM_PAGE.CLICK_CONFIRM" | translate }}
+          </button>
+          } @else if (onRegisterConfirm === 'true') {
+          <span class="fa-solid fa-spinner fa-spin fa-2x"></span>
+          } @else if (onRegisterConfirm === 'success') {
+          <span class="text-success">
+            <span class="fa-regular fa-circle-check"></span>
+            {{ "REGISTER_CONFIRM_PAGE.CONFIRMED" | translate }}
+          </span>
+          } @else {
+          <span class="text-danger">
+            {{ "REGISTER_CONFIRM_PAGE.ERRORS.CONFIRMATION_FAILED" | translate }}
+          </span>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
