@@ -11,12 +11,18 @@ import { TranslateModule } from '@ngx-translate/core';
 })
 export class HeaderComponent {
   @Output() registerClick: EventEmitter<void>;
+  @Output() loginCLick: EventEmitter<void>;
 
   constructor() {
     this.registerClick = new EventEmitter<void>();
+    this.loginCLick = new EventEmitter<void>();
   }
 
   onRegisterClick() {
     this.registerClick.emit();
+  }
+
+  onLoginClick() {
+    this.loginCLick.emit();
   }
 }

@@ -26,6 +26,17 @@
     "REGISTER": "S'inscrire sur Nouvelles",
     "ACCOUNT_CREATED": "Compte crée. Vérifiez votre boite e-mail pour confirmer votre inscription."
   },
+  "LOGIN_MODAL": {
+    "ERRORS": {
+      "INVALID_EMAIL": "L'adresse e-mail est invalide.",
+      "PASSWORD_MIN_LENGTH": "Le mot de passe doit contenir au moins 12 caractères.",
+      "INVALID": "Les informations d'identification ne sont pas valides.",
+      "UNCONFIRMED": "Le compte n'a pas encore été confirmé."
+    },
+    "LOGIN": "Se connecter sur Nouvelles",
+    "LOGIN2": "Se connecter",
+    "CONNECTION": "Connexion..."
+  },
   "FORMS": {
     "USERNAME": "Nom d'utilisateur",
     "EMAIL": "Adresse E-Mail",
