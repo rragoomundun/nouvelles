@@ -22,4 +22,8 @@ export class AuthService {
       {}
     );
   }
+
+  login(params: any): Observable<any> {
+    return this.http.post(`${this.API_PREFIX}/login`, params);
+  }
 }

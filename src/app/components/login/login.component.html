@@ -35,6 +35,29 @@
           formControlName="password"
         />
       </div>
+
+      <div class="text-center">
+        @if (['false', 'error'].includes(onLogin)) {
+        <button
+          [disabled]="isLoginFormValid === false"
+          type="submit"
+          class="btn btn-primary"
+        >
+          {{ "LOGIN_MODAL.LOGIN2" | translate }}
+        </button>
+        } @if (onLogin === 'true') {
+        <button [disabled]="true" type="submit" class="btn btn-primary">
+          <span class="fa-solid fa-spinner fa-spin"></span>
+          {{ "LOGIN_MODAL.CONNECTION" | translate }}
+        </button>
+        }
+      </div>
+
+      @if (onLogin === 'error') {
+      <div class="text-center text-danger mt-3">
+        <span>{{ loginError | translate }}</span>
+      </div>
+      }
     </form>
   </div>
   <div class="modal-footer"></div>
