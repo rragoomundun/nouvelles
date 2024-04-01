@@ -1,0 +1,41 @@
+<ng-template #loginModalTemplate let-loginModal>
+  <div class="modal-header">
+    <h4 class="modal-title app-logo">{{ "GENERAL.TITLE" | translate }}</h4>
+  </div>
+  <div class="modal-body">
+    <p class="text-center">{{ "LOGIN_MODAL.LOGIN" | translate }}</p>
+
+    <hr />
+
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <div class="input-group mb-3">
+        <span class="input-group-text">
+          <span class="fa-regular fa-envelope"></span>
+        </span>
+
+        <input
+          id="email"
+          class="form-control"
+          type="email"
+          placeholder="{{ 'FORMS.EMAIL' | translate }}"
+          formControlName="email"
+        />
+      </div>
+
+      <div class="input-group mb-3">
+        <span class="input-group-text">
+          <span class="fa-solid fa-lock"></span>
+        </span>
+
+        <input
+          id="password"
+          class="form-control"
+          type="password"
+          placeholder="{{ 'FORMS.PASSWORD' | translate }}"
+          formControlName="password"
+        />
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer"></div>
+</ng-template>

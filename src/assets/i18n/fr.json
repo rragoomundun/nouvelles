@@ -26,6 +26,9 @@
     "REGISTER": "S'inscrire sur Nouvelles",
     "ACCOUNT_CREATED": "Compte crée. Vérifiez votre boite e-mail pour confirmer votre inscription."
   },
+  "LOGIN_MODAL": {
+    "LOGIN": "Se connecter sur Nouvelles"
+  },
   "FORMS": {
     "USERNAME": "Nom d'utilisateur",
     "EMAIL": "Adresse E-Mail",

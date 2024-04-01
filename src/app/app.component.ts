@@ -5,16 +5,18 @@ import { TranslateService } from '@ngx-translate/core';
 
 import { HeaderComponent } from './components/header/header.component';
 import { RegisterComponent } from './components/register/register.component';
+import { LoginComponent } from './components/login/login.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, HeaderComponent, RegisterComponent],
+  imports: [RouterOutlet, HeaderComponent, RegisterComponent, LoginComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
   @ViewChild(RegisterComponent) registerComponent!: RegisterComponent;
+  @ViewChild(LoginComponent) loginComponent!: LoginComponent;
 
   constructor(public translate: TranslateService, private router: Router) {
     translate.addLangs(['fr']);
@@ -27,5 +29,9 @@ export class AppComponent {
 
   onRegisterClick() {
     this.registerComponent.open();
+  }
+
+  onLoginClick() {
+    this.loginComponent.open();
   }
 }
