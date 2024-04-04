@@ -34,6 +34,10 @@ export class AuthService {
     return this.http.get(`${this.API_PREFIX}/logout`);
   }
 
+  passwordForgotten(params: any): Observable<any> {
+    return this.http.post(`${this.API_PREFIX}/password/forgot`, params);
+  }
+
   authorized(): Observable<any> {
     return this.http.get(`${this.API_PREFIX}/authorized`);
   }
