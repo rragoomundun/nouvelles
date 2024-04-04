@@ -8,6 +8,8 @@ import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
 
 import { UserService } from './shared/services/user/user.service';
+import { AuthService } from './shared/services/auth/auth.service';
+import { StorageService } from './shared/services/storage/storage.service';
 
 @Component({
   selector: 'app-root',
@@ -23,7 +25,9 @@ export class AppComponent implements OnInit {
   constructor(
     public translate: TranslateService,
     private router: Router,
-    public userService: UserService
+    public userService: UserService,
+    private authService: AuthService,
+    private storageService: StorageService
   ) {
     translate.addLangs(['fr']);
     translate.setDefaultLang('fr');
@@ -33,15 +37,34 @@ export class AppComponent implements OnInit {
     return this.router.url.startsWith('/inscription/confirmer/') === false;
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.userService.setUser();
   }
 
-  onRegisterClick() {
+  logout(): void {
+    this.authService.logout().subscribe({
+      complete: () => {
+        this.userService.id = null;
+        this.userService.name = null;
+        this.userService.email = null;
+        this.userService.image = null;
+        this.userService.roles = null;
+
+        setTimeout(() => this.storageService.clear());
+        this.storageService.deleteCookie('token', '/');
+      },
+    });
+  }
+
+  onRegisterClick(): void {
     this.registerComponent.open();
   }
 
-  onLoginClick() {
+  onLoginClick(): void {
     this.loginComponent.open();
+  }
+
+  onLogoutClick(): void {
+    this.logout();
   }
 }

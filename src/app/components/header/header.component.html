@@ -91,8 +91,8 @@
                   {{ "HEADER.ACCOUNT.MY_ACCOUNT" | translate }}
                 </a>
               </li>
-              @if (userService.roles.includes('redacteur') ||
-              userService.roles.includes('admin')) {
+              @if (userService.roles && (userService.roles.includes('redacteur')
+              || userService.roles.includes('admin'))) {
               <li>
                 <a class="dropdown-item" href="#">
                   <span class="fa-solid fa-pen-to-square"></span>
@@ -107,7 +107,7 @@
                 </a>
               </li>
               <li>
-                <a class="dropdown-item" href="#">
+                <a (click)="onLogoutClick()" class="dropdown-item" href="#">
                   <span class="fa-solid fa-arrow-right-from-bracket"></span>
                   {{ "HEADER.ACCOUNT.LOUGOUT" | translate }}
                 </a>

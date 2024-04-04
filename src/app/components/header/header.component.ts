@@ -14,10 +14,12 @@ import { UserService } from '../../shared/services/user/user.service';
 export class HeaderComponent {
   @Output() registerClick: EventEmitter<void>;
   @Output() loginCLick: EventEmitter<void>;
+  @Output() logoutClick: EventEmitter<void>;
 
   constructor(public userService: UserService) {
     this.registerClick = new EventEmitter<void>();
     this.loginCLick = new EventEmitter<void>();
+    this.logoutClick = new EventEmitter<void>();
   }
 
   onRegisterClick() {
@@ -26,5 +28,9 @@ export class HeaderComponent {
 
   onLoginClick() {
     this.loginCLick.emit();
+  }
+
+  onLogoutClick() {
+    this.logoutClick.emit();
   }
 }

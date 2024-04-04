@@ -8,11 +8,11 @@ import { Observable } from 'rxjs';
 export class UserService {
   readonly API_PREFIX: string;
 
-  id: number;
-  name: string;
-  email: string;
-  image: string;
-  roles: string[];
+  id: number | null;
+  name: string | null;
+  email: string | null;
+  image: string | null;
+  roles: string[] | null;
 
   constructor(private http: HttpClient) {
     this.API_PREFIX = 'user';
