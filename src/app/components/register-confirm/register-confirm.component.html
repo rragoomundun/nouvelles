@@ -3,7 +3,9 @@
     <div class="col-12 col-md-8">
       <div class="card">
         <div class="card-body">
-          <h4 class="card-title app-logo">{{ "GENERAL.TITLE" | translate }}</h4>
+          <h4 class="card-title app-logo">
+            <a [routerLink]="['/']">{{ "GENERAL.TITLE" | translate }}</a>
+          </h4>
 
           <p>
             {{ "REGISTER_CONFIRM_PAGE.CONFIRM" | translate }}

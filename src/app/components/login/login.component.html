@@ -36,6 +36,15 @@
         />
       </div>
 
+      <div id="password-forgotten" class="mb-3">
+        <a
+          [routerLink]="['/auth/mot-de-passe-oublie']"
+          class="d-block text-right"
+        >
+          {{ "LOGIN_MODAL.PASSWORD_FORGOTTEN" | translate }}
+        </a>
+      </div>
+
       <div class="text-center">
         @if (['false', 'error'].includes(onLogin)) {
         <button

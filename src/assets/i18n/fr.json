@@ -36,7 +36,8 @@
     },
     "LOGIN": "Se connecter sur Nouvelles",
     "LOGIN2": "Se connecter",
-    "CONNECTION": "Connexion..."
+    "CONNECTION": "Connexion...",
+    "PASSWORD_FORGOTTEN": "Mot de passe oublié"
   },
   "FORMS": {
     "USERNAME": "Nom d'utilisateur",
@@ -54,5 +55,16 @@
     "CONFIRM": "Confirmation du compte",
     "CLICK_CONFIRM": "Cliquez pour confirmer votre compte",
     "CONFIRMED": "Compte confirmé. Vous allez être redirigé..."
+  },
+  "PASSWORD_FORGOTTEN_PAGE": {
+    "ERRORS": {
+      "INVALID_EMAIL": "L'adresse e-mail est invalide.",
+      "UNCONFIRMED": "Le compte n'a pas encore été confirmé.",
+      "ALREADY_RECOVERING": "Une procédure de récupération est déjà en cours pour cette adresse.",
+      "EMAIL_SENDING_FAILED": "Impossible d'envoyer l'e-mail de récupération."
+    },
+    "TITLE": "Mot de passe oublié",
+    "DESCRIPTION": "Veuillez entrer votre adresse email ci-dessous pour pouvoir récupérer votre compte.",
+    "EMAIL_SENT": "Un e-mail de récupération a été envoyé à l'adresse renseignée."
   }
 }

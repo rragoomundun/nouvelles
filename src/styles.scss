@@ -1,5 +1,10 @@
 .app-logo {
   font-family: "Merriweather", serif;
+
+  a {
+    color: #000;
+    text-decoration: none;
+  }
 }
 
 main {
@@ -10,4 +15,4 @@ main {
 }
 
 /* Importing Bootstrap SCSS file. */
-@import 'bootstrap/scss/bootstrap';
+@import "bootstrap/scss/bootstrap";
