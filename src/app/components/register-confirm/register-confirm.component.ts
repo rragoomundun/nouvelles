@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute, RouterLink } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 
 import { AppService } from '../../shared/services/app/app.service';
@@ -9,7 +9,7 @@ import { UserService } from '../../shared/services/user/user.service';
 @Component({
   selector: 'app-register-confirm',
   standalone: true,
-  imports: [TranslateModule],
+  imports: [TranslateModule, RouterLink],
   templateUrl: './register-confirm.component.html',
   styleUrl: './register-confirm.component.scss',
 })

@@ -36,7 +36,8 @@
     },
     "LOGIN": "Se connecter sur Nouvelles",
     "LOGIN2": "Se connecter",
-    "CONNECTION": "Connexion..."
+    "CONNECTION": "Connexion...",
+    "PASSWORD_FORGOTTEN": "Mot de passe oublié"
   },
   "FORMS": {
     "USERNAME": "Nom d'utilisateur",
@@ -54,5 +55,9 @@
     "CONFIRM": "Confirmation du compte",
     "CLICK_CONFIRM": "Cliquez pour confirmer votre compte",
     "CONFIRMED": "Compte confirmé. Vous allez être redirigé..."
+  },
+  "PASSWORD_FORGOTTEN_PAGE": {
+    "TITLE": "Mot de passe oublié",
+    "DESCRIPTION": "Veuillez entrer votre adresse email ci-dessous pour pouvoir récupérer votre compte."
   }
 }

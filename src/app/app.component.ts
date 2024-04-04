@@ -34,7 +34,10 @@ export class AppComponent implements OnInit {
   }
 
   get showHeader(): boolean {
-    return this.router.url.startsWith('/inscription/confirmer/') === false;
+    return (
+      this.router.url.startsWith('/inscription/confirmer/') === false &&
+      this.router.url !== '/auth/mot-de-passe-oublie'
+    );
   }
 
   ngOnInit(): void {
