@@ -4,6 +4,7 @@ import { TranslateModule } from '@ngx-translate/core';
 
 import { AppService } from '../../shared/services/app/app.service';
 import { AuthService } from '../../shared/services/auth/auth.service';
+import { UserService } from '../../shared/services/user/user.service';
 
 @Component({
   selector: 'app-register-confirm',
@@ -19,7 +20,8 @@ export class RegisterConfirmComponent {
     private router: Router,
     private activatedRoute: ActivatedRoute,
     private appService: AppService,
-    private authService: AuthService
+    private authService: AuthService,
+    private userService: UserService
   ) {
     this.appService.setTitle('REGISTER_CONFIRM_PAGE.TITLE');
 
@@ -35,6 +37,7 @@ export class RegisterConfirmComponent {
     this.authService.registerConfirm(confirmationToken).subscribe({
       complete: () => {
         this.onRegisterConfirm = 'success';
+        this.userService.setUser();
 
         setTimeout(() => {
           this.router.navigate(['/']);

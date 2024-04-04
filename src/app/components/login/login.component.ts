@@ -10,6 +10,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 
 import { AuthService } from '../../shared/services/auth/auth.service';
+import { UserService } from '../../shared/services/user/user.service';
 
 @Component({
   selector: 'app-login',
@@ -28,7 +29,10 @@ export class LoginComponent {
 
   private modalService: any;
 
-  constructor(private authService: AuthService) {
+  constructor(
+    private authService: AuthService,
+    private userService: UserService
+  ) {
     this.modalService = inject(NgbModal);
 
     this.loginForm = new FormGroup({
@@ -50,6 +54,7 @@ export class LoginComponent {
     this.authService.login(this.loginForm.value).subscribe({
       complete: () => {
         this.loginModalRef.close();
+        this.userService.setUser();
       },
       error: (error: HttpErrorResponse) => {
         const { type } = error.error;

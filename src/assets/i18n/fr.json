@@ -3,7 +3,8 @@
     "TITLE": "Nouvelles",
     "SEARCH": "Rechercher",
     "LOGIN": "Connexion",
-    "REGISTER": "Inscription"
+    "REGISTER": "Inscription",
+    "USER_IMAGE": "Image de l'utilisateur"
   },
   "HEADER": {
     "FORUM": "Forum",

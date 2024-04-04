@@ -2,6 +2,8 @@ import { Component, Output, EventEmitter } from '@angular/core';
 
 import { TranslateModule } from '@ngx-translate/core';
 
+import { UserService } from '../../shared/services/user/user.service';
+
 @Component({
   selector: 'app-header',
   standalone: true,
@@ -13,7 +15,7 @@ export class HeaderComponent {
   @Output() registerClick: EventEmitter<void>;
   @Output() loginCLick: EventEmitter<void>;
 
-  constructor() {
+  constructor(public userService: UserService) {
     this.registerClick = new EventEmitter<void>();
     this.loginCLick = new EventEmitter<void>();
   }

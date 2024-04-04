@@ -24,3 +24,19 @@ header {
     border: none;
   }
 }
+
+.nav-item {
+  display: flex;
+  align-items: center;
+}
+
+.nav-link.dropdown-toggle {
+  display: flex;
+  align-items: center;
+
+  img {
+    width: 32px;
+    border-radius: 100%;
+    margin-right: 5px;
+  }
+}

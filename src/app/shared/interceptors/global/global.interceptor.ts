@@ -13,7 +13,7 @@ export function globalInterceptor(
     return next(req);
   }
 
-  const newRequest = {
+  const newRequest: any = {
     url: `${environment.API_URL}/${url}`,
   };
 

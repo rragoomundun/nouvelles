@@ -19,11 +19,18 @@ export class AuthService {
   registerConfirm(confirmationToken: string | null): Observable<any> {
     return this.http.put(
       `${this.API_PREFIX}/register/confirm/${confirmationToken}`,
-      {}
+      {},
+      { withCredentials: true }
     );
   }
 
   login(params: any): Observable<any> {
-    return this.http.post(`${this.API_PREFIX}/login`, params);
+    return this.http.post(`${this.API_PREFIX}/login`, params, {
+      withCredentials: true,
+    });
+  }
+
+  authorized(): Observable<any> {
+    return this.http.get(`${this.API_PREFIX}/authorized`);
   }
 }
