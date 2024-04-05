@@ -66,5 +66,13 @@
     "TITLE": "Mot de passe oublié",
     "DESCRIPTION": "Veuillez entrer votre adresse email ci-dessous pour pouvoir récupérer votre compte.",
     "EMAIL_SENT": "Un e-mail de récupération a été envoyé à l'adresse renseignée."
+  },
+  "PASSWORD_RESET_PAGE": {
+    "ERRORS": {
+      "PASSWORD_MIN_LENGTH": "Le mot de passe doit contenir au moins 12 caractères.",
+      "INVALID_TOKEN": "Le token de récupération est invalide. Veuillez ré-essayer la procédure de récupération de mot de passe plus tard."
+    },
+    "TITLE": "Réinitiliser le mot de passe",
+    "PASSWORD_MODIFIED": "Mot de passe modifié. Vous allez être redirigé..."
   }
 }

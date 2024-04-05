@@ -39,6 +39,7 @@
       <div id="password-forgotten" class="mb-3">
         <a
           [routerLink]="['/auth/mot-de-passe-oublie']"
+          (click)="loginModalRef.close()"
           class="d-block text-right"
         >
           {{ "LOGIN_MODAL.PASSWORD_FORGOTTEN" | translate }}

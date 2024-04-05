@@ -38,6 +38,16 @@ export class AuthService {
     return this.http.post(`${this.API_PREFIX}/password/forgot`, params);
   }
 
+  resetPassword(params: any, resetPasswordToken: string): Observable<any> {
+    return this.http.put(
+      `${this.API_PREFIX}/password/reset/${resetPasswordToken}`,
+      params,
+      {
+        withCredentials: true,
+      }
+    );
+  }
+
   authorized(): Observable<any> {
     return this.http.get(`${this.API_PREFIX}/authorized`);
   }

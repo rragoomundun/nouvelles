@@ -39,9 +39,7 @@ export class RegisterConfirmComponent {
         this.onRegisterConfirm = 'success';
         this.userService.setUser();
 
-        setTimeout(() => {
-          this.router.navigate(['/']);
-        }, 3000);
+        setTimeout(() => this.router.navigate(['/']), 3000);
       },
       error: () => {
         this.onRegisterConfirm = 'error';
