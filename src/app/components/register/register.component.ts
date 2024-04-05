@@ -6,7 +6,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { HttpErrorResponse } from '@angular/common/http';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { TranslateModule } from '@ngx-translate/core';
 
 import { AuthService } from '../../shared/services/auth/auth.service';
@@ -21,6 +21,7 @@ import { AuthService } from '../../shared/services/auth/auth.service';
 export class RegisterComponent {
   @ViewChild('registerModalTemplate') registerModalTemplate!: TemplateRef<any>;
 
+  registerModalRef: NgbModalRef;
   registerForm: FormGroup;
   registerError: string;
   onRegister: string;
@@ -50,7 +51,19 @@ export class RegisterComponent {
   }
 
   open() {
-    this.modalService.open(this.registerModalTemplate);
+    this.registerModalRef = this.modalService.open(this.registerModalTemplate);
+
+    this.registerModalRef.closed.subscribe({
+      complete: () => {
+        this.registerError = '';
+        this.onRegister = 'false';
+
+        this.registerForm.controls['name'].setValue('');
+        this.registerForm.controls['email'].setValue('');
+        this.registerForm.controls['password'].setValue('');
+        this.registerForm.controls['repeatPassword'].setValue('');
+      },
+    });
   }
 
   onSubmit() {
