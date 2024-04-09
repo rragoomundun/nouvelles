@@ -7,6 +7,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
 
+import { CategoryService } from './shared/services/category/category.service';
 import { UserService } from './shared/services/user/user.service';
 import { AuthService } from './shared/services/auth/auth.service';
 import { StorageService } from './shared/services/storage/storage.service';
@@ -25,6 +26,7 @@ export class AppComponent implements OnInit {
   constructor(
     public translate: TranslateService,
     private router: Router,
+    private categoryService: CategoryService,
     public userService: UserService,
     private authService: AuthService,
     private storageService: StorageService
@@ -42,6 +44,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.categoryService.setAllCategories();
     this.userService.setUser();
   }
 
