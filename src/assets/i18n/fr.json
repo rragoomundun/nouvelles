@@ -74,5 +74,8 @@
     },
     "TITLE": "Réinitiliser le mot de passe",
     "PASSWORD_MODIFIED": "Mot de passe modifié. Vous allez être redirigé..."
+  },
+  "HOME_PAGE": {
+    "TITLE": "Actualités et forum"
   }
 }
