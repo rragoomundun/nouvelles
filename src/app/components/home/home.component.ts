@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { TranslateModule } from '@ngx-translate/core';
 
 import { AppService } from '../../shared/services/app/app.service';
 import { HomeService } from '../../shared/services/home/home.service';
@@ -7,7 +8,7 @@ import { HomeService } from '../../shared/services/home/home.service';
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [RouterLink],
+  imports: [RouterLink, TranslateModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })

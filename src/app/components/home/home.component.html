@@ -1,143 +1,120 @@
 @if (frontArticles) {
-<section class="container">
-  <div class="row">
-    <div class="col">
-      <a
-        [routerLink]="[
-          frontArticles[0].category +
-            '/' +
-            frontArticles[0].id +
-            '/' +
-            frontArticles[0].title
-        ]"
-        class="article"
-      >
-        <img [src]="frontArticles[0].image" [alt]="frontArticles[0].title" />
-        <h3>{{ frontArticles[0].title }}</h3>
-      </a>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-12 col-md-6">
-      <a
-        [routerLink]="[
-          frontArticles[1].category +
-            '/' +
-            frontArticles[1].id +
-            '/' +
-            frontArticles[1].title
-        ]"
-        class="article"
-      >
-        <img [src]="frontArticles[1].image" [alt]="frontArticles[1].title" />
-        <h5>{{ frontArticles[1].title }}</h5>
-      </a>
-    </div>
-    <div class="col-12 col-md-6">
-      <a
-        [routerLink]="[
-          frontArticles[2].category +
-            '/' +
-            frontArticles[2].id +
-            '/' +
-            frontArticles[2].title
-        ]"
-        class="article"
-      >
-        <img [src]="frontArticles[2].image" [alt]="frontArticles[2].title" />
-        <h5>{{ frontArticles[2].title }}</h5>
-      </a>
-    </div>
-  </div>
-</section>
-} @if (articlesByCategory) { @for (articleByCategory of articlesByCategory;
-track articleByCategory) {
-<section class="article-category container">
-  <a [routerLink]="[articleByCategory.category.label]">
-    <h4>{{ articleByCategory.category.name }}</h4>
-  </a>
-
-  <div class="articles-delimiter"></div>
-
-  <div class="row">
-    <div class="col-12 col-md-6">
-      <a
-        [routerLink]="[
-          articleByCategory.category.label +
-            '/' +
-            articleByCategory.articles[0].id +
-            '/' +
-            articleByCategory.articles[0].title
-        ]"
-        class="article"
-      >
-        <img
-          [src]="articleByCategory.articles[0].image"
-          [alt]="articleByCategory.articles[0].title"
-        />
-        <h5>{{ articleByCategory.articles[0].title }}</h5>
-      </a>
+  <section class="container">
+    <div class="row">
+      <div class="col">
+        <a
+          [routerLink]="[
+            frontArticles[0].category +
+              '/' +
+              frontArticles[0].id +
+              '/' +
+              frontArticles[0].title
+          ]"
+          class="article"
+        >
+          <img [src]="frontArticles[0].image" [alt]="frontArticles[0].title" />
+          <h3>{{ frontArticles[0].title }}</h3>
+        </a>
+      </div>
     </div>
 
-    <div class="col-12 col-md-6">
-      <a
-        [routerLink]="[
-          articleByCategory.category.label +
-            '/' +
-            articleByCategory.articles[1].id +
-            '/' +
-            articleByCategory.articles[1].title
-        ]"
-        class="article"
-      >
-        <img
-          [src]="articleByCategory.articles[1].image"
-          [alt]="articleByCategory.articles[1].title"
-        />
-        <h5>{{ articleByCategory.articles[1].title }}</h5>
-      </a>
+    <div class="row">
+      @for (i of [1, 2]; track i) {
+        <div class="col-12 col-md-6">
+          <a
+            [routerLink]="[
+              frontArticles[i].category +
+                '/' +
+                frontArticles[i].id +
+                '/' +
+                frontArticles[i].title
+            ]"
+            class="article"
+          >
+            <img
+              [src]="frontArticles[i].image"
+              [alt]="frontArticles[i].title"
+            />
+            <h5>{{ frontArticles[i].title }}</h5>
+          </a>
+        </div>
+      }
     </div>
-  </div>
+  </section>
+}
 
-  <div class="row">
-    <div class="col-12 col-md-6">
-      <a
-        [routerLink]="[
-          articleByCategory.category.label +
-            '/' +
-            articleByCategory.articles[2].id +
-            '/' +
-            articleByCategory.articles[2].title
-        ]"
-        class="article"
-      >
-        <img
-          [src]="articleByCategory.articles[2].image"
-          [alt]="articleByCategory.articles[2].title"
-        />
-        <h5>{{ articleByCategory.articles[2].title }}</h5>
-      </a>
+@if (mostViewedArticles) {
+  <section id="most-viewed-article" class="container">
+    <div class="section-title">
+      <h4>{{ "HOME_PAGE.MOST_READED" | translate }}</h4>
     </div>
 
-    <div class="col-12 col-md-6">
-      <a
-        [routerLink]="[
-          articleByCategory.category.label +
-            '/' +
-            articleByCategory.articles[3].id +
-            '/' +
-            articleByCategory.articles[3].title
-        ]"
-        class="article"
-      >
-        <img
-          [src]="articleByCategory.articles[3].image"
-          [alt]="articleByCategory.articles[3].title"
-        />
-        <h5>{{ articleByCategory.articles[3].title }}</h5>
-      </a>
-    </div>
-  </div>
-</section>
-} }
+    @for (i of [1, 2, 3]; let rowIndex = $index; track i) {
+      <div class="row">
+        @for (j of [1, 2, 3]; let colIndex = $index; track j) {
+          <div class="col-12 col-sm-6 col-md-4">
+            <a
+              [routerLink]="[
+                mostViewedArticles[rowIndex * 3 + colIndex].category +
+                  '/' +
+                  mostViewedArticles[rowIndex * 3 + colIndex].id +
+                  '/' +
+                  mostViewedArticles[rowIndex * 3 + colIndex].title
+              ]"
+            >
+              <h5>
+                {{ rowIndex * 3 + colIndex + 1 }}.
+                {{ mostViewedArticles[rowIndex * 3 + colIndex].title }}
+              </h5>
+            </a>
+          </div>
+        }
+      </div>
+    }
+  </section>
+}
+
+@if (articlesByCategory) {
+  @for (articleByCategory of articlesByCategory; track articlesByCategory) {
+    <section class="container">
+      <div class="section-title">
+        <a [routerLink]="[articleByCategory.category.label]">
+          <h4>{{ articleByCategory.category.name }}</h4>
+        </a>
+      </div>
+
+      @for (i of [0, 1]; let rowIndex = $index; track i) {
+        <div class="row">
+          @for (j of [0, 1]; let colIndex = $index; track j) {
+            <div class="col-12 col-md-6">
+              <a
+                [routerLink]="[
+                  articleByCategory.category.label +
+                    '/' +
+                    articleByCategory.articles[rowIndex * 2 + colIndex].id +
+                    '/' +
+                    articleByCategory.articles[rowIndex * 2 + colIndex].title
+                ]"
+                class="article"
+              >
+                <img
+                  [src]="
+                    articleByCategory.articles[rowIndex * 2 + colIndex].image
+                  "
+                  [alt]="
+                    articleByCategory.articles[rowIndex * 2 + colIndex].title
+                  "
+                />
+                <h5>
+                  {{
+                    articleByCategory.articles[rowIndex * 2 + colIndex].title
+                  }}
+                </h5>
+              </a>
+            </div>
+          }
+        </div>
+      }
+    </section>
+  }
+}

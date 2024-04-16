@@ -76,6 +76,7 @@
     "PASSWORD_MODIFIED": "Mot de passe modifié. Vous allez être redirigé..."
   },
   "HOME_PAGE": {
-    "TITLE": "Actualités et forum"
+    "TITLE": "Actualités et forum",
+    "MOST_READED": "Les plus lus"
   }
 }
