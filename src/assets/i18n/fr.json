@@ -4,7 +4,10 @@
     "SEARCH": "Rechercher",
     "LOGIN": "Connexion",
     "REGISTER": "Inscription",
-    "USER_IMAGE": "Image de l'utilisateur"
+    "USER_IMAGE": "Image de l'utilisateur",
+    "DATE": {
+      "UPDATED": "Mis à jour"
+    }
   },
   "HEADER": {
     "FORUM": "Forum",

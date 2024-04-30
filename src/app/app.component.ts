@@ -29,10 +29,11 @@ export class AppComponent implements OnInit {
     private categoryService: CategoryService,
     public userService: UserService,
     private authService: AuthService,
-    private storageService: StorageService
+    private storageService: StorageService,
   ) {
     translate.addLangs(['fr']);
     translate.setDefaultLang('fr');
+    translate.use('fr');
   }
 
   get showHeader(): boolean {

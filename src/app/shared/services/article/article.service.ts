@@ -12,6 +12,11 @@ export class ArticleService {
     this.API_PREFIX = 'article';
   }
 
+  getArticle(articleId: number): Observable<any> {
+    const url = `${this.API_PREFIX}/${articleId}`;
+    return this.http.get(url);
+  }
+
   getArticleCategoryMeta(category: string): Observable<any> {
     const url = `${this.API_PREFIX}/by-category/meta`;
     const params = { category };

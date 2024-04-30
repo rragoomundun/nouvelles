@@ -1,1 +1,42 @@
-<p>article works!</p>
+@if (notFound) {
+  <app-not-found></app-not-found>
+} @else if (author) {
+  <img [src]="image" [alt]="title" id="cover-image" />
+  <h2>{{ title }}</h2>
+
+  <div id="author" class="row row-cols-auto align-items-center">
+    <div class="col">
+      <a [routerLink]="['/profile/' + author.id + '/' + author.name]">
+        @if (author.image) {
+          <img [src]="author.image" [alt]="author.name + ' profile image'" />
+        } @else {
+          <span class="fa-regular fa-circle-user fa-2x"></span>
+        }
+      </a>
+    </div>
+    <div class="col">
+      <a [routerLink]="['/profile/' + author.id + '/' + author.name]">
+        <span class="fw-bold">{{ author.name }}</span>
+      </a>
+    </div>
+    <div class="col date-delimiter">
+      <span>·</span>
+    </div>
+    <div class="col">
+      <span>{{ date }}</span>
+    </div>
+
+    @if (updatedDate) {
+      <div class="col date-delimiter">
+        <span>·</span>
+      </div>
+      <div class="col">
+        <span>
+          {{ "GENERAL.DATE.UPDATED" | translate }} : {{ updatedDate }}
+        </span>
+      </div>
+    }
+  </div>
+
+  <div [innerHTML]="content" id="content"></div>
+}
