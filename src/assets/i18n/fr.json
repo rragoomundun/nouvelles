@@ -16,6 +16,10 @@
       "LOUGOUT": "Se déconnecter"
     }
   },
+  "UTILS": {
+    "PREVIOUS": "Précédent",
+    "NEXT": "Suivant"
+  },
   "REGISTER_MODAL": {
     "ERRORS": {
       "NAME_IN_USE": "Le nom d'utilisateur est déjà utilisé.",
@@ -78,5 +82,10 @@
   "HOME_PAGE": {
     "TITLE": "Actualités et forum",
     "MOST_READED": "Les plus lus"
+  },
+  "404_PAGE": {
+    "TITLE": "404 - Page introuvable",
+    "MESSAGE_LINE_1": "404 : Non Trouvé",
+    "MESSAGE_LINE_2": "Impossible de trouver la page demandée"
   }
 }

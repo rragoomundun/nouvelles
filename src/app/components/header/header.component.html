@@ -18,11 +18,14 @@
       <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
         <ul class="navbar-nav mb-2 mb-lg-0">
           @for (category of categoryService.categories; track category) {
-          <li class="nav-item">
-            <a [routerLink]="['/' + category.label]" class="nav-link">
-              {{ category.name }}
-            </a>
-          </li>
+            <li class="nav-item">
+              <a
+                [routerLink]="['/categorie/' + category.label]"
+                class="nav-link"
+              >
+                {{ category.name }}
+              </a>
+            </li>
           }
 
           <li class="nav-item">
@@ -53,58 +56,62 @@
               aria-expanded="false"
             >
               @if (userService.image) {
-              <img
-                [src]="userService.image"
-                [alt]="'GENERAL.USER_IMAGE' | translate"
-              />
+                <img
+                  [src]="userService.image"
+                  [alt]="'GENERAL.USER_IMAGE' | translate"
+                />
               } @else {
-              <i class="fa-regular fa-circle-user"></i>&nbsp; } @if
-              (userService.name) {
-              {{ userService.name }}
+                <i class="fa-regular fa-circle-user"></i>&nbsp;
+              }
+              @if (userService.name) {
+                {{ userService.name }}
               } @else {
-              {{ "HEADER.ACCOUNT.ACCOUNT" | translate }}
+                {{ "HEADER.ACCOUNT.ACCOUNT" | translate }}
               }
             </a>
             <ul class="dropdown-menu">
               @if (userService.isLoggedIn === false) {
-              <li>
-                <a (click)="onRegisterClick()" class="dropdown-item" href="#">
-                  {{ "GENERAL.REGISTER" | translate }}
-                </a>
-              </li>
-              <li>
-                <a (click)="onLoginClick()" class="dropdown-item" href="#">
-                  {{ "GENERAL.LOGIN" | translate }}
-                </a>
-              </li>
+                <li>
+                  <a (click)="onRegisterClick()" class="dropdown-item" href="#">
+                    {{ "GENERAL.REGISTER" | translate }}
+                  </a>
+                </li>
+                <li>
+                  <a (click)="onLoginClick()" class="dropdown-item" href="#">
+                    {{ "GENERAL.LOGIN" | translate }}
+                  </a>
+                </li>
               } @else {
-              <li>
-                <a class="dropdown-item" href="#">
-                  <span class="fa-regular fa-circle-user"></span>
-                  {{ "HEADER.ACCOUNT.MY_ACCOUNT" | translate }}
-                </a>
-              </li>
-              @if (userService.roles && (userService.roles.includes('redacteur')
-              || userService.roles.includes('admin'))) {
-              <li>
-                <a class="dropdown-item" href="#">
-                  <span class="fa-solid fa-pen-to-square"></span>
-                  {{ "HEADER.ACCOUNT.WRITE_ARTICLE" | translate }}
-                </a>
-              </li>
-              }
-              <li>
-                <a class="dropdown-item" href="#">
-                  <span class="fa-solid fa-gear"></span>
-                  {{ "HEADER.ACCOUNT.SETTINGS" | translate }}
-                </a>
-              </li>
-              <li>
-                <a (click)="onLogoutClick()" class="dropdown-item" href="#">
-                  <span class="fa-solid fa-arrow-right-from-bracket"></span>
-                  {{ "HEADER.ACCOUNT.LOUGOUT" | translate }}
-                </a>
-              </li>
+                <li>
+                  <a class="dropdown-item" href="#">
+                    <span class="fa-regular fa-circle-user"></span>
+                    {{ "HEADER.ACCOUNT.MY_ACCOUNT" | translate }}
+                  </a>
+                </li>
+                @if (
+                  userService.roles &&
+                  (userService.roles.includes("redacteur") ||
+                    userService.roles.includes("admin"))
+                ) {
+                  <li>
+                    <a class="dropdown-item" href="#">
+                      <span class="fa-solid fa-pen-to-square"></span>
+                      {{ "HEADER.ACCOUNT.WRITE_ARTICLE" | translate }}
+                    </a>
+                  </li>
+                }
+                <li>
+                  <a class="dropdown-item" href="#">
+                    <span class="fa-solid fa-gear"></span>
+                    {{ "HEADER.ACCOUNT.SETTINGS" | translate }}
+                  </a>
+                </li>
+                <li>
+                  <a (click)="onLogoutClick()" class="dropdown-item" href="#">
+                    <span class="fa-solid fa-arrow-right-from-bracket"></span>
+                    {{ "HEADER.ACCOUNT.LOUGOUT" | translate }}
+                  </a>
+                </li>
               }
             </ul>
           </li>

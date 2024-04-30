@@ -4,8 +4,9 @@
       <div class="col">
         <a
           [routerLink]="[
-            frontArticles[0].category +
-              '/' +
+            '/categorie/' +
+              frontArticles[0].category +
+              '/article/' +
               frontArticles[0].id +
               '/' +
               frontArticles[0].title
@@ -23,8 +24,9 @@
         <div class="col-12 col-md-6">
           <a
             [routerLink]="[
-              frontArticles[i].category +
-                '/' +
+              '/categorie/' +
+                frontArticles[i].category +
+                '/article/' +
                 frontArticles[i].id +
                 '/' +
                 frontArticles[i].title
@@ -45,7 +47,7 @@
 
 @if (mostViewedArticles) {
   <section id="most-viewed-article" class="container">
-    <div class="section-title">
+    <div class="articles-section-title">
       <h4>{{ "HOME_PAGE.MOST_READED" | translate }}</h4>
     </div>
 
@@ -55,8 +57,9 @@
           <div class="col-12 col-sm-6 col-md-4">
             <a
               [routerLink]="[
-                mostViewedArticles[rowIndex * 3 + colIndex].category +
-                  '/' +
+                '/categorie/' +
+                  mostViewedArticles[rowIndex * 3 + colIndex].category +
+                  '/article/' +
                   mostViewedArticles[rowIndex * 3 + colIndex].id +
                   '/' +
                   mostViewedArticles[rowIndex * 3 + colIndex].title
@@ -77,8 +80,8 @@
 @if (articlesByCategory) {
   @for (articleByCategory of articlesByCategory; track articlesByCategory) {
     <section class="container">
-      <div class="section-title">
-        <a [routerLink]="[articleByCategory.category.label]">
+      <div class="articles-section-title">
+        <a [routerLink]="['/categorie/' + articleByCategory.category.label]">
           <h4>{{ articleByCategory.category.name }}</h4>
         </a>
       </div>
@@ -89,8 +92,9 @@
             <div class="col-12 col-md-6">
               <a
                 [routerLink]="[
-                  articleByCategory.category.label +
-                    '/' +
+                  '/categorie/' +
+                    articleByCategory.category.label +
+                    '/article/' +
                     articleByCategory.articles[rowIndex * 2 + colIndex].id +
                     '/' +
                     articleByCategory.articles[rowIndex * 2 + colIndex].title
