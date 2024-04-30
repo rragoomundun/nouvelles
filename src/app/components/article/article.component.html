@@ -1,1 +1,28 @@
-<p>article works!</p>
+@if (notFound) {
+  <app-not-found></app-not-found>
+} @else {
+  <img [src]="image" [alt]="title" id="cover-image" />
+  <h2>{{ title }}</h2>
+
+  <div id="author" class="row row-cols-auto align-items-center">
+    <div class="col">
+      <a [routerLink]="['/profile/' + author.id + '/' + author.name]">
+        <img
+          src="https://i.pinimg.com/originals/e0/3c/26/e03c26f07bfb6ef6c15ec7b0171df145.jpg"
+          [alt]="author.name + ' profile image'"
+        />
+      </a>
+    </div>
+    <div class="col">
+      <a [routerLink]="['/profile/' + author.id + '/' + author.name]">
+        <span class="fw-bold">{{ author.name }}</span>
+      </a>
+    </div>
+    <div class="col date-delimiter">
+      <span>·</span>
+    </div>
+    <div class="col">
+      <span>{{ date }}</span>
+    </div>
+  </div>
+}
