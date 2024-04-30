@@ -6,7 +6,11 @@
 
   <div id="author" class="row row-cols-auto align-items-center">
     <div class="col">
-      <a [routerLink]="['/profile/' + author.id + '/' + author.name]">
+      <a
+        [routerLink]="[
+          '/profile/' + author.id + '/' + urlService.toLowerURL(author.name)
+        ]"
+      >
         @if (author.image) {
           <img [src]="author.image" [alt]="author.name + ' profile image'" />
         } @else {
@@ -15,7 +19,11 @@
       </a>
     </div>
     <div class="col">
-      <a [routerLink]="['/profile/' + author.id + '/' + author.name]">
+      <a
+        [routerLink]="[
+          '/profile/' + author.id + '/' + urlService.toLowerURL(author.name)
+        ]"
+      >
         <span class="fw-bold">{{ author.name }}</span>
       </a>
     </div>

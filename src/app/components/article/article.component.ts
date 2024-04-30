@@ -8,6 +8,7 @@ import { NotFoundComponent } from '../not-found/not-found.component';
 
 import { ArticleService } from '../../shared/services/article/article.service';
 import { DateService } from '../../shared/services/date/date.service';
+import { UrlService } from '../../shared/services/url/url.service';
 
 @Component({
   selector: 'app-article',
@@ -30,6 +31,7 @@ export class ArticleComponent implements OnInit {
     private activatedRoute: ActivatedRoute,
     private articleService: ArticleService,
     private dateService: DateService,
+    public urlService: UrlService,
   ) {}
 
   ngOnInit() {

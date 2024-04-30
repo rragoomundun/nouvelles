@@ -19,6 +19,7 @@ import { NotFoundComponent } from '../not-found/not-found.component';
 
 import { ArticleService } from '../../shared/services/article/article.service';
 import { AppService } from '../../shared/services/app/app.service';
+import { UrlService } from '../../shared/services/url/url.service';
 
 @Component({
   selector: 'app-category',
@@ -39,6 +40,7 @@ export class CategoryComponent implements OnInit {
     private activatedRoute: ActivatedRoute,
     private articleService: ArticleService,
     private appService: AppService,
+    public urlService: UrlService,
     @Inject(PLATFORM_ID) private platformId: any,
   ) {}
 

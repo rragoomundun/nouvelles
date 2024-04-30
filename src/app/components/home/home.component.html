@@ -9,7 +9,7 @@
               '/article/' +
               frontArticles[0].id +
               '/' +
-              frontArticles[0].title
+              urlService.toLowerURL(frontArticles[0].title)
           ]"
           class="article"
         >
@@ -29,7 +29,7 @@
                 '/article/' +
                 frontArticles[i].id +
                 '/' +
-                frontArticles[i].title
+                urlService.toLowerURL(frontArticles[i].title)
             ]"
             class="article"
           >
@@ -62,7 +62,9 @@
                   '/article/' +
                   mostViewedArticles[rowIndex * 3 + colIndex].id +
                   '/' +
-                  mostViewedArticles[rowIndex * 3 + colIndex].title
+                  urlService.toLowerURL(
+                    mostViewedArticles[rowIndex * 3 + colIndex].title
+                  )
               ]"
             >
               <h5>
@@ -97,7 +99,9 @@
                     '/article/' +
                     articleByCategory.articles[rowIndex * 2 + colIndex].id +
                     '/' +
-                    articleByCategory.articles[rowIndex * 2 + colIndex].title
+                    urlService.toLowerURL(
+                      articleByCategory.articles[rowIndex * 2 + colIndex].title
+                    )
                 ]"
                 class="article"
               >

@@ -4,6 +4,7 @@ import { TranslateModule } from '@ngx-translate/core';
 
 import { AppService } from '../../shared/services/app/app.service';
 import { HomeService } from '../../shared/services/home/home.service';
+import { UrlService } from '../../shared/services/url/url.service';
 
 @Component({
   selector: 'app-home',
@@ -19,7 +20,8 @@ export class HomeComponent implements OnInit {
 
   constructor(
     private appService: AppService,
-    private homeService: HomeService
+    private homeService: HomeService,
+    public urlService: UrlService,
   ) {
     this.appService.setTitle('HOME_PAGE.TITLE');
   }
