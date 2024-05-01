@@ -72,12 +72,12 @@
             <ul class="dropdown-menu">
               @if (userService.isLoggedIn === false) {
                 <li>
-                  <a (click)="onRegisterClick()" class="dropdown-item" href="#">
+                  <a (click)="onRegisterClick()" class="dropdown-item">
                     {{ "GENERAL.REGISTER" | translate }}
                   </a>
                 </li>
                 <li>
-                  <a (click)="onLoginClick()" class="dropdown-item" href="#">
+                  <a (click)="onLoginClick()" class="dropdown-item">
                     {{ "GENERAL.LOGIN" | translate }}
                   </a>
                 </li>

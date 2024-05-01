@@ -37,6 +37,14 @@ a.content-link:hover {
   text-decoration: underline;
 }
 
+.articles-section-title {
+  border-bottom: 2px solid #444;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* Bootstrap */
+
 .pagination {
   .page-item.active .page-link {
     background-color: #009900;
@@ -48,10 +56,10 @@ a.content-link:hover {
   }
 }
 
-.articles-section-title {
-  border-bottom: 2px solid #444;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+.dropdown-menu {
+  .dropdown-item:hover {
+    cursor: pointer;
+  }
 }
 
 /* Importing Bootstrap SCSS file. */
