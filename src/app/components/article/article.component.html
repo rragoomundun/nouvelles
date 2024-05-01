@@ -2,7 +2,7 @@
   <app-not-found></app-not-found>
 } @else if (author) {
   <img [src]="image" [alt]="title" id="cover-image" />
-  <h2>{{ title }}</h2>
+  <h2 class="title">{{ title }}</h2>
 
   <div id="author" class="row row-cols-auto align-items-center">
     <div class="col">
@@ -23,6 +23,7 @@
         [routerLink]="[
           '/profile/' + author.id + '/' + urlService.toLowerURL(author.name)
         ]"
+        class="content-link"
       >
         <span class="fw-bold">{{ author.name }}</span>
       </a>

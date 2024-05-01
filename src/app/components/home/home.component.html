@@ -11,7 +11,7 @@
               '/' +
               urlService.toLowerURL(frontArticles[0].title)
           ]"
-          class="article"
+          class="article title-link"
         >
           <img [src]="frontArticles[0].image" [alt]="frontArticles[0].title" />
           <h3>{{ frontArticles[0].title }}</h3>
@@ -31,7 +31,7 @@
                 '/' +
                 urlService.toLowerURL(frontArticles[i].title)
             ]"
-            class="article"
+            class="article title-link"
           >
             <img
               [src]="frontArticles[i].image"
@@ -48,7 +48,7 @@
 @if (mostViewedArticles) {
   <section id="most-viewed-article" class="container">
     <div class="articles-section-title">
-      <h4>{{ "HOME_PAGE.MOST_READED" | translate }}</h4>
+      <h4 class="title">{{ "HOME_PAGE.MOST_READED" | translate }}</h4>
     </div>
 
     @for (i of [1, 2, 3]; let rowIndex = $index; track i) {
@@ -66,6 +66,7 @@
                     mostViewedArticles[rowIndex * 3 + colIndex].title
                   )
               ]"
+              class="title-link"
             >
               <h5>
                 {{ rowIndex * 3 + colIndex + 1 }}.
@@ -83,7 +84,10 @@
   @for (articleByCategory of articlesByCategory; track articlesByCategory) {
     <section class="container">
       <div class="articles-section-title">
-        <a [routerLink]="['/categorie/' + articleByCategory.category.label]">
+        <a
+          [routerLink]="['/categorie/' + articleByCategory.category.label]"
+          class="title-link"
+        >
           <h4>{{ articleByCategory.category.name }}</h4>
         </a>
       </div>
@@ -103,7 +107,7 @@
                       articleByCategory.articles[rowIndex * 2 + colIndex].title
                     )
                 ]"
-                class="article"
+                class="article title-link"
               >
                 <img
                   [src]="

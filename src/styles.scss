@@ -1,3 +1,10 @@
+main {
+  max-width: 768px;
+  margin: auto;
+  margin-top: 100px;
+  padding: 0 12px;
+}
+
 .app-logo {
   font-family: "Merriweather", serif;
 
@@ -7,11 +14,38 @@
   }
 }
 
-main {
-  max-width: 768px;
-  margin: auto;
-  margin-top: 100px;
-  padding: 0 12px;
+.title {
+  font-family: "Lora";
+}
+
+a.title-link {
+  font-family: "Lora";
+  text-decoration: none;
+  color: inherit;
+}
+
+a.title-link:hover {
+  text-decoration: underline;
+}
+
+a.content-link {
+  color: #009900;
+  text-decoration: none;
+}
+
+a.content-link:hover {
+  text-decoration: underline;
+}
+
+.pagination {
+  .page-item.active .page-link {
+    background-color: #009900;
+    border-color: #009900;
+  }
+
+  .page-item:not(.active):not(.disabled) .page-link {
+    color: #009900;
+  }
 }
 
 .articles-section-title {
