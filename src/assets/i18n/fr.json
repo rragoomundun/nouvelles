@@ -19,6 +19,10 @@
       "LOUGOUT": "Se déconnecter"
     }
   },
+  "FOOTER": {
+    "TOS": "Conditions d'utilisation",
+    "PRIVACY_POLICY": "Politique de confidentialité"
+  },
   "UTILS": {
     "PREVIOUS": "Précédent",
     "NEXT": "Suivant"

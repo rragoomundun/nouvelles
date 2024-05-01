@@ -4,6 +4,7 @@ import { RouterOutlet, Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 
 import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
 import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
 
@@ -15,7 +16,13 @@ import { StorageService } from './shared/services/storage/storage.service';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, HeaderComponent, RegisterComponent, LoginComponent],
+  imports: [
+    RouterOutlet,
+    HeaderComponent,
+    FooterComponent,
+    RegisterComponent,
+    LoginComponent,
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
@@ -36,7 +43,7 @@ export class AppComponent implements OnInit {
     translate.use('fr');
   }
 
-  get showHeader(): boolean {
+  get showHeaderFooter(): boolean {
     return (
       this.router.url.startsWith('/inscription/confirmer/') === false &&
       this.router.url !== '/auth/mot-de-passe-oublie' &&

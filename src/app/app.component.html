@@ -1,14 +1,18 @@
-@if (showHeader) {
-<app-header
-  (registerClick)="onRegisterClick()"
-  (loginCLick)="onLoginClick()"
-  (logoutClick)="onLogoutClick()"
-></app-header>
+@if (showHeaderFooter) {
+  <app-header
+    (registerClick)="onRegisterClick()"
+    (loginCLick)="onLoginClick()"
+    (logoutClick)="onLogoutClick()"
+  ></app-header>
 }
 
 <main>
   <router-outlet />
 </main>
+
+@if (showHeaderFooter) {
+  <app-footer></app-footer>
+}
 
 <app-register></app-register>
 <app-login></app-login>
