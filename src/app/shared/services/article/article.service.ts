@@ -30,4 +30,9 @@ export class ArticleService {
 
     return this.http.get(url, { params });
   }
+
+  articleViewed(articleId: number): Observable<any> {
+    const url = `${this.API_PREFIX}/${articleId}/viewed`;
+    return this.http.put(url, {});
+  }
 }

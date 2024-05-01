@@ -9,6 +9,7 @@ import { NotFoundComponent } from '../not-found/not-found.component';
 import { ArticleService } from '../../shared/services/article/article.service';
 import { DateService } from '../../shared/services/date/date.service';
 import { UrlService } from '../../shared/services/url/url.service';
+import { AppService } from '../../shared/services/app/app.service';
 
 @Component({
   selector: 'app-article',
@@ -29,6 +30,7 @@ export class ArticleComponent implements OnInit {
 
   constructor(
     private activatedRoute: ActivatedRoute,
+    private appService: AppService,
     private articleService: ArticleService,
     private dateService: DateService,
     public urlService: UrlService,
@@ -67,6 +69,8 @@ export class ArticleComponent implements OnInit {
             })
             .toLocaleString(DateTime.DATE_FULL);
         }
+
+        setTimeout(() => this.appService.setTitle(this.title, false), 250);
       },
       error: (value) => {
         if (value.status === 404) {
@@ -74,5 +78,7 @@ export class ArticleComponent implements OnInit {
         }
       },
     });
+
+    this.articleService.articleViewed(this.articleId).subscribe();
   }
 }
