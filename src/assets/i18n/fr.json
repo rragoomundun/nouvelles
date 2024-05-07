@@ -5,6 +5,7 @@
     "LOGIN": "Connexion",
     "REGISTER": "Inscription",
     "USER_IMAGE": "Image de l'utilisateur",
+    "CATEGORY": "Categorie",
     "DATE": {
       "UPDATED": "Mis à jour"
     }
@@ -89,6 +90,20 @@
   "HOME_PAGE": {
     "TITLE": "Actualités et forum",
     "MOST_READED": "Les plus lus"
+  },
+  "ARTICLE_WRITE_PAGE": {
+    "TITLE": "Écrire un article",
+    "ARTICLE_TITLE": "Titre de l'article",
+    "IMAGE": "Image de couverture",
+    "IMAGE_CONTINUE_USING": "Ou continuer d'utiliser",
+    "SELECT_CATEGORY": "Sélectionner une catégorie",
+    "PUBLISH": "Publier",
+    "CONTENT": "Contenu de l'article",
+    "VALIDATED": "L'article a bien été sauvegardé / publié.",
+    "ERRORS": {
+      "EDIT": "Impossible d'éditer cet article",
+      "VALIDATE": "Impossible de sauvegarder / publier l'article."
+    }
   },
   "404_PAGE": {
     "TITLE": "404 - Page introuvable",

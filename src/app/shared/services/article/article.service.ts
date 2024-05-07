@@ -35,4 +35,13 @@ export class ArticleService {
     const url = `${this.API_PREFIX}/${articleId}/viewed`;
     return this.http.put(url, {});
   }
+
+  postArticle(params: any): Observable<any> {
+    return this.http.post(this.API_PREFIX, params, { withCredentials: true });
+  }
+
+  isUserOwner(articleId: number): Observable<any> {
+    const url = `${this.API_PREFIX}/${articleId}/is-user-owner`;
+    return this.http.get(url, { withCredentials: true });
+  }
 }

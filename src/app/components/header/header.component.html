@@ -94,7 +94,7 @@
                     userService.roles.includes("admin"))
                 ) {
                   <li>
-                    <a class="dropdown-item" href="#">
+                    <a [routerLink]="['/article/ecrire']" class="dropdown-item">
                       <span class="fa-solid fa-pen-to-square"></span>
                       {{ "HEADER.ACCOUNT.WRITE_ARTICLE" | translate }}
                     </a>
