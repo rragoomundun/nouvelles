@@ -11,6 +11,7 @@ import { CategoryComponent } from './components/category/category.component';
 import { ArticleComponent } from './components/article/article.component';
 import { ArticleWriteComponent } from './components/article-write/article-write.component';
 import { NewArticleComponent } from './components/new-article/new-article.component';
+import { EditArticleComponent } from './components/edit-article/edit-article.component';
 
 export const routes: Routes = [
   {
@@ -55,8 +56,11 @@ export const routes: Routes = [
     ],
   },
   {
-    path: 'article/nouveau',
-    component: NewArticleComponent,
+    path: 'article',
+    children: [
+      { path: 'nouveau', component: NewArticleComponent },
+      { path: ':id/editer', component: EditArticleComponent },
+    ],
     canActivate: [isAdminOrRedactorGuard],
   },
   {

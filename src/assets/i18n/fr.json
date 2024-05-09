@@ -105,6 +105,14 @@
       "CREATION": "Impossible de créer l'article."
     }
   },
+  "EDIT_ARTICLE_PAGE": {
+    "TITLE": "Éditer un article",
+    "IMAGE_USE": "Ou utiliser",
+    "ERRORS": {
+      "NOT_OWNER": "Vous n'êtes pas le propriétaire de l'article que vous tentez d'éditer",
+      "NOT_FOUND": "Impossible de trouver l'article à éditer"
+    }
+  },
   "404_PAGE": {
     "TITLE": "404 - Page introuvable",
     "MESSAGE_LINE_1": "404 : Non Trouvé",
