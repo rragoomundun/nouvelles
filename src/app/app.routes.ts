@@ -2,6 +2,7 @@ import { Routes } from '@angular/router';
 
 import { isAdminOrRedactorGuard } from './shared/guards/is-admin-or-redactor/is-admin-or-redactor.guard';
 
+import { NotFoundComponent } from './components/not-found/not-found.component';
 import { HomeComponent } from './components/home/home.component';
 import { RegisterConfirmComponent } from './components/register-confirm/register-confirm.component';
 import { PasswordForgottenComponent } from './components/password-forgotten/password-forgotten.component';
@@ -9,7 +10,7 @@ import { PasswordResetComponent } from './components/password-reset/password-res
 import { CategoryComponent } from './components/category/category.component';
 import { ArticleComponent } from './components/article/article.component';
 import { ArticleWriteComponent } from './components/article-write/article-write.component';
-import { NotFoundComponent } from './components/not-found/not-found.component';
+import { NewArticleComponent } from './components/new-article/new-article.component';
 
 export const routes: Routes = [
   {
@@ -52,6 +53,11 @@ export const routes: Routes = [
         component: CategoryComponent,
       },
     ],
+  },
+  {
+    path: 'article/nouveau',
+    component: NewArticleComponent,
+    canActivate: [isAdminOrRedactorGuard],
   },
   {
     path: 'article/ecrire',

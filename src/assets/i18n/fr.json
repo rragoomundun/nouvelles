@@ -5,7 +5,7 @@
     "LOGIN": "Connexion",
     "REGISTER": "Inscription",
     "USER_IMAGE": "Image de l'utilisateur",
-    "CATEGORY": "Categorie",
+    "CATEGORY": "Catégorie",
     "DATE": {
       "UPDATED": "Mis à jour"
     }
@@ -91,18 +91,18 @@
     "TITLE": "Actualités et forum",
     "MOST_READED": "Les plus lus"
   },
-  "ARTICLE_WRITE_PAGE": {
-    "TITLE": "Écrire un article",
+  "NEW_ARTICLE_PAGE": {
+    "TITLE": "Nouvel article",
     "ARTICLE_TITLE": "Titre de l'article",
     "IMAGE": "Image de couverture",
-    "IMAGE_CONTINUE_USING": "Ou continuer d'utiliser",
     "SELECT_CATEGORY": "Sélectionner une catégorie",
     "PUBLISH": "Publier",
     "CONTENT": "Contenu de l'article",
-    "VALIDATED": "L'article a bien été sauvegardé / publié.",
+    "CREATE": "Créer",
+    "CREATION": "Création",
+    "CREATED": "L'article a bien été crée :",
     "ERRORS": {
-      "EDIT": "Impossible d'éditer cet article",
-      "VALIDATE": "Impossible de sauvegarder / publier l'article."
+      "CREATION": "Impossible de créer l'article."
     }
   },
   "404_PAGE": {
