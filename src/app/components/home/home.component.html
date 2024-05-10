@@ -13,7 +13,11 @@
           ]"
           class="article title-link"
         >
-          <img [src]="frontArticles[0].image" [alt]="frontArticles[0].title" />
+          <img
+            [src]="frontArticles[0].image"
+            [alt]="frontArticles[0].title"
+            class="image-ratio-16x9"
+          />
           <h3>{{ frontArticles[0].title }}</h3>
         </a>
       </div>
@@ -36,6 +40,7 @@
             <img
               [src]="frontArticles[i].image"
               [alt]="frontArticles[i].title"
+              class="image-ratio-16x9"
             />
             <h5>{{ frontArticles[i].title }}</h5>
           </a>
@@ -116,6 +121,7 @@
                   [alt]="
                     articleByCategory.articles[rowIndex * 2 + colIndex].title
                   "
+                  class="image-ratio-16x9"
                 />
                 <h5>
                   {{
