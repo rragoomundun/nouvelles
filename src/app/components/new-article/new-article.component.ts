@@ -22,6 +22,7 @@ import { UrlService } from '../../shared/services/url/url.service';
   styleUrl: './new-article.component.scss',
 })
 export class NewArticleComponent implements OnInit {
+  title: string;
   articleForm: FormGroup;
   file: File;
   createdArticleLink: string;
@@ -71,6 +72,8 @@ export class NewArticleComponent implements OnInit {
     }
 
     publishedControl.setValue(published);
+
+    this.title = this.articleForm.controls['title'].value;
 
     this.onCreation = 'true';
 

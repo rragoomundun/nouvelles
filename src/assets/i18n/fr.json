@@ -99,7 +99,7 @@
     "PUBLISH": "Publier",
     "CONTENT": "Contenu de l'article",
     "CREATE": "Créer",
-    "CREATION": "Création",
+    "CREATION": "Création...",
     "CREATED": "L'article a bien été crée :",
     "ERRORS": {
       "CREATION": "Impossible de créer l'article."
@@ -108,9 +108,13 @@
   "EDIT_ARTICLE_PAGE": {
     "TITLE": "Éditer un article",
     "IMAGE_USE": "Ou utiliser",
+    "EDIT": "Éditer",
+    "EDITION": "Édition...",
+    "EDITED": "L'article a bien été édité :",
     "ERRORS": {
       "NOT_OWNER": "Vous n'êtes pas le propriétaire de l'article que vous tentez d'éditer",
-      "NOT_FOUND": "Impossible de trouver l'article à éditer"
+      "NOT_FOUND": "Impossible de trouver l'article à éditer",
+      "EDITION": "Impossible d'éditer l'article."
     }
   },
   "404_PAGE": {

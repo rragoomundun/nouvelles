@@ -94,5 +94,39 @@
         required
       ></textarea>
     </div>
+
+    <div class="text-end">
+      @if (["false", "success", "error"].includes(onEdit)) {
+        <button
+          [disabled]="isFormValid === false"
+          class="btn btn-primary"
+          type="submit"
+        >
+          {{ "EDIT_ARTICLE_PAGE.EDIT" | translate }}
+        </button>
+      }
+
+      @if (onEdit === "true") {
+        <button [disabled]="true" class="btn btn-primary">
+          <span class="fa-solid fa-spinner fa-spin"></span>
+          {{ "EDIT_ARTICLE_PAGE.EDITION" | translate }}
+        </button>
+      }
+    </div>
+
+    @if (onEdit === "success") {
+      <div class="text-end text-success mt-3">
+        <span>{{ "EDIT_ARTICLE_PAGE.EDITED" | translate }}</span>
+        <a routerLink="{{ editedArticleLink }}" class="content-link">
+          {{ title }}
+        </a>
+      </div>
+    }
+
+    @if (onEdit === "error") {
+      <div class="text-end text-danger mt-3">
+        <span>{{ "EDIT_ARTICLE_PAGE.ERRORS.EDITION" | translate }}</span>
+      </div>
+    }
   </form>
 }
