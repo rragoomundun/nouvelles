@@ -1,0 +1,110 @@
+<h2 class="title">{{ "NEW_ARTICLE_PAGE.TITLE" | translate }}</h2>
+
+<form [formGroup]="articleForm" (ngSubmit)="onSubmit()">
+  <div class="mb-3">
+    <label for="title" class="form-label">
+      {{ "NEW_ARTICLE_PAGE.ARTICLE_TITLE" | translate }}
+    </label>
+    <input
+      id="title"
+      class="form-control"
+      type="text"
+      formControlName="title"
+      required
+    />
+  </div>
+
+  <div class="mb-3">
+    <label for="file" class="form-label">
+      {{ "NEW_ARTICLE_PAGE.IMAGE" | translate }}
+    </label>
+    <input
+      (change)="onFileSelected($event)"
+      id="file"
+      class="form-control"
+      type="file"
+      autocomplete="off"
+      required
+    />
+  </div>
+
+  <div class="mb-3">
+    <label for="category" class="form-label">
+      {{ "GENERAL.CATEGORY" | translate }}
+    </label>
+    <select
+      id="category"
+      class="form-select"
+      formControlName="category"
+      required
+    >
+      @for (category of categoryService.categories; track category) {
+        <option value="{{ category.label }}">{{ category.name }}</option>
+      }
+    </select>
+  </div>
+
+  <div class="mb-3">
+    <div class="form-check">
+      <input
+        id="publish"
+        class="form-check-input"
+        type="checkbox"
+        value=""
+        formControlName="published"
+        required
+      />
+      <label class="form-check-label" for="publish">
+        {{ "NEW_ARTICLE_PAGE.PUBLISH" | translate }}
+      </label>
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <label for="content" class="form-label">
+      {{ "NEW_ARTICLE_PAGE.CONTENT" | translate }}
+    </label>
+    <textarea
+      id="content"
+      class="form-control"
+      cols="30"
+      rows="10"
+      formControlName="content"
+      required
+    ></textarea>
+  </div>
+
+  <div class="text-end">
+    @if (["false", "success", "error"].includes(onCreation)) {
+      <button
+        [disabled]="isFormValid === false"
+        class="btn btn-primary"
+        type="submit"
+      >
+        {{ "NEW_ARTICLE_PAGE.CREATE" | translate }}
+      </button>
+    }
+
+    @if (onCreation === "true") {
+      <button [disabled]="true" type="submit" class="btn btn-primary">
+        <span class="fa-solid fa-spinner fa-spin"></span>
+        {{ "NEW_ARTICLE_PAGE.CREATION" | translate }}
+      </button>
+    }
+  </div>
+
+  @if (onCreation === "success") {
+    <div class="text-end text-success mt-3">
+      <span>{{ "NEW_ARTICLE_PAGE.CREATED" | translate }}</span>
+      <a routerLink="{{ createdArticleLink }}" class="content-link">
+        {{ title }}
+      </a>
+    </div>
+  }
+
+  @if (onCreation === "error") {
+    <div class="text-end text-danger mt-3">
+      <span>{{ "NEW_ARTICLE_PAGE.ERRORS.CREATION" | translate }}</span>
+    </div>
+  }
+</form>

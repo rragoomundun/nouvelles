@@ -5,6 +5,7 @@
     "LOGIN": "Connexion",
     "REGISTER": "Inscription",
     "USER_IMAGE": "Image de l'utilisateur",
+    "CATEGORY": "Catégorie",
     "DATE": {
       "UPDATED": "Mis à jour"
     }
@@ -89,6 +90,32 @@
   "HOME_PAGE": {
     "TITLE": "Actualités et forum",
     "MOST_READED": "Les plus lus"
+  },
+  "NEW_ARTICLE_PAGE": {
+    "TITLE": "Nouvel article",
+    "ARTICLE_TITLE": "Titre de l'article",
+    "IMAGE": "Image de couverture",
+    "SELECT_CATEGORY": "Sélectionner une catégorie",
+    "PUBLISH": "Publier",
+    "CONTENT": "Contenu de l'article",
+    "CREATE": "Créer",
+    "CREATION": "Création...",
+    "CREATED": "L'article a bien été crée :",
+    "ERRORS": {
+      "CREATION": "Impossible de créer l'article."
+    }
+  },
+  "EDIT_ARTICLE_PAGE": {
+    "TITLE": "Éditer un article",
+    "IMAGE_USE": "Ou utiliser",
+    "EDIT": "Éditer",
+    "EDITION": "Édition...",
+    "EDITED": "L'article a bien été édité :",
+    "ERRORS": {
+      "NOT_OWNER": "Vous n'êtes pas le propriétaire de l'article que vous tentez d'éditer",
+      "NOT_FOUND": "Impossible de trouver l'article à éditer",
+      "EDITION": "Impossible d'éditer l'article."
+    }
   },
   "404_PAGE": {
     "TITLE": "404 - Page introuvable",

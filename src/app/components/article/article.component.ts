@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 
+import { marked } from 'marked';
 import { DateTime } from 'luxon';
 
 import { NotFoundComponent } from '../not-found/not-found.component';
@@ -41,36 +42,40 @@ export class ArticleComponent implements OnInit {
 
     this.articleService.getArticle(this.articleId).subscribe({
       next: (value) => {
-        const { title, image, date, updatedDate, author, content } = value;
+        if (value.published === false) {
+          this.notFound = true;
+        } else {
+          const { title, image, date, updated_date, author, content } = value;
 
-        this.notFound = false;
+          this.notFound = false;
 
-        this.title = title;
-        this.image = image;
-        this.author = author;
-        this.content = content;
+          this.title = title;
+          this.image = image;
+          this.author = author;
+          this.content = <string>marked.parse(content);
 
-        const dateObj = new Date(date);
-        this.date = this.dateService.dt
-          .set({
-            day: dateObj.getDate(),
-            month: dateObj.getMonth() + 1,
-            year: dateObj.getFullYear(),
-          })
-          .toLocaleString(DateTime.DATE_FULL);
-
-        if (updatedDate) {
-          const updatedDateObj = new Date(updatedDate);
-          this.updatedDate = this.dateService.dt
+          const dateObj = new Date(date);
+          this.date = this.dateService.dt
             .set({
-              day: updatedDateObj.getDate(),
-              month: updatedDateObj.getMonth() + 1,
-              year: updatedDateObj.getFullYear(),
+              day: dateObj.getDate(),
+              month: dateObj.getMonth() + 1,
+              year: dateObj.getFullYear(),
             })
             .toLocaleString(DateTime.DATE_FULL);
-        }
 
-        setTimeout(() => this.appService.setTitle(this.title, false), 250);
+          if (updated_date) {
+            const updatedDateObj = new Date(updated_date);
+            this.updatedDate = this.dateService.dt
+              .set({
+                day: updatedDateObj.getDate(),
+                month: updatedDateObj.getMonth() + 1,
+                year: updatedDateObj.getFullYear(),
+              })
+              .toLocaleString(DateTime.DATE_FULL);
+          }
+
+          setTimeout(() => this.appService.setTitle(this.title, false), 250);
+        }
       },
       error: (value) => {
         if (value.status === 404) {
