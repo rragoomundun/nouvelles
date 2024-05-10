@@ -59,7 +59,7 @@
     @for (i of [1, 2, 3]; let rowIndex = $index; track i) {
       <div class="row">
         @for (j of [1, 2, 3]; let colIndex = $index; track j) {
-          <div class="col-12 col-sm-6 col-md-4">
+          <div class="col-12 col-md-4">
             <a
               [routerLink]="[
                 '/categorie/' +
