@@ -14,8 +14,11 @@ export class UserService {
   image: string | null;
   roles: string[] | null;
 
+  onGetUser: string;
+
   constructor(private http: HttpClient) {
     this.API_PREFIX = 'user';
+    this.onGetUser = 'false';
   }
 
   get isLoggedIn(): boolean {
@@ -27,6 +30,8 @@ export class UserService {
   }
 
   setUser() {
+    this.onGetUser = 'true';
+
     this.getUser().subscribe({
       next: (value) => {
         this.id = value.id;
@@ -34,6 +39,11 @@ export class UserService {
         this.email = value.email;
         this.image = value.image;
         this.roles = value.roles;
+
+        this.onGetUser = 'success';
+      },
+      error: () => {
+        this.onGetUser = 'error';
       },
     });
   }
