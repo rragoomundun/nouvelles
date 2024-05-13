@@ -1,8 +1,8 @@
 import {
   Component,
   OnInit,
+  OnDestroy,
   Inject,
-  Injectable,
   PLATFORM_ID,
 } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
@@ -13,6 +13,7 @@ import {
   RouterLink,
 } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
+import { Subscription } from 'rxjs';
 import { filter } from 'rxjs/operators';
 
 import { NotFoundComponent } from '../not-found/not-found.component';
@@ -28,7 +29,8 @@ import { UrlService } from '../../shared/services/url/url.service';
   templateUrl: './category.component.html',
   styleUrl: './category.component.scss',
 })
-export class CategoryComponent implements OnInit {
+export class CategoryComponent implements OnInit, OnDestroy {
+  routerEventsSubscription: Subscription;
   articles: any[];
   categoryName: string;
   totalArticles: number;
@@ -48,12 +50,21 @@ export class CategoryComponent implements OnInit {
     this.getMetaInformation();
     this.getArticles();
 
-    this.router.events
+    // Load again when the user navigate to another category
+    this.routerEventsSubscription = this.router.events
       .pipe(filter((event) => event instanceof NavigationEnd))
       .subscribe(() => {
-        this.getMetaInformation();
-        this.getArticles();
+        let regex = new RegExp('/categorie/.[^/]*$');
+
+        if (regex.test(this.router.url)) {
+          this.getMetaInformation();
+          this.getArticles();
+        }
       });
+  }
+
+  ngOnDestroy(): void {
+    this.routerEventsSubscription.unsubscribe();
   }
 
   get category(): string {

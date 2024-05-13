@@ -14,7 +14,7 @@ export class ArticleService {
 
   getArticle(articleId: number): Observable<any> {
     const url = `${this.API_PREFIX}/${articleId}`;
-    return this.http.get(url);
+    return this.http.get(url, { withCredentials: true });
   }
 
   getArticleCategoryMeta(category: string): Observable<any> {

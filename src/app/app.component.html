@@ -6,9 +6,11 @@
   ></app-header>
 }
 
-<main>
-  <router-outlet />
-</main>
+@if (["true", "false"].includes(userService.onGetUser) === false) {
+  <main>
+    <router-outlet />
+  </main>
+}
 
 @if (showHeaderFooter) {
   <app-footer></app-footer>

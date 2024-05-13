@@ -20,7 +20,7 @@ export class AuthService {
     return this.http.put(
       `${this.API_PREFIX}/register/confirm/${confirmationToken}`,
       {},
-      { withCredentials: true }
+      { withCredentials: true },
     );
   }
 
@@ -44,11 +44,19 @@ export class AuthService {
       params,
       {
         withCredentials: true,
-      }
+      },
     );
   }
 
   authorized(): Observable<any> {
-    return this.http.get(`${this.API_PREFIX}/authorized`);
+    return this.http.get(`${this.API_PREFIX}/authorized`, {
+      withCredentials: true,
+    });
+  }
+
+  authorizedAdminRedacteur(): Observable<any> {
+    return this.http.get(`${this.API_PREFIX}/authorized-admin-redacteur`, {
+      withCredentials: true,
+    });
   }
 }

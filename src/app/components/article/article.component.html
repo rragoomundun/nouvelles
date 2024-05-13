@@ -1,7 +1,8 @@
 @if (notFound) {
   <app-not-found></app-not-found>
 } @else if (author) {
-  <img [src]="image" [alt]="title" id="cover-image" />
+  <img [src]="image" [alt]="title" id="cover-image" class="image-ratio-16x9" />
+
   <h2 class="title">{{ title }}</h2>
 
   <div id="author" class="row row-cols-auto align-items-center">
