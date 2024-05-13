@@ -1,0 +1,20 @@
+@if (showHeaderFooter) {
+  <app-header
+    (registerClick)="onRegisterClick()"
+    (loginCLick)="onLoginClick()"
+    (logoutClick)="onLogoutClick()"
+  ></app-header>
+}
+
+@if (["true", "false"].includes(userService.onGetUser) === false) {
+  <main>
+    <router-outlet />
+  </main>
+}
+
+@if (showHeaderFooter) {
+  <app-footer></app-footer>
+}
+
+<app-register></app-register>
+<app-login></app-login>

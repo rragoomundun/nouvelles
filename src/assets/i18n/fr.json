@@ -1,0 +1,125 @@
+{
+  "GENERAL": {
+    "TITLE": "Nouvelles",
+    "SEARCH": "Rechercher",
+    "LOGIN": "Connexion",
+    "REGISTER": "Inscription",
+    "USER_IMAGE": "Image de l'utilisateur",
+    "CATEGORY": "Catégorie",
+    "DATE": {
+      "UPDATED": "Mis à jour"
+    }
+  },
+  "HEADER": {
+    "FORUM": "Forum",
+    "ACCOUNT": {
+      "ACCOUNT": "Compte",
+      "MY_ACCOUNT": "Mon Compte",
+      "WRITE_ARTICLE": "Écrire un article",
+      "SETTINGS": "Paramètres",
+      "LOUGOUT": "Se déconnecter"
+    }
+  },
+  "FOOTER": {
+    "TOS": "Conditions d'utilisation",
+    "PRIVACY_POLICY": "Politique de confidentialité"
+  },
+  "UTILS": {
+    "PREVIOUS": "Précédent",
+    "NEXT": "Suivant"
+  },
+  "REGISTER_MODAL": {
+    "ERRORS": {
+      "NAME_IN_USE": "Le nom d'utilisateur est déjà utilisé.",
+      "INVALID_EMAIL": "L'adresse e-mail est invalide.",
+      "EMAIL_IN_USE": "L'adresse e-mail est déjà utilisée.",
+      "PASSWORD_MIN_LENGTH": "Le mot de passe doit contenir au moins 12 caractères.",
+      "ACCOUNT_CREATION_FAILED": "Impossible de créer le compte. Veuillez ré-essayer plus tard."
+    },
+    "REGISTER": "S'inscrire sur Nouvelles",
+    "ACCOUNT_CREATED": "Compte crée. Vérifiez votre boite e-mail pour confirmer votre inscription."
+  },
+  "LOGIN_MODAL": {
+    "ERRORS": {
+      "INVALID_EMAIL": "L'adresse e-mail est invalide.",
+      "PASSWORD_MIN_LENGTH": "Le mot de passe doit contenir au moins 12 caractères.",
+      "INVALID": "Les informations d'identification ne sont pas valides.",
+      "UNCONFIRMED": "Le compte n'a pas encore été confirmé."
+    },
+    "LOGIN": "Se connecter sur Nouvelles",
+    "LOGIN2": "Se connecter",
+    "CONNECTION": "Connexion...",
+    "PASSWORD_FORGOTTEN": "Mot de passe oublié"
+  },
+  "FORMS": {
+    "USERNAME": "Nom d'utilisateur",
+    "EMAIL": "Adresse E-Mail",
+    "PASSWORD": "Mot de passe",
+    "REPEAT_PASSWORD": "Répéter le mot de passe",
+    "VALIDATE": "Valider",
+    "VALIDATION": "Validation..."
+  },
+  "REGISTER_CONFIRM_PAGE": {
+    "ERRORS": {
+      "CONFIRMATION_FAILED": "Impossible de confirmer le compte."
+    },
+    "TITLE": "Confirmation du compte",
+    "CONFIRM": "Confirmation du compte",
+    "CLICK_CONFIRM": "Cliquez pour confirmer votre compte",
+    "CONFIRMED": "Compte confirmé. Vous allez être redirigé..."
+  },
+  "PASSWORD_FORGOTTEN_PAGE": {
+    "ERRORS": {
+      "INVALID_EMAIL": "L'adresse e-mail est invalide.",
+      "UNCONFIRMED": "Le compte n'a pas encore été confirmé.",
+      "ALREADY_RECOVERING": "Une procédure de récupération est déjà en cours pour cette adresse.",
+      "EMAIL_SENDING_FAILED": "Impossible d'envoyer l'e-mail de récupération."
+    },
+    "TITLE": "Mot de passe oublié",
+    "DESCRIPTION": "Veuillez entrer votre adresse email ci-dessous pour pouvoir récupérer votre compte.",
+    "EMAIL_SENT": "Un e-mail de récupération a été envoyé à l'adresse renseignée."
+  },
+  "PASSWORD_RESET_PAGE": {
+    "ERRORS": {
+      "PASSWORD_MIN_LENGTH": "Le mot de passe doit contenir au moins 12 caractères.",
+      "INVALID_TOKEN": "Le token de récupération est invalide. Veuillez ré-essayer la procédure de récupération de mot de passe plus tard."
+    },
+    "TITLE": "Réinitiliser le mot de passe",
+    "PASSWORD_MODIFIED": "Mot de passe modifié. Vous allez être redirigé..."
+  },
+  "HOME_PAGE": {
+    "TITLE": "Actualités et forum",
+    "MOST_READED": "Les plus lus"
+  },
+  "NEW_ARTICLE_PAGE": {
+    "TITLE": "Nouvel article",
+    "ARTICLE_TITLE": "Titre de l'article",
+    "IMAGE": "Image de couverture",
+    "SELECT_CATEGORY": "Sélectionner une catégorie",
+    "PUBLISH": "Publier",
+    "CONTENT": "Contenu de l'article",
+    "CREATE": "Créer",
+    "CREATION": "Création...",
+    "CREATED": "L'article a bien été crée :",
+    "ERRORS": {
+      "CREATION": "Impossible de créer l'article."
+    }
+  },
+  "EDIT_ARTICLE_PAGE": {
+    "TITLE": "Éditer un article",
+    "IMAGE_USE": "Ou utiliser",
+    "EDIT": "Éditer",
+    "EDITION": "Édition...",
+    "EDITED": "L'article a bien été édité :",
+    "ERRORS": {
+      "NOT_OWNER": "Vous n'êtes pas le propriétaire de l'article que vous tentez d'éditer",
+      "NOT_FOUND": "Impossible de trouver l'article à éditer",
+      "EDITION": "Impossible d'éditer l'article."
+    }
+  },
+  "404_PAGE": {
+    "TITLE": "404 - Page introuvable",
+    "MESSAGE_LINE_1": "404 : Non Trouvé",
+    "MESSAGE_LINE_2": "Impossible de trouver la page demandée"
+  }
+}

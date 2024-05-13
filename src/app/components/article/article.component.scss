@@ -1,0 +1,23 @@
+#cover-image {
+  width: 100%;
+}
+
+#author {
+  img {
+    width: 48px;
+    border-radius: 100%;
+  }
+
+  .fa-circle-user {
+    color: #333;
+  }
+}
+
+#content {
+  margin-top: 1rem;
+  font-size: 1.25rem;
+}
+
+.date-delimiter {
+  padding: 0;
+}

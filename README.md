@@ -1,8 +1,21 @@
 # Nouvelles
-Information website and forum
+
+Information website and forum.
+
+## Install dependencies
+
+```
+npm install
+```
+
+## Run app
+
+```
+npm start
+```
 
 ---
 
-* Version: 0.1.0
-* License: MIT
-* Author: Raphael Ragoomundun
+- Version: 0.2.0
+- License: MIT
+- Author: Raphael Ragoomundun
