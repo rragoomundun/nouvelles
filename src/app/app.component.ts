@@ -12,6 +12,7 @@ import { CategoryService } from './shared/services/category/category.service';
 import { UserService } from './shared/services/user/user.service';
 import { AuthService } from './shared/services/auth/auth.service';
 import { StorageService } from './shared/services/storage/storage.service';
+import { ForumService } from './shared/services/forum/forum.service';
 
 @Component({
   selector: 'app-root',
@@ -34,6 +35,7 @@ export class AppComponent implements OnInit {
     public translate: TranslateService,
     private router: Router,
     private categoryService: CategoryService,
+    private forumService: ForumService,
     public userService: UserService,
     private authService: AuthService,
     private storageService: StorageService,
@@ -53,6 +55,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.categoryService.setAllCategories();
+    this.forumService.setForums();
     this.userService.setUser();
   }
 
