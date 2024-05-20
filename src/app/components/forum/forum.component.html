@@ -1,0 +1,10 @@
+<div class="container">
+  <a routerLink="/forum">{{ "FORUM_PAGE.TITLE" | translate }}</a>
+
+  @if (currentForumName) {
+    <span>&nbsp;&gt;&nbsp;</span>
+    <span class="fw-bold">{{ currentForumName }}</span>
+  }
+</div>
+
+<router-outlet></router-outlet>

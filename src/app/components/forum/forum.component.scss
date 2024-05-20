@@ -1,0 +1,16 @@
+.container {
+  padding-bottom: 0.5rem;
+
+  a,
+  span {
+    color: #555;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+}

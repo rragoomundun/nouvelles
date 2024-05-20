@@ -12,6 +12,9 @@ import { ArticleComponent } from './components/article/article.component';
 import { ArticleWriteComponent } from './components/article-write/article-write.component';
 import { NewArticleComponent } from './components/new-article/new-article.component';
 import { EditArticleComponent } from './components/edit-article/edit-article.component';
+import { ForumComponent } from './components/forum/forum.component';
+import { ForumListComponent } from './components/forum-list/forum-list.component';
+import { DiscussionsComponent } from './components/discussions/discussions.component';
 
 export const routes: Routes = [
   {
@@ -67,6 +70,20 @@ export const routes: Routes = [
     path: 'article/ecrire',
     component: ArticleWriteComponent,
     canActivate: [isAdminOrRedactorGuard],
+  },
+  {
+    path: 'forum',
+    component: ForumComponent,
+    children: [
+      {
+        path: '',
+        component: ForumListComponent,
+      },
+      {
+        path: '**',
+        component: DiscussionsComponent,
+      },
+    ],
   },
   {
     path: '**',

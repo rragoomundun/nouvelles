@@ -117,6 +117,9 @@
       "EDITION": "Impossible d'éditer l'article."
     }
   },
+  "FORUM_PAGE": {
+    "TITLE": "Forum"
+  },
   "404_PAGE": {
     "TITLE": "404 - Page introuvable",
     "MESSAGE_LINE_1": "404 : Non Trouvé",
