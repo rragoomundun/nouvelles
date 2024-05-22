@@ -16,6 +16,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { Subscription } from 'rxjs';
 import { filter } from 'rxjs/operators';
 
+import { PaginationComponent } from '../../shared/components/pagination/pagination.component';
 import { NotFoundComponent } from '../not-found/not-found.component';
 
 import { ArticleService } from '../../shared/services/article/article.service';
@@ -25,7 +26,12 @@ import { UrlService } from '../../shared/services/url/url.service';
 @Component({
   selector: 'app-category',
   standalone: true,
-  imports: [RouterLink, TranslateModule, NotFoundComponent],
+  imports: [
+    RouterLink,
+    TranslateModule,
+    PaginationComponent,
+    NotFoundComponent,
+  ],
   templateUrl: './category.component.html',
   styleUrl: './category.component.scss',
 })
@@ -73,33 +79,6 @@ export class CategoryComponent implements OnInit, OnDestroy {
 
   get page(): number {
     return Number(this.activatedRoute.snapshot.queryParams['page'] || '1');
-  }
-
-  get pages(): number[] {
-    return Array.from(Array(this.nbPages).keys()).map((key) => key + 1);
-  }
-
-  get pagesEnd(): number[] {
-    const start = this.nbPages - 2;
-    const pagesArray = [];
-
-    for (let i = start; i <= this.nbPages; i++) {
-      pagesArray.push(i);
-    }
-
-    return pagesArray;
-  }
-
-  get pagesIn(): number[] {
-    const start = this.page - 1;
-    const end = this.page + 1;
-    const pagesArray = [];
-
-    for (let i = start; i <= end; i++) {
-      pagesArray.push(i);
-    }
-
-    return pagesArray;
   }
 
   getArticles() {

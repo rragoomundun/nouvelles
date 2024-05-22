@@ -18,6 +18,18 @@ export class ForumService {
     return this.http.get(`${this.API_PREFIX}/list`);
   }
 
+  getForumMeta(forum: string): Observable<any> {
+    const url = `${this.API_PREFIX}/${forum}/meta`;
+    return this.http.get(url);
+  }
+
+  getDiscussions(forum: string, page: number): Observable<any> {
+    const url = `${this.API_PREFIX}/${forum}/discussions`;
+    const params = { page };
+
+    return this.http.get(url, { params });
+  }
+
   setForums() {
     this.getForums().subscribe({
       next: (value) => {

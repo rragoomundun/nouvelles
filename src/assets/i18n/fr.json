@@ -117,8 +117,17 @@
       "EDITION": "Impossible d'éditer l'article."
     }
   },
+  "FORUM_COMMON": {
+    "DISCUSSIONS": "discussions",
+    "MESSAGES": "messages"
+  },
   "FORUM_PAGE": {
     "TITLE": "Forum"
+  },
+  "DISCUSSION_PAGE": {
+    "LAST_MESSAGE": "Dernier Message",
+    "BY": "Par",
+    "NO_DISCUSSIONS": "Aucune discussions dans ce forum."
   },
   "404_PAGE": {
     "TITLE": "404 - Page introuvable",

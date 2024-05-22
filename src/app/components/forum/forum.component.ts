@@ -50,7 +50,7 @@ export class ForumComponent implements OnInit, OnDestroy {
     let regex = new RegExp('/forum/.+$');
 
     if (regex.test(this.router.url)) {
-      this.currentForum = this.router.url.split('/')[2];
+      this.currentForum = this.router.url.split('/')[2].split('?')[0];
     } else {
       this.currentForum = null;
     }
