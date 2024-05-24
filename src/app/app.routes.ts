@@ -15,6 +15,7 @@ import { EditArticleComponent } from './components/edit-article/edit-article.com
 import { ForumComponent } from './components/forum/forum.component';
 import { ForumListComponent } from './components/forum-list/forum-list.component';
 import { DiscussionsComponent } from './components/discussions/discussions.component';
+import { DiscussionComponent } from './components/discussion/discussion.component';
 
 export const routes: Routes = [
   {
@@ -80,8 +81,12 @@ export const routes: Routes = [
         component: ForumListComponent,
       },
       {
-        path: '**',
+        path: ':forum',
         component: DiscussionsComponent,
+      },
+      {
+        path: ':forum/discussion/:discussionId/:discussionTitle',
+        component: DiscussionComponent,
       },
     ],
   },
