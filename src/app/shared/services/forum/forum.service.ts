@@ -30,6 +30,19 @@ export class ForumService {
     return this.http.get(url, { params });
   }
 
+  getDiscussionMeta(forum: string, discussionId: number): Observable<any> {
+    return this.http.get(
+      `${this.API_PREFIX}/${forum}/discussion/${discussionId}/meta`,
+    );
+  }
+
+  getDiscussionMessage(discussionId: number, page: number): Observable<any> {
+    const url = `${this.API_PREFIX}/discussion/${discussionId}/messages`;
+    const params = { page };
+
+    return this.http.get(url, { params });
+  }
+
   setForums() {
     this.getForums().subscribe({
       next: (value) => {

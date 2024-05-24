@@ -82,7 +82,7 @@ export class DiscussionsComponent implements OnInit, OnDestroy {
     this.routerEventsSubscription.unsubscribe();
   }
 
-  getMetaInformation() {
+  getMetaInformation(): void {
     this.forumService.getForumMeta(this.forum).subscribe({
       next: (value) => {
         this.nbPages = value.nbPages;
@@ -90,7 +90,7 @@ export class DiscussionsComponent implements OnInit, OnDestroy {
     });
   }
 
-  getDiscussions() {
+  getDiscussions(): void {
     this.forumService.getDiscussions(this.forum, this.page).subscribe({
       next: (value) => {
         this.discussions = value;
