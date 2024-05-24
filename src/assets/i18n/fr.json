@@ -6,6 +6,10 @@
     "REGISTER": "Inscription",
     "USER_IMAGE": "Image de l'utilisateur",
     "CATEGORY": "Catégorie",
+    "NAME": "Nom",
+    "MESSAGE": "Message",
+    "CREATE": "Créer",
+    "CREATION": "Création...",
     "DATE": {
       "UPDATED": "Mis à jour"
     }
@@ -98,8 +102,6 @@
     "SELECT_CATEGORY": "Sélectionner une catégorie",
     "PUBLISH": "Publier",
     "CONTENT": "Contenu de l'article",
-    "CREATE": "Créer",
-    "CREATION": "Création...",
     "CREATED": "L'article a bien été crée :",
     "ERRORS": {
       "CREATION": "Impossible de créer l'article."
@@ -119,7 +121,8 @@
   },
   "FORUM_COMMON": {
     "DISCUSSIONS": "discussions",
-    "MESSAGES": "messages"
+    "MESSAGES": "messages",
+    "NEW_DISCUSSION": "Nouvelle discussion"
   },
   "FORUM_PAGE": {
     "TITLE": "Forum"
@@ -128,6 +131,13 @@
     "LAST_MESSAGE": "Dernier Message",
     "BY": "Par",
     "NO_DISCUSSIONS": "Aucune discussions dans ce forum."
+  },
+  "NEW_DISCUSSION_PAGE": {
+    "NAME": "Nom de la discussion",
+    "FIRST_MESSAGE": "Premier message",
+    "ERRORS": {
+      "CREATION": "Impossible de créer la discussion."
+    }
   },
   "404_PAGE": {
     "TITLE": "404 - Page introuvable",
