@@ -43,6 +43,12 @@ export class ForumService {
     return this.http.get(url, { params });
   }
 
+  postDiscussion(params: any): Observable<any> {
+    return this.http.post(`${this.API_PREFIX}/discussion`, params, {
+      withCredentials: true,
+    });
+  }
+
   setForums() {
     this.getForums().subscribe({
       next: (value) => {

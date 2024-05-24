@@ -32,6 +32,11 @@ export class ForumComponent implements OnInit, OnDestroy {
     return null;
   }
 
+  get onDiscussions(): boolean {
+    let regex = new RegExp('/forum/[^/]+$');
+    return regex.test(this.router.url);
+  }
+
   ngOnInit(): void {
     this.setCurrentForum();
 

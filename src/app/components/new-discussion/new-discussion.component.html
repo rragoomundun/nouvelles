@@ -1,0 +1,57 @@
+<div class="container">
+  <h2 class="title">{{ "FORUM_COMMON.NEW_DISCUSSION" | translate }}</h2>
+
+  <form [formGroup]="discussionForm" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+      <label for="name" class="form-label">
+        {{ "NEW_DISCUSSION_PAGE.NAME" | translate }}
+      </label>
+      <input
+        id="name"
+        class="form-control"
+        type="text"
+        formControlName="name"
+        required
+      />
+    </div>
+
+    <div class="mb-3">
+      <label for="message" class="form-label">
+        {{ "NEW_DISCUSSION_PAGE.FIRST_MESSAGE" | translate }}
+      </label>
+      <textarea
+        id="message"
+        class="form-control"
+        cols="30"
+        rows="10"
+        formControlName="message"
+        required
+      ></textarea>
+    </div>
+
+    <div class="text-end">
+      @if (["false", "error"].includes(onCreation)) {
+        <button
+          [disabled]="isFormValid === false"
+          class="btn btn-primary"
+          type="submit"
+        >
+          {{ "GENERAL.CREATE" | translate }}
+        </button>
+      }
+
+      @if (onCreation === "true") {
+        <button [disabled]="true" type="submit" class="btn btn-primary">
+          <span class="fa-solid fa-spinner fa-spin"></span>
+          {{ "GENERAL.CREATION" | translate }}
+        </button>
+      }
+    </div>
+
+    @if (onCreation === "error") {
+      <div class="text-end text-danger mt-3">
+        <span>{{ "NEW_DISCUSSION_PAGE.ERRORS.CREATION" | translate }}</span>
+      </div>
+    }
+  </form>
+</div>
