@@ -3,10 +3,10 @@ import { RouterOutlet, Router } from '@angular/router';
 
 import { TranslateService } from '@ngx-translate/core';
 
-import { HeaderComponent } from './components/header/header.component';
-import { FooterComponent } from './components/footer/footer.component';
-import { RegisterComponent } from './components/register/register.component';
-import { LoginComponent } from './components/login/login.component';
+import { HeaderComponent } from './core/components/header/header.component';
+import { FooterComponent } from './core/components/footer/footer.component';
+import { RegisterComponent } from './core/components/register/register.component';
+import { LoginComponent } from './core/components/login/login.component';
 
 import { CategoryService } from './shared/services/category/category.service';
 import { UserService } from './shared/services/user/user.service';
