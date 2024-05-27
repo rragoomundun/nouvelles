@@ -127,10 +127,18 @@
   "FORUM_PAGE": {
     "TITLE": "Forum"
   },
-  "DISCUSSION_PAGE": {
+  "DISCUSSIONS_PAGE": {
     "LAST_MESSAGE": "Dernier Message",
     "BY": "Par",
     "NO_DISCUSSIONS": "Aucune discussions dans ce forum."
+  },
+  "DISCUSSION_PAGE": {
+    "ANSWER_DISCUSSION": "Répondre à la conversation",
+    "ANSWER": "Répondre",
+    "ANSWERING": "Réponse...",
+    "ERRORS": {
+      "ANSWERING": "Impossible de répondre à la conversation"
+    }
   },
   "NEW_DISCUSSION_PAGE": {
     "NAME": "Nom de la discussion",

@@ -32,13 +32,13 @@
           </a>
 
           <span>&nbsp;·&nbsp;</span>
-          <span>{{ message.date }}</span>
+          <span>{{ message.dateFormatted }}</span>
 
-          @if (message.updatedDate) {
+          @if (message.updatedDateFormatted) {
             <span class="d-none d-md-inline">&nbsp;·&nbsp;</span>
             <span class="d-none d-md-inline"
               >{{ "GENERAL.DATE.UPDATED" | translate }} :
-              {{ message.updatedDate }}
+              {{ message.updatedDateFormatted }}
             </span>
           }
         </div>
@@ -68,5 +68,9 @@
   @if (nbPages) {
     <br />
     <app-pagination [nbPages]="nbPages"></app-pagination>
+  }
+
+  @if (userSharedService.isLoggedIn) {
+    <app-answer-discussion (answered)="onNewAnswer()"></app-answer-discussion>
   }
 </div>
