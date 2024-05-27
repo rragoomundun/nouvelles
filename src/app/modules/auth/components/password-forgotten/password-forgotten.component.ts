@@ -9,8 +9,8 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { RouterLink } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 
-import { AppService } from '../../../../shared/services/app/app.service';
-import { AuthService } from '../../../../shared/services/auth/auth.service';
+import { AppSharedService } from '../../../../shared/services/app/app-shared.service';
+import { AuthService } from '../../services/auth/auth.service';
 
 @Component({
   selector: 'app-password-forgotten',
@@ -26,10 +26,10 @@ export class PasswordForgottenComponent {
   passwordForgottenError: string;
 
   constructor(
-    private appService: AppService,
+    private appSharedService: AppSharedService,
     private authService: AuthService,
   ) {
-    this.appService.setTitle('PASSWORD_FORGOTTEN_PAGE.TITLE');
+    this.appSharedService.setTitle('PASSWORD_FORGOTTEN_PAGE.TITLE');
 
     this.passwordForgottenForm = new FormGroup({
       email: new FormControl('', [Validators.required]),

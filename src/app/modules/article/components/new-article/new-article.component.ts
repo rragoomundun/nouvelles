@@ -8,11 +8,11 @@ import {
 import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 
-import { AppService } from '../../../../shared/services/app/app.service';
-import { ArticleService } from '../../../../shared/services/article/article.service';
-import { UploadService } from '../../../../shared/services/file/upload.service';
-import { CategoryService } from '../../../../shared/services/category/category.service';
-import { UrlService } from '../../../../shared/services/url/url.service';
+import { AppSharedService } from '../../../../shared/services/app/app-shared.service';
+import { ArticleSharedService } from '../../../../shared/services/article/article-shared.service';
+import { UploadSharedService } from '../../../../shared/services/file/upload-shared.service';
+import { CategorySharedService } from '../../../../shared/services/category/category-shared.service';
+import { UrlSharedService } from '../../../../shared/services/url/url-shared.service';
 
 @Component({
   selector: 'app-new-article',
@@ -29,11 +29,11 @@ export class NewArticleComponent implements OnInit {
   onCreation: string;
 
   constructor(
-    private appService: AppService,
-    private articleService: ArticleService,
-    private uploadService: UploadService,
-    private urlService: UrlService,
-    public categoryService: CategoryService,
+    private appSharedService: AppSharedService,
+    private articleSharedService: ArticleSharedService,
+    private uploadSharedService: UploadSharedService,
+    private urlSharedService: UrlSharedService,
+    public categorySharedService: CategorySharedService,
   ) {}
 
   get isFormValid(): boolean {
@@ -46,7 +46,7 @@ export class NewArticleComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.appService.setTitle('NEW_ARTICLE_PAGE.TITLE');
+    this.appSharedService.setTitle('NEW_ARTICLE_PAGE.TITLE');
 
     this.articleForm = new FormGroup({
       title: new FormControl('', [Validators.required]),
@@ -77,21 +77,23 @@ export class NewArticleComponent implements OnInit {
 
     this.onCreation = 'true';
 
-    this.uploadService.upload(this.file).subscribe({
+    this.uploadSharedService.upload(this.file).subscribe({
       next: (value) => {
         this.articleForm.controls['image'].setValue(value.file);
 
-        this.articleService.postArticle(this.articleForm.value).subscribe({
-          next: (value) => {
-            this.createdArticleLink = `/categorie/${this.articleForm.controls['category'].value}/article/${value.id}/${this.urlService.toLowerURL(this.articleForm.controls['title'].value)}`;
-          },
-          complete: () => {
-            this.onCreation = 'success';
-          },
-          error: () => {
-            this.onCreation = 'error';
-          },
-        });
+        this.articleSharedService
+          .postArticle(this.articleForm.value)
+          .subscribe({
+            next: (value) => {
+              this.createdArticleLink = `/categorie/${this.articleForm.controls['category'].value}/article/${value.id}/${this.urlSharedService.toLowerURL(this.articleForm.controls['title'].value)}`;
+            },
+            complete: () => {
+              this.onCreation = 'success';
+            },
+            error: () => {
+              this.onCreation = 'error';
+            },
+          });
       },
       error: () => {
         this.onCreation = 'error';

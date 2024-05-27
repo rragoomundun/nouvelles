@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { StorageService } from './storage.service';
+import { ForumSharedService } from './forum-shared.service';
 
-describe('StorageService', () => {
-  let service: StorageService;
+describe('ForumSharedService', () => {
+  let service: ForumSharedService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(StorageService);
+    service = TestBed.inject(ForumSharedService);
   });
 
   it('should be created', () => {

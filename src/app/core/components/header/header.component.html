@@ -17,7 +17,7 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
         <ul class="navbar-nav mb-2 mb-lg-0">
-          @for (category of categoryService.categories; track category) {
+          @for (category of categorySharedService.categories; track category) {
             <li class="nav-item">
               <a
                 [routerLink]="['/categorie/' + category.label]"
@@ -57,22 +57,22 @@
               data-bs-toggle="dropdown"
               aria-expanded="false"
             >
-              @if (userService.image) {
+              @if (userSharedService.image) {
                 <img
-                  [src]="userService.image"
+                  [src]="userSharedService.image"
                   [alt]="'GENERAL.USER_IMAGE' | translate"
                 />
               } @else {
                 <i class="fa-regular fa-circle-user"></i>&nbsp;
               }
-              @if (userService.name) {
-                {{ userService.name }}
+              @if (userSharedService.name) {
+                {{ userSharedService.name }}
               } @else {
                 {{ "HEADER.ACCOUNT.ACCOUNT" | translate }}
               }
             </a>
             <ul class="dropdown-menu">
-              @if (userService.isLoggedIn === false) {
+              @if (userSharedService.isLoggedIn === false) {
                 <li>
                   <a (click)="onRegisterClick()" class="dropdown-item">
                     {{ "GENERAL.REGISTER" | translate }}
@@ -91,9 +91,9 @@
                   </a>
                 </li>
                 @if (
-                  userService.roles &&
-                  (userService.roles.includes("redacteur") ||
-                    userService.roles.includes("admin"))
+                  userSharedService.roles &&
+                  (userSharedService.roles.includes("redacteur") ||
+                    userSharedService.roles.includes("admin"))
                 ) {
                   <li>
                     <a

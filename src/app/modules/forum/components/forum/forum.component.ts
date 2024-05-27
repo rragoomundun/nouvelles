@@ -4,7 +4,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { Subscription } from 'rxjs';
 import { filter } from 'rxjs/operators';
 
-import { ForumService } from '../../../../shared/services/forum/forum.service';
+import { ForumSharedService } from '../../../../shared/services/forum/forum-shared.service';
 
 @Component({
   selector: 'app-forum',
@@ -19,12 +19,12 @@ export class ForumComponent implements OnInit, OnDestroy {
 
   constructor(
     private router: Router,
-    public forumService: ForumService,
+    public forumSharedService: ForumSharedService,
   ) {}
 
   get currentForumName(): string | null {
-    if (this.currentForum && this.forumService.forums) {
-      return this.forumService.forums.find(
+    if (this.currentForum && this.forumSharedService.forums) {
+      return this.forumSharedService.forums.find(
         (forum) => forum.label === this.currentForum,
       ).name;
     }

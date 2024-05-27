@@ -20,9 +20,10 @@ import { DateTime } from 'luxon';
 
 import { PaginationComponent } from '../../../../shared/components/pagination/pagination.component';
 
-import { ForumService } from '../../../../shared/services/forum/forum.service';
-import { AppService } from '../../../../shared/services/app/app.service';
-import { UrlService } from '../../../../shared/services/url/url.service';
+import { ForumSharedService } from '../../../../shared/services/forum/forum-shared.service';
+import { ForumService } from '../../services/forum/forum.service';
+import { AppSharedService } from '../../../../shared/services/app/app-shared.service';
+import { UrlSharedService } from '../../../../shared/services/url/url-shared.service';
 
 @Component({
   selector: 'app-discussions',
@@ -42,9 +43,10 @@ export class DiscussionsComponent implements OnInit, OnDestroy {
     private router: Router,
     private activatedRoute: ActivatedRoute,
     private translateService: TranslateService,
-    private appService: AppService,
+    private appSharedService: AppSharedService,
+    private forumSharedService: ForumSharedService,
     private forumService: ForumService,
-    public urlService: UrlService,
+    public urlSharedService: UrlSharedService,
     @Inject(PLATFORM_ID) private platformId: any,
   ) {}
 
@@ -58,13 +60,13 @@ export class DiscussionsComponent implements OnInit, OnDestroy {
     this.getMetaInformation();
     this.getDiscussions();
 
-    this.forumService.getForums().subscribe({
+    this.forumSharedService.getForums().subscribe({
       next: (value) => {
         const forumName = value.find(
           (forum: any) => forum.label === this.forum,
         ).name;
 
-        this.appService.setTitle(
+        this.appSharedService.setTitle(
           `${forumName} - ${this.translateService.instant('FORUM_PAGE.TITLE')}`,
           false,
         );

@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 
-import { DateTime, Settings } from 'luxon';
+import { DateTime } from 'luxon';
 
 @Injectable({
   providedIn: 'root',
 })
-export class DateService {
+export class DateSharedService {
   readonly dt: DateTime;
   readonly lang: string;
 

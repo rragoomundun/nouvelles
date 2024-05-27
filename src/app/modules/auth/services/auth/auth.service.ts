@@ -12,26 +12,12 @@ export class AuthService {
     this.API_PREFIX = 'auth';
   }
 
-  register(params: any): Observable<any> {
-    return this.http.post(`${this.API_PREFIX}/register`, params);
-  }
-
   registerConfirm(confirmationToken: string | null): Observable<any> {
     return this.http.put(
       `${this.API_PREFIX}/register/confirm/${confirmationToken}`,
       {},
       { withCredentials: true },
     );
-  }
-
-  login(params: any): Observable<any> {
-    return this.http.post(`${this.API_PREFIX}/login`, params, {
-      withCredentials: true,
-    });
-  }
-
-  logout(): Observable<any> {
-    return this.http.get(`${this.API_PREFIX}/logout`);
   }
 
   passwordForgotten(params: any): Observable<any> {
@@ -46,17 +32,5 @@ export class AuthService {
         withCredentials: true,
       },
     );
-  }
-
-  authorized(): Observable<any> {
-    return this.http.get(`${this.API_PREFIX}/authorized`, {
-      withCredentials: true,
-    });
-  }
-
-  authorizedAdminRedacteur(): Observable<any> {
-    return this.http.get(`${this.API_PREFIX}/authorized-admin-redacteur`, {
-      withCredentials: true,
-    });
   }
 }

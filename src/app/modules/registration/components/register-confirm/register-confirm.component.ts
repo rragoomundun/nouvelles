@@ -2,9 +2,9 @@ import { Component } from '@angular/core';
 import { Router, ActivatedRoute, RouterLink } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 
-import { AppService } from '../../../../shared/services/app/app.service';
-import { AuthService } from '../../../../shared/services/auth/auth.service';
-import { UserService } from '../../../../shared/services/user/user.service';
+import { AppSharedService } from '../../../../shared/services/app/app-shared.service';
+import { AuthService } from '../../../auth/services/auth/auth.service';
+import { UserSharedService } from '../../../../shared/services/user/user-shared.service';
 
 @Component({
   selector: 'app-register-confirm',
@@ -19,11 +19,11 @@ export class RegisterConfirmComponent {
   constructor(
     private router: Router,
     private activatedRoute: ActivatedRoute,
-    private appService: AppService,
+    private appSharedService: AppSharedService,
     private authService: AuthService,
-    private userService: UserService,
+    private userSharedService: UserSharedService,
   ) {
-    this.appService.setTitle('REGISTER_CONFIRM_PAGE.TITLE');
+    this.appSharedService.setTitle('REGISTER_CONFIRM_PAGE.TITLE');
 
     this.onRegisterConfirm = 'false';
   }
@@ -37,7 +37,7 @@ export class RegisterConfirmComponent {
     this.authService.registerConfirm(confirmationToken).subscribe({
       complete: () => {
         this.onRegisterConfirm = 'success';
-        this.userService.setUser();
+        this.userSharedService.setUser();
 
         setTimeout(() => this.router.navigate(['/']), 3000);
       },

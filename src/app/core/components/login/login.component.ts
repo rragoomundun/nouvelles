@@ -10,8 +10,8 @@ import { RouterLink } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 
-import { AuthService } from '../../../shared/services/auth/auth.service';
-import { UserService } from '../../../shared/services/user/user.service';
+import { AuthSharedService } from '../../../shared/services/auth/auth-shared.service';
+import { UserSharedService } from '../../../shared/services/user/user-shared.service';
 
 @Component({
   selector: 'app-login',
@@ -31,8 +31,8 @@ export class LoginComponent {
   private modalService: any;
 
   constructor(
-    private authService: AuthService,
-    private userService: UserService,
+    private authSharedService: AuthSharedService,
+    private userSharedService: UserSharedService,
   ) {
     this.modalService = inject(NgbModal);
 
@@ -52,10 +52,10 @@ export class LoginComponent {
   onSubmit() {
     this.onLogin = 'true';
 
-    this.authService.login(this.loginForm.value).subscribe({
+    this.authSharedService.login(this.loginForm.value).subscribe({
       complete: () => {
         this.loginModalRef.close();
-        this.userService.setUser();
+        this.userSharedService.setUser();
       },
       error: (error: HttpErrorResponse) => {
         const { type } = error.error;

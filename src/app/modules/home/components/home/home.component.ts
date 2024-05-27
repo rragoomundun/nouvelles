@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 
-import { AppService } from '../../../../shared/services/app/app.service';
-import { HomeService } from '../../../../shared/services/home/home.service';
-import { UrlService } from '../../../../shared/services/url/url.service';
+import { AppSharedService } from '../../../../shared/services/app/app-shared.service';
+import { HomeService } from '../../services/home/home.service';
+import { UrlSharedService } from '../../../../shared/services/url/url-shared.service';
 
 @Component({
   selector: 'app-home',
@@ -19,11 +19,11 @@ export class HomeComponent implements OnInit {
   mostViewedArticles: any[];
 
   constructor(
-    private appService: AppService,
+    private appSharedService: AppSharedService,
     private homeService: HomeService,
-    public urlService: UrlService,
+    public urlSharedService: UrlSharedService,
   ) {
-    this.appService.setTitle('HOME_PAGE.TITLE');
+    this.appSharedService.setTitle('HOME_PAGE.TITLE');
   }
 
   ngOnInit(): void {

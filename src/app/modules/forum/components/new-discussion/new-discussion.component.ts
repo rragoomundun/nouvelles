@@ -8,9 +8,9 @@ import {
 } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 
-import { AppService } from '../../../../shared/services/app/app.service';
-import { ForumService } from '../../../../shared/services/forum/forum.service';
-import { UrlService } from '../../../../shared/services/url/url.service';
+import { AppSharedService } from '../../../../shared/services/app/app-shared.service';
+import { ForumService } from '../../services/forum/forum.service';
+import { UrlSharedService } from '../../../../shared/services/url/url-shared.service';
 
 @Component({
   selector: 'app-new-discussion',
@@ -26,9 +26,9 @@ export class NewDiscussionComponent implements OnInit {
   constructor(
     private activatedRoute: ActivatedRoute,
     private router: Router,
-    private appService: AppService,
+    private appSharedService: AppSharedService,
     private forumService: ForumService,
-    private urlService: UrlService,
+    private urlSharedService: UrlSharedService,
   ) {}
 
   get isFormValid(): boolean {
@@ -36,7 +36,7 @@ export class NewDiscussionComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.appService.setTitle('FORUM_COMMON.NEW_DISCUSSION');
+    this.appSharedService.setTitle('FORUM_COMMON.NEW_DISCUSSION');
 
     this.discussionForm = new FormGroup({
       name: new FormControl('', [Validators.required]),
@@ -58,7 +58,7 @@ export class NewDiscussionComponent implements OnInit {
     this.forumService.postDiscussion(params).subscribe({
       next: (value) => {
         const { id } = value;
-        const url = `/forum/${params.forum}/discussion/${id}/${this.urlService.toLowerURL(params.name)}`;
+        const url = `/forum/${params.forum}/discussion/${id}/${this.urlSharedService.toLowerURL(params.name)}`;
 
         this.router.navigate([url]);
       },

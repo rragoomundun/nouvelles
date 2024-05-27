@@ -14,10 +14,6 @@ export class ForumService {
     this.API_PREFIX = 'forum';
   }
 
-  getForums(): Observable<any> {
-    return this.http.get(`${this.API_PREFIX}/list`);
-  }
-
   getForumMeta(forum: string): Observable<any> {
     const url = `${this.API_PREFIX}/${forum}/meta`;
     return this.http.get(url);
@@ -46,14 +42,6 @@ export class ForumService {
   postDiscussion(params: any): Observable<any> {
     return this.http.post(`${this.API_PREFIX}/discussion`, params, {
       withCredentials: true,
-    });
-  }
-
-  setForums() {
-    this.getForums().subscribe({
-      next: (value) => {
-        this.forums = value;
-      },
     });
   }
 }

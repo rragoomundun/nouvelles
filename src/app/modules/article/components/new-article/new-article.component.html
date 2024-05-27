@@ -38,7 +38,7 @@
       formControlName="category"
       required
     >
-      @for (category of categoryService.categories; track category) {
+      @for (category of categorySharedService.categories; track category) {
         <option value="{{ category.label }}">{{ category.name }}</option>
       }
     </select>

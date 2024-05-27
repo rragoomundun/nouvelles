@@ -9,7 +9,7 @@
               '/article/' +
               frontArticles[0].id +
               '/' +
-              urlService.toLowerURL(frontArticles[0].title)
+              urlSharedService.toLowerURL(frontArticles[0].title)
           ]"
           class="article title-link"
         >
@@ -33,7 +33,7 @@
                 '/article/' +
                 frontArticles[i].id +
                 '/' +
-                urlService.toLowerURL(frontArticles[i].title)
+                urlSharedService.toLowerURL(frontArticles[i].title)
             ]"
             class="article title-link"
           >
@@ -67,7 +67,7 @@
                   '/article/' +
                   mostViewedArticles[rowIndex * 3 + colIndex].id +
                   '/' +
-                  urlService.toLowerURL(
+                  urlSharedService.toLowerURL(
                     mostViewedArticles[rowIndex * 3 + colIndex].title
                   )
               ]"
@@ -108,7 +108,7 @@
                     '/article/' +
                     articleByCategory.articles[rowIndex * 2 + colIndex].id +
                     '/' +
-                    urlService.toLowerURL(
+                    urlSharedService.toLowerURL(
                       articleByCategory.articles[rowIndex * 2 + colIndex].title
                     )
                 ]"
