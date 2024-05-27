@@ -32,7 +32,7 @@ export class ForumService {
     );
   }
 
-  getDiscussionMessage(discussionId: number, page: number): Observable<any> {
+  getDiscussionMessages(discussionId: number, page: number): Observable<any> {
     const url = `${this.API_PREFIX}/discussion/${discussionId}/messages`;
     const params = { page };
 
@@ -43,5 +43,13 @@ export class ForumService {
     return this.http.post(`${this.API_PREFIX}/discussion`, params, {
       withCredentials: true,
     });
+  }
+
+  postMessage(discussionId: number, params: any): Observable<any> {
+    return this.http.post(
+      `${this.API_PREFIX}/discussion/${discussionId}`,
+      params,
+      { withCredentials: true },
+    );
   }
 }

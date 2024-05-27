@@ -1,6 +1,6 @@
 <div class="container">
   @if (noDiscussions) {
-    <p>{{ "DISCUSSION_PAGE.NO_DISCUSSIONS" | translate }}</p>
+    <p>{{ "DISCUSSIONS_PAGE.NO_DISCUSSIONS" | translate }}</p>
   }
 
   @for (discussion of discussions; track discussion) {
@@ -19,7 +19,7 @@
         <br /><br />
 
         <span>
-          {{ "DISCUSSION_PAGE.BY" | translate }}
+          {{ "DISCUSSIONS_PAGE.BY" | translate }}
           <a
             [routerLink]="[
               '/profile',
@@ -41,7 +41,7 @@
           <span>{{ "FORUM_COMMON.MESSAGES" | translate }}</span>
         </div>
         <div>
-          <span>{{ "DISCUSSION_PAGE.LAST_MESSAGE" | translate }} :</span>
+          <span>{{ "DISCUSSIONS_PAGE.LAST_MESSAGE" | translate }} :</span>
           <br />
           <span>{{ discussion.lastMessageDateFormatted }}</span>
         </div>
