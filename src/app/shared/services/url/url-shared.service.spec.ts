@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { DateService } from './date.service';
+import { UrlSharedService } from './url-shared.service';
 
-describe('DateService', () => {
-  let service: DateService;
+describe('UrlSharedService', () => {
+  let service: UrlSharedService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(DateService);
+    service = TestBed.inject(UrlSharedService);
   });
 
   it('should be created', () => {

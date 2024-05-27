@@ -8,10 +8,11 @@ import { DateTime } from 'luxon';
 
 import { NotFoundComponent } from '../../../not-found/components/not-found/not-found.component';
 
-import { ArticleService } from '../../../../shared/services/article/article.service';
-import { DateService } from '../../../../shared/services/date/date.service';
-import { UrlService } from '../../../../shared/services/url/url.service';
-import { AppService } from '../../../../shared/services/app/app.service';
+import { ArticleSharedService } from '../../../../shared/services/article/article-shared.service';
+import { ArticleService } from '../../../article/services/article/article.service';
+import { DateSharedService } from '../../../../shared/services/date/date-shared.service';
+import { UrlSharedService } from '../../../../shared/services/url/url-shared.service';
+import { AppSharedService } from '../../../../shared/services/app/app-shared.service';
 
 @Component({
   selector: 'app-article',
@@ -32,17 +33,18 @@ export class ArticleComponent implements OnInit {
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private appService: AppService,
+    private appSharedService: AppSharedService,
+    private articleSharedService: ArticleSharedService,
     private articleService: ArticleService,
-    private dateService: DateService,
-    public urlService: UrlService,
+    private dateSharedService: DateSharedService,
+    public urlSharedService: UrlSharedService,
     @Inject(PLATFORM_ID) private platformId: any,
   ) {}
 
   ngOnInit() {
     this.articleId = this.activatedRoute.snapshot.params['articleId'];
 
-    this.articleService.getArticle(this.articleId).subscribe({
+    this.articleSharedService.getArticle(this.articleId).subscribe({
       next: (value: any) => {
         const { title, image, date, updated_date, author, content, published } =
           value;
@@ -55,7 +57,7 @@ export class ArticleComponent implements OnInit {
         this.content = <string>marked.parse(content);
 
         const dateObj = new Date(date);
-        this.date = this.dateService.dt
+        this.date = this.dateSharedService.dt
           .set({
             day: dateObj.getDate(),
             month: dateObj.getMonth() + 1,
@@ -65,7 +67,7 @@ export class ArticleComponent implements OnInit {
 
         if (updated_date) {
           const updatedDateObj = new Date(updated_date);
-          this.updatedDate = this.dateService.dt
+          this.updatedDate = this.dateSharedService.dt
             .set({
               day: updatedDateObj.getDate(),
               month: updatedDateObj.getMonth() + 1,
@@ -74,7 +76,7 @@ export class ArticleComponent implements OnInit {
             .toLocaleString(DateTime.DATE_FULL);
         }
 
-        this.appService.setTitle(this.title, false);
+        this.appSharedService.setTitle(this.title, false);
 
         if (published === true) {
           this.articleService.articleViewed(this.articleId).subscribe();

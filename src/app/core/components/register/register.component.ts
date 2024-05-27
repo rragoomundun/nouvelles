@@ -9,7 +9,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { TranslateModule } from '@ngx-translate/core';
 
-import { AuthService } from '../../../shared/services/auth/auth.service';
+import { AuthSharedService } from '../../../shared/services/auth/auth-shared.service';
 
 @Component({
   selector: 'app-register',
@@ -28,7 +28,7 @@ export class RegisterComponent {
 
   private modalService: any;
 
-  constructor(private authService: AuthService) {
+  constructor(private authSharedService: AuthSharedService) {
     this.modalService = inject(NgbModal);
 
     this.registerForm = new FormGroup({
@@ -75,7 +75,7 @@ export class RegisterComponent {
 
     this.onRegister = 'true';
 
-    this.authService.register(params).subscribe({
+    this.authSharedService.register(params).subscribe({
       complete: () => (this.onRegister = 'success'),
       error: (error: HttpErrorResponse) => {
         const { type } = error.error;

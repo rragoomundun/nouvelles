@@ -7,7 +7,7 @@ import { appConfig } from '../../../app.config';
 @Injectable({
   providedIn: 'root',
 })
-export class AppService {
+export class AppSharedService {
   readonly config: any;
 
   constructor(

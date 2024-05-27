@@ -4,7 +4,7 @@ import { CookieService } from 'ngx-cookie-service';
 @Injectable({
   providedIn: 'root',
 })
-export class StorageService {
+export class StorageSharedService {
   constructor(private cookieService: CookieService) {}
 
   get(key: string) {
@@ -28,7 +28,7 @@ export class StorageService {
     path?: string,
     domain?: string,
     secure?: boolean,
-    sameSite?: 'Lax' | 'None' | 'Strict'
+    sameSite?: 'Lax' | 'None' | 'Strict',
   ) {
     this.cookieService.delete(name, path, domain, secure, sameSite);
   }

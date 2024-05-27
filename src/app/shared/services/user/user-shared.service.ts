@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root',
 })
-export class UserService {
+export class UserSharedService {
   readonly API_PREFIX: string;
 
   id: number | null;

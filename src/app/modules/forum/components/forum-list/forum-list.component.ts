@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 
-import { ForumService } from '../../../../shared/services/forum/forum.service';
-import { AppService } from '../../../../shared/services/app/app.service';
+import { ForumSharedService } from '../../../../shared/services/forum/forum-shared.service';
+import { AppSharedService } from '../../../../shared/services/app/app-shared.service';
 
 @Component({
   selector: 'app-forum-list',
@@ -14,12 +14,12 @@ import { AppService } from '../../../../shared/services/app/app.service';
 })
 export class ForumListComponent implements OnInit {
   constructor(
-    private appService: AppService,
-    public forumService: ForumService,
+    private appSharedService: AppSharedService,
+    public forumSharedService: ForumSharedService,
   ) {}
 
   ngOnInit(): void {
-    this.appService.setTitle('FORUM_PAGE.TITLE');
-    this.forumService.setForums();
+    this.appSharedService.setTitle('FORUM_PAGE.TITLE');
+    this.forumSharedService.setForums();
   }
 }

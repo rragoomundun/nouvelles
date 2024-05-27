@@ -1,5 +1,5 @@
 <div class="container">
-  @for (forum of forumService.forums; track forum) {
+  @for (forum of forumSharedService.forums; track forum) {
     <div class="row">
       <div class="col">
         <a routerLink="./{{ forum.label }}">

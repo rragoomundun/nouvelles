@@ -22,10 +22,10 @@ import { filter } from 'rxjs/operators';
 
 import { PaginationComponent } from '../../../../shared/components/pagination/pagination.component';
 
-import { ForumService } from '../../../../shared/services/forum/forum.service';
-import { UrlService } from '../../../../shared/services/url/url.service';
-import { DateService } from '../../../../shared/services/date/date.service';
-import { AppService } from '../../../../shared/services/app/app.service';
+import { ForumService } from '../../services/forum/forum.service';
+import { UrlSharedService } from '../../../../shared/services/url/url-shared.service';
+import { DateSharedService } from '../../../../shared/services/date/date-shared.service';
+import { AppSharedService } from '../../../../shared/services/app/app-shared.service';
 
 @Component({
   selector: 'app-discussion',
@@ -46,10 +46,10 @@ export class DiscussionComponent implements OnInit, OnDestroy {
     private router: Router,
     private activatedRoute: ActivatedRoute,
     private translateService: TranslateService,
-    private appService: AppService,
+    private appSharedService: AppSharedService,
     private forumService: ForumService,
-    private dateService: DateService,
-    public urlService: UrlService,
+    private dateSharedService: DateSharedService,
+    public urlSharedService: UrlSharedService,
     @Inject(PLATFORM_ID) private platformId: any,
   ) {}
 
@@ -81,7 +81,7 @@ export class DiscussionComponent implements OnInit, OnDestroy {
         this.name = value.name;
         this.nbPages = value.nbPages;
 
-        this.appService.setTitle(
+        this.appSharedService.setTitle(
           `${this.name} - ${this.translateService.instant('FORUM_PAGE.TITLE')}`,
           false,
         );
@@ -98,7 +98,7 @@ export class DiscussionComponent implements OnInit, OnDestroy {
           message.content = <string>marked.parse(message.content);
 
           const dateObj = new Date(message.date);
-          message.date = this.dateService.dt
+          message.date = this.dateSharedService.dt
             .set({
               day: dateObj.getDate(),
               month: dateObj.getMonth() + 1,
@@ -108,7 +108,7 @@ export class DiscussionComponent implements OnInit, OnDestroy {
 
           if (message.updatedDate) {
             const updatedDateObj = new Date(message.updatedDate);
-            message.updatedDate = this.dateService.dt
+            message.updatedDate = this.dateSharedService.dt
               .set({
                 day: updatedDateObj.getDate(),
                 month: updatedDateObj.getMonth() + 1,

@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root',
 })
-export class UploadService {
+export class UploadSharedService {
   readonly API_PREFIX: string;
 
   constructor(private http: HttpClient) {

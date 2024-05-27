@@ -19,9 +19,9 @@ import { filter } from 'rxjs/operators';
 import { PaginationComponent } from '../../../../shared/components/pagination/pagination.component';
 import { NotFoundComponent } from '../../../not-found/components/not-found/not-found.component';
 
-import { ArticleService } from '../../../../shared/services/article/article.service';
-import { AppService } from '../../../../shared/services/app/app.service';
-import { UrlService } from '../../../../shared/services/url/url.service';
+import { ArticleService } from '../../../article/services/article/article.service';
+import { AppSharedService } from '../../../../shared/services/app/app-shared.service';
+import { UrlSharedService } from '../../../../shared/services/url/url-shared.service';
 
 @Component({
   selector: 'app-category',
@@ -47,8 +47,8 @@ export class CategoryComponent implements OnInit, OnDestroy {
     private router: Router,
     private activatedRoute: ActivatedRoute,
     private articleService: ArticleService,
-    private appService: AppService,
-    public urlService: UrlService,
+    private appSharedService: AppSharedService,
+    public urlSharedService: UrlSharedService,
     @Inject(PLATFORM_ID) private platformId: any,
   ) {}
 
@@ -115,7 +115,7 @@ export class CategoryComponent implements OnInit, OnDestroy {
           this.nbPages = value.nbPages;
           this.notFound = false;
 
-          this.appService.setTitle(this.categoryName, false);
+          this.appSharedService.setTitle(this.categoryName, false);
         } else {
           this.notFound = true;
         }

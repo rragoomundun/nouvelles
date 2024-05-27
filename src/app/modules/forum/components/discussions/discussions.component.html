@@ -10,7 +10,7 @@
           [routerLink]="[
             'discussion',
             discussion.id,
-            urlService.toLowerURL(discussion.name)
+            urlSharedService.toLowerURL(discussion.name)
           ]"
         >
           {{ discussion.name }}
@@ -24,7 +24,7 @@
             [routerLink]="[
               '/profile',
               discussion.author.id,
-              urlService.toLowerURL(discussion.author.name)
+              urlSharedService.toLowerURL(discussion.author.name)
             ]"
             class="content-link"
           >

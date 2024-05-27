@@ -12,7 +12,10 @@
       <div class="col-12 col-md-6">
         <a
           [routerLink]="[
-            'article/' + article.id + '/' + urlService.toLowerURL(article.title)
+            'article/' +
+              article.id +
+              '/' +
+              urlSharedService.toLowerURL(article.title)
           ]"
           class="title-link"
         >

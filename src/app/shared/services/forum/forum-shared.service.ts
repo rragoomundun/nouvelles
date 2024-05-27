@@ -5,23 +5,23 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root',
 })
-export class CategoryService {
+export class ForumSharedService {
   readonly API_PREFIX: string;
 
-  categories: any[];
+  forums: any[];
 
   constructor(private http: HttpClient) {
-    this.API_PREFIX = 'category';
+    this.API_PREFIX = 'forum';
   }
 
-  getAllCategories(): Observable<any> {
-    return this.http.get(`${this.API_PREFIX}/all`);
+  getForums(): Observable<any> {
+    return this.http.get(`${this.API_PREFIX}/list`);
   }
 
-  setAllCategories() {
-    this.getAllCategories().subscribe({
+  setForums() {
+    this.getForums().subscribe({
       next: (value) => {
-        this.categories = value;
+        this.forums = value;
       },
     });
   }

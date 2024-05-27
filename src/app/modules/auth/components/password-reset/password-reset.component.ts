@@ -8,9 +8,9 @@ import {
   ReactiveFormsModule,
 } from '@angular/forms';
 
-import { AppService } from '../../../../shared/services/app/app.service';
-import { AuthService } from '../../../../shared/services/auth/auth.service';
-import { UserService } from '../../../../shared/services/user/user.service';
+import { AppSharedService } from '../../../../shared/services/app/app-shared.service';
+import { AuthService } from '../../services/auth/auth.service';
+import { UserSharedService } from '../../../../shared/services/user/user-shared.service';
 
 @Component({
   selector: 'app-password-reset',
@@ -28,11 +28,11 @@ export class PasswordResetComponent {
   constructor(
     private router: Router,
     private activatedRoute: ActivatedRoute,
-    private appService: AppService,
+    private appSharedService: AppSharedService,
     private authService: AuthService,
-    private userService: UserService,
+    private userSharedService: UserSharedService,
   ) {
-    this.appService.setTitle('PASSWORD_RESET_PAGE.TITLE');
+    this.appSharedService.setTitle('PASSWORD_RESET_PAGE.TITLE');
 
     this.passwordResetForm = new FormGroup({
       password: new FormControl('', [Validators.required]),
@@ -64,7 +64,7 @@ export class PasswordResetComponent {
       .subscribe({
         complete: () => {
           this.onPasswordReset = 'success';
-          this.userService.setUser();
+          this.userSharedService.setUser();
 
           setTimeout(() => this.router.navigate(['/']), 3000);
         },

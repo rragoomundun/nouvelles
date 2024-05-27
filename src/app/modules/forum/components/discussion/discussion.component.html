@@ -8,7 +8,7 @@
           [routerLink]="[
             '/profile',
             message.author.id,
-            urlService.toLowerURL(message.author.name)
+            urlSharedService.toLowerURL(message.author.name)
           ]"
         >
           @if (message.author.image) {
@@ -24,7 +24,7 @@
             [routerLink]="[
               '/profile',
               message.author.id,
-              urlService.toLowerURL(message.author.name)
+              urlSharedService.toLowerURL(message.author.name)
             ]"
             class="content-link"
           >

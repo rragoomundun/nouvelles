@@ -9,7 +9,10 @@
     <div class="col">
       <a
         [routerLink]="[
-          '/profile/' + author.id + '/' + urlService.toLowerURL(author.name)
+          '/profile/' +
+            author.id +
+            '/' +
+            urlSharedService.toLowerURL(author.name)
         ]"
       >
         @if (author.image) {
@@ -22,7 +25,10 @@
     <div class="col">
       <a
         [routerLink]="[
-          '/profile/' + author.id + '/' + urlService.toLowerURL(author.name)
+          '/profile/' +
+            author.id +
+            '/' +
+            urlSharedService.toLowerURL(author.name)
         ]"
         class="content-link"
       >

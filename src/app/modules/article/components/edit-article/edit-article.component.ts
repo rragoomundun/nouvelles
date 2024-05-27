@@ -8,11 +8,12 @@ import {
 } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
 
-import { AppService } from '../../../../shared/services/app/app.service';
-import { CategoryService } from '../../../../shared/services/category/category.service';
-import { UploadService } from '../../../../shared/services/file/upload.service';
-import { ArticleService } from '../../../../shared/services/article/article.service';
-import { UrlService } from '../../../../shared/services/url/url.service';
+import { AppSharedService } from '../../../../shared/services/app/app-shared.service';
+import { CategorySharedService } from '../../../../shared/services/category/category-shared.service';
+import { UploadSharedService } from '../../../../shared/services/file/upload-shared.service';
+import { ArticleSharedService } from '../../../../shared/services/article/article-shared.service';
+import { ArticleService } from '../../services/article/article.service';
+import { UrlSharedService } from '../../../../shared/services/url/url-shared.service';
 
 @Component({
   selector: 'app-edit-article',
@@ -34,11 +35,12 @@ export class EditArticleComponent implements OnInit {
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private appService: AppService,
+    private appSharedService: AppSharedService,
+    private articleSharedService: ArticleSharedService,
     private articleService: ArticleService,
-    private uploadService: UploadService,
-    private urlService: UrlService,
-    public categoryService: CategoryService,
+    private uploadSharedService: UploadSharedService,
+    private urlSharedService: UrlSharedService,
+    public categorySharedService: CategorySharedService,
   ) {}
 
   get isFormValid(): boolean {
@@ -51,7 +53,7 @@ export class EditArticleComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.appService.setTitle('EDIT_ARTICLE_PAGE.TITLE');
+    this.appSharedService.setTitle('EDIT_ARTICLE_PAGE.TITLE');
 
     this.id = this.activatedRoute.snapshot.params['id'];
 
@@ -67,7 +69,7 @@ export class EditArticleComponent implements OnInit {
 
     this.articleService.isUserOwner(this.id).subscribe({
       next: () => {
-        this.articleService.getArticle(this.id).subscribe({
+        this.articleSharedService.getArticle(this.id).subscribe({
           next: (value: any) => {
             this.image = value.image;
 
@@ -122,9 +124,9 @@ export class EditArticleComponent implements OnInit {
     if (this.image) {
       data.image = this.image;
 
-      this.articleService.postArticle(data).subscribe({
+      this.articleSharedService.postArticle(data).subscribe({
         complete: () => {
-          this.editedArticleLink = `/categorie/${data.category}/article/${data.id}/${this.urlService.toLowerURL(data.title)}`;
+          this.editedArticleLink = `/categorie/${data.category}/article/${data.id}/${this.urlSharedService.toLowerURL(data.title)}`;
           this.onEdit = 'success';
         },
         error: () => {
@@ -132,13 +134,13 @@ export class EditArticleComponent implements OnInit {
         },
       });
     } else {
-      this.uploadService.upload(<File>this.file).subscribe({
+      this.uploadSharedService.upload(<File>this.file).subscribe({
         next: (value: any) => {
           data.image = value.file;
 
-          this.articleService.postArticle(data).subscribe({
+          this.articleSharedService.postArticle(data).subscribe({
             complete: () => {
-              this.editedArticleLink = `/categorie/${data.category}/article/${data.id}/${this.urlService.toLowerURL(data.title)}`;
+              this.editedArticleLink = `/categorie/${data.category}/article/${data.id}/${this.urlSharedService.toLowerURL(data.title)}`;
               this.image = data.image;
               this.file = null;
               this.onEdit = 'success';

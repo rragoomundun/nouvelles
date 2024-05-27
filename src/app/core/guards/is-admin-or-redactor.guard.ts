@@ -5,16 +5,16 @@ import { isPlatformBrowser } from '@angular/common';
 import { Observable, of } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 
-import { UserService } from '../../services/user/user.service';
-import { AuthService } from '../../services/auth/auth.service';
+import { UserSharedService } from '../../shared/services/user/user-shared.service';
+import { AuthSharedService } from '../../shared/services/auth/auth-shared.service';
 
 export const isAdminOrRedactorGuard: CanActivateFn = (route, state) => {
   const router = inject(Router);
-  const userService = inject(UserService);
-  const authService = inject(AuthService);
+  const userSharedService = inject(UserSharedService);
+  const authSharedService = inject(AuthSharedService);
   const platformId = inject(PLATFORM_ID);
 
-  return <Observable<boolean>>authService.authorizedAdminRedacteur().pipe(
+  return <Observable<boolean>>authSharedService.authorizedAdminRedacteur().pipe(
     map(() => true),
     catchError(() => {
       if (isPlatformBrowser(platformId)) {

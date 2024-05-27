@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 
-import { AppService } from '../../../../shared/services/app/app.service';
+import { AppSharedService } from '../../../../shared/services/app/app-shared.service';
 
 @Component({
   selector: 'app-not-found',
@@ -11,7 +11,7 @@ import { AppService } from '../../../../shared/services/app/app.service';
   styleUrl: './not-found.component.scss',
 })
 export class NotFoundComponent {
-  constructor(private appService: AppService) {
-    this.appService.setTitle('404_PAGE.TITLE');
+  constructor(private appSharedService: AppSharedService) {
+    this.appSharedService.setTitle('404_PAGE.TITLE');
   }
 }

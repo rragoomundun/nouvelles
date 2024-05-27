@@ -5,7 +5,7 @@ import removeAccents from 'remove-accents';
 @Injectable({
   providedIn: 'root',
 })
-export class UrlService {
+export class UrlSharedService {
   constructor() {}
 
   toLowerURL(url: string): string {

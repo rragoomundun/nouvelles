@@ -12,11 +12,6 @@ export class ArticleService {
     this.API_PREFIX = 'article';
   }
 
-  getArticle(articleId: number): Observable<any> {
-    const url = `${this.API_PREFIX}/${articleId}`;
-    return this.http.get(url, { withCredentials: true });
-  }
-
   getArticleCategoryMeta(category: string): Observable<any> {
     const url = `${this.API_PREFIX}/by-category/meta`;
     const params = { category };
@@ -34,10 +29,6 @@ export class ArticleService {
   articleViewed(articleId: number): Observable<any> {
     const url = `${this.API_PREFIX}/${articleId}/viewed`;
     return this.http.put(url, {});
-  }
-
-  postArticle(params: any): Observable<any> {
-    return this.http.post(this.API_PREFIX, params, { withCredentials: true });
   }
 
   isUserOwner(articleId: number): Observable<any> {

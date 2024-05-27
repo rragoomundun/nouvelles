@@ -3,8 +3,8 @@ import { RouterLink } from '@angular/router';
 
 import { TranslateModule } from '@ngx-translate/core';
 
-import { UserService } from '../../../shared/services/user/user.service';
-import { CategoryService } from '../../../shared/services/category/category.service';
+import { UserSharedService } from '../../../shared/services/user/user-shared.service';
+import { CategorySharedService } from '../../../shared/services/category/category-shared.service';
 
 @Component({
   selector: 'app-header',
@@ -19,8 +19,8 @@ export class HeaderComponent {
   @Output() logoutClick: EventEmitter<void>;
 
   constructor(
-    public userService: UserService,
-    public categoryService: CategoryService,
+    public userSharedService: UserSharedService,
+    public categorySharedService: CategorySharedService,
   ) {
     this.registerClick = new EventEmitter<void>();
     this.loginCLick = new EventEmitter<void>();
