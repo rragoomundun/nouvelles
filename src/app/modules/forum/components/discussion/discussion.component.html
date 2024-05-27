@@ -1,0 +1,72 @@
+<div class="container">
+  <h2>{{ name }}</h2>
+
+  @for (message of messages; track message) {
+    <div class="d-flex">
+      <div class="d-none d-sm-block">
+        <a
+          [routerLink]="[
+            '/profile',
+            message.author.id,
+            urlSharedService.toLowerURL(message.author.name)
+          ]"
+        >
+          @if (message.author.image) {
+            <img [src]="message.author.image" [alt]="message.author.name" />
+          } @else {
+            <span class="fa-regular fa-circle-user fa-2x"></span>
+          }
+        </a>
+      </div>
+      <div>
+        <div>
+          <a
+            [routerLink]="[
+              '/profile',
+              message.author.id,
+              urlSharedService.toLowerURL(message.author.name)
+            ]"
+            class="content-link"
+          >
+            {{ message.author.name }}
+          </a>
+
+          <span>&nbsp;·&nbsp;</span>
+          <span>{{ message.date }}</span>
+
+          @if (message.updatedDate) {
+            <span class="d-none d-md-inline">&nbsp;·&nbsp;</span>
+            <span class="d-none d-md-inline"
+              >{{ "GENERAL.DATE.UPDATED" | translate }} :
+              {{ message.updatedDate }}
+            </span>
+          }
+        </div>
+        <div [innerHTML]="message.content"></div>
+        <div>
+          <span class="thumb">
+            <span class="fa-solid fa-thumbs-up"></span>
+            <span>
+              @if (message.nbLikes) {
+                {{ message.nbLikes }}
+              }
+            </span>
+          </span>
+          <span class="thumb">
+            <span class="fa-solid fa-thumbs-down"></span>
+            <span>
+              @if (message.nbDislikes) {
+                {{ message.nbDislikes }}
+              }
+            </span>
+          </span>
+        </div>
+      </div>
+    </div>
+  }
+
+  @if (nbPages) {
+    <br />
+    <app-pagination [nbPages]="nbPages"></app-pagination>
+  }
+</div>

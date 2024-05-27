@@ -3,16 +3,16 @@ import { RouterOutlet, Router } from '@angular/router';
 
 import { TranslateService } from '@ngx-translate/core';
 
-import { HeaderComponent } from './components/header/header.component';
-import { FooterComponent } from './components/footer/footer.component';
-import { RegisterComponent } from './components/register/register.component';
-import { LoginComponent } from './components/login/login.component';
+import { HeaderComponent } from './core/components/header/header.component';
+import { FooterComponent } from './core/components/footer/footer.component';
+import { RegisterComponent } from './core/components/register/register.component';
+import { LoginComponent } from './core/components/login/login.component';
 
-import { CategoryService } from './shared/services/category/category.service';
-import { UserService } from './shared/services/user/user.service';
-import { AuthService } from './shared/services/auth/auth.service';
-import { StorageService } from './shared/services/storage/storage.service';
-import { ForumService } from './shared/services/forum/forum.service';
+import { CategorySharedService } from './shared/services/category/category-shared.service';
+import { UserSharedService } from './shared/services/user/user-shared.service';
+import { AuthSharedService } from './shared/services/auth/auth-shared.service';
+import { StorageSharedService } from './shared/services/storage/storage-shared.service';
+import { ForumSharedService } from './shared/services/forum/forum-shared.service';
 
 @Component({
   selector: 'app-root',
@@ -34,11 +34,11 @@ export class AppComponent implements OnInit {
   constructor(
     public translate: TranslateService,
     private router: Router,
-    private categoryService: CategoryService,
-    private forumService: ForumService,
-    public userService: UserService,
-    private authService: AuthService,
-    private storageService: StorageService,
+    private categorySharedService: CategorySharedService,
+    private forumSharedService: ForumSharedService,
+    public userSharedService: UserSharedService,
+    private authSharedService: AuthSharedService,
+    private storageSharedService: StorageSharedService,
   ) {
     translate.addLangs(['fr']);
     translate.setDefaultLang('fr');
@@ -54,22 +54,22 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.categoryService.setAllCategories();
-    this.forumService.setForums();
-    this.userService.setUser();
+    this.categorySharedService.setAllCategories();
+    this.forumSharedService.setForums();
+    this.userSharedService.setUser();
   }
 
   logout(): void {
-    this.authService.logout().subscribe({
+    this.authSharedService.logout().subscribe({
       complete: () => {
-        this.userService.id = null;
-        this.userService.name = null;
-        this.userService.email = null;
-        this.userService.image = null;
-        this.userService.roles = null;
+        this.userSharedService.id = null;
+        this.userSharedService.name = null;
+        this.userSharedService.email = null;
+        this.userSharedService.image = null;
+        this.userSharedService.roles = null;
 
-        setTimeout(() => this.storageService.clear());
-        this.storageService.deleteCookie('token', '/');
+        setTimeout(() => this.storageSharedService.clear());
+        this.storageSharedService.deleteCookie('token', '/');
       },
     });
   }
