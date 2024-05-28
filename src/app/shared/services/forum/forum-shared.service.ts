@@ -9,9 +9,19 @@ export class ForumSharedService {
   readonly API_PREFIX: string;
 
   forums: any[];
+  currentForum: string | null;
 
   constructor(private http: HttpClient) {
     this.API_PREFIX = 'forum';
+  }
+
+  get currentForumName(): string | null {
+    if (this.currentForum && this.forums) {
+      return this.forums.find((forum) => forum.label === this.currentForum)
+        .name;
+    }
+
+    return null;
   }
 
   getForums(): Observable<any> {

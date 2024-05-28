@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { TranslateModule } from '@ngx-translate/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import {
   FormControl,
   FormGroup,
@@ -11,6 +11,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { AppSharedService } from '../../../../shared/services/app/app-shared.service';
 import { ForumService } from '../../services/forum/forum.service';
 import { UrlSharedService } from '../../../../shared/services/url/url-shared.service';
+import { ForumSharedService } from '../../../../shared/services/forum/forum-shared.service';
 
 @Component({
   selector: 'app-new-discussion',
@@ -26,8 +27,10 @@ export class NewDiscussionComponent implements OnInit {
   constructor(
     private activatedRoute: ActivatedRoute,
     private router: Router,
+    private translateService: TranslateService,
     private appSharedService: AppSharedService,
     private forumService: ForumService,
+    private forumSharedService: ForumSharedService,
     private urlSharedService: UrlSharedService,
   ) {}
 
@@ -42,6 +45,21 @@ export class NewDiscussionComponent implements OnInit {
       name: new FormControl('', [Validators.required]),
       message: new FormControl('', [Validators.required]),
     });
+
+    this.forumService.breadcrumbItems = [
+      {
+        label: this.translateService.instant('FORUM_PAGE.TITLE'),
+        link: '/forum',
+      },
+      {
+        label: this.forumSharedService.currentForumName,
+        link: `/forum/${this.forumSharedService.currentForum}`,
+      },
+      {
+        label: this.translateService.instant('FORUM_COMMON.NEW_DISCUSSION'),
+        link: this.router.url,
+      },
+    ];
 
     this.onCreation = 'false';
   }

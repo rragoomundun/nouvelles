@@ -26,7 +26,10 @@ const routes: Routes = [
           {
             path: 'discussion',
             children: [
-              { path: 'nouvelle', component: NewDiscussionComponent },
+              {
+                path: 'nouvelle',
+                component: NewDiscussionComponent,
+              },
               {
                 path: ':discussionId/:discussionTitle',
                 component: DiscussionComponent,
