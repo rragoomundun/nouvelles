@@ -70,6 +70,17 @@ export class DiscussionsComponent implements OnInit, OnDestroy {
           `${forumName} - ${this.translateService.instant('FORUM_PAGE.TITLE')}`,
           false,
         );
+
+        this.forumService.breadcrumbItems = [
+          {
+            label: this.translateService.instant('FORUM_PAGE.TITLE'),
+            link: '/forum',
+          },
+          {
+            label: forumName,
+            link: `/forum/${this.forum}`,
+          },
+        ];
       },
     });
 

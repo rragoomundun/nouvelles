@@ -1,16 +1,18 @@
 <div class="container">
   <div class="row">
     <div class="col">
-      <a routerLink="/forum">{{ "FORUM_PAGE.TITLE" | translate }}</a>
-
-      @if (currentForumName) {
-        <span>&nbsp;&gt;&nbsp;</span>
-        <span class="fw-bold">{{ currentForumName }}</span>
-      }
+      <app-breadcrumb></app-breadcrumb>
     </div>
-    <div class="col-12 col-sm-5 col-md-4 text-sm-end">
+    <div class="col-auto text-sm-end">
       @if (onDiscussions) {
-        <a [routerLink]="['/forum', currentForum, 'discussion', 'nouvelle']">
+        <a
+          [routerLink]="[
+            '/forum',
+            forumSharedService.currentForum,
+            'discussion',
+            'nouvelle'
+          ]"
+        >
           <span class="fa-solid fa-circle-plus"></span>
           <span>&nbsp;{{ "FORUM_COMMON.NEW_DISCUSSION" | translate }}</span>
         </a>

@@ -28,6 +28,7 @@ import { UrlSharedService } from '../../../../shared/services/url/url-shared.ser
 import { DateSharedService } from '../../../../shared/services/date/date-shared.service';
 import { AppSharedService } from '../../../../shared/services/app/app-shared.service';
 import { UserSharedService } from '../../../../shared/services/user/user-shared.service';
+import { ForumSharedService } from '../../../../shared/services/forum/forum-shared.service';
 
 @Component({
   selector: 'app-discussion',
@@ -57,6 +58,7 @@ export class DiscussionComponent implements OnInit, OnDestroy {
     private translateService: TranslateService,
     private appSharedService: AppSharedService,
     private forumService: ForumService,
+    private forumSharedService: ForumSharedService,
     private dateSharedService: DateSharedService,
     public userSharedService: UserSharedService,
     public urlSharedService: UrlSharedService,
@@ -97,6 +99,21 @@ export class DiscussionComponent implements OnInit, OnDestroy {
           `${this.name} - ${this.translateService.instant('FORUM_PAGE.TITLE')}`,
           false,
         );
+
+        this.forumService.breadcrumbItems = [
+          {
+            label: this.translateService.instant('FORUM_PAGE.TITLE'),
+            link: '/forum',
+          },
+          {
+            label: this.forumSharedService.currentForumName,
+            link: `/forum/${this.forumSharedService.currentForum}`,
+          },
+          {
+            label: this.name,
+            link: this.router.url,
+          },
+        ];
       },
     });
   }

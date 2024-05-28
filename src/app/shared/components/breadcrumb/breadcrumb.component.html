@@ -1,0 +1,14 @@
+<nav>
+  <ol>
+    @for (item of forumService.breadcrumbItems; track item; let last = $last) {
+      <li>
+        @if (last === false) {
+          <a routerLink="{{ item.link }}">{{ item.label }}</a>
+          <span>&nbsp;&gt;&nbsp;</span>
+        } @else {
+          <span class="active">{{ item.label }}</span>
+        }
+      </li>
+    }
+  </ol>
+</nav>

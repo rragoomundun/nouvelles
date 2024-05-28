@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 export class ForumService {
   readonly API_PREFIX: string;
 
-  forums: any[];
+  breadcrumbItems: { label: string; link?: string }[];
 
   constructor(private http: HttpClient) {
     this.API_PREFIX = 'forum';
