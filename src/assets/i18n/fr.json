@@ -122,6 +122,7 @@
   "FORUM_COMMON": {
     "DISCUSSIONS": "discussions",
     "MESSAGES": "messages",
+    "MESSAGE": "message",
     "NEW_DISCUSSION": "Nouvelle discussion"
   },
   "FORUM_PAGE": {
