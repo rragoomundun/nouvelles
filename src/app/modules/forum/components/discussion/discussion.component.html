@@ -59,8 +59,11 @@
             }
           </div>
           <div>
-            <span class="thumb">
-              <span class="fa-solid fa-thumbs-up"></span>
+            <span (click)="onThumbUpClick(message)" class="thumb">
+              <span
+                [class.text-success]="message.vote && message.vote === 'like'"
+                class="fa-solid fa-thumbs-up"
+              ></span>
               <span>
                 @if (message.nbLikes) {
                   {{ message.nbLikes }}
@@ -68,7 +71,10 @@
               </span>
             </span>
             <span class="thumb">
-              <span class="fa-solid fa-thumbs-down"></span>
+              <span
+                [class.text-danger]="message.vote && message.vote === 'dislike'"
+                class="fa-solid fa-thumbs-down"
+              ></span>
               <span>
                 @if (message.nbDislikes) {
                   {{ message.nbDislikes }}
