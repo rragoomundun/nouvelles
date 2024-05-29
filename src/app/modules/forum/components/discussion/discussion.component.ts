@@ -80,8 +80,10 @@ export class DiscussionComponent implements OnInit, OnDestroy {
     this.forum = this.activatedRoute.snapshot.params['forum'];
     this.id = this.activatedRoute.snapshot.params['discussionId'];
 
-    this.getMetaInformation();
-    this.getMessages();
+    if (isPlatformBrowser(this.platformId)) {
+      this.getMetaInformation();
+      this.getMessages();
+    }
 
     this.routerEventsSubscription = this.router.events
       .pipe(filter((event) => event instanceof NavigationEnd))
@@ -198,5 +200,21 @@ export class DiscussionComponent implements OnInit, OnDestroy {
 
   onEditClick(messageId: number, message: string): void {
     this.editMessageComponent.open(this.id, messageId, message);
+  }
+
+  onThumbUpClick(message: any): void {
+    if (this.userSharedService.isLoggedIn) {
+      if (message.vote && message.vote === 'like') {
+        this.forumService.deleteVote(this.id, message.id).subscribe();
+
+        message.vote = null;
+        message.nbLikes--;
+      } else {
+        this.forumService.likeMessage(this.id, message.id).subscribe();
+
+        message.vote = 'like';
+        message.nbLikes++;
+      }
+    }
   }
 }

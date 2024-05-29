@@ -6,7 +6,7 @@
   ></app-header>
 }
 
-@if (["true", "false"].includes(userSharedService.onGetUser) === false) {
+@if (["success", "error"].includes(userSharedService.onGetUser)) {
   <main>
     <router-outlet />
   </main>

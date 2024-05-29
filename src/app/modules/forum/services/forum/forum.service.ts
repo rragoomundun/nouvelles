@@ -36,7 +36,7 @@ export class ForumService {
     const url = `${this.API_PREFIX}/discussion/${discussionId}/messages`;
     const params = { page };
 
-    return this.http.get(url, { params });
+    return this.http.get(url, { params, withCredentials: true });
   }
 
   postDiscussion(params: any): Observable<any> {
@@ -61,6 +61,21 @@ export class ForumService {
     return this.http.put(
       `${this.API_PREFIX}/discussion/${discussionId}/message/${messageId}`,
       params,
+      { withCredentials: true },
+    );
+  }
+
+  likeMessage(discussionId: number, messageId: number): Observable<any> {
+    return this.http.put(
+      `${this.API_PREFIX}/discussion/${discussionId}/message/${messageId}/like`,
+      {},
+      { withCredentials: true },
+    );
+  }
+
+  deleteVote(discussionId: number, messageId: number): Observable<any> {
+    return this.http.delete(
+      `${this.API_PREFIX}/discussion/${discussionId}/message/${messageId}/delete-vote`,
       { withCredentials: true },
     );
   }
