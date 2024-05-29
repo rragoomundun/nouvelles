@@ -23,7 +23,7 @@ export class PaginationComponent {
   }
 
   get pagesEnd(): number[] {
-    const start = this.nbPages - 2;
+    const start = this.nbPages - 3;
     const pagesArray = [];
 
     for (let i = start; i <= this.nbPages; i++) {

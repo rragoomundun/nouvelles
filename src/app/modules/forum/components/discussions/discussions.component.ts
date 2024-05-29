@@ -122,7 +122,7 @@ export class DiscussionsComponent implements OnInit, OnDestroy {
         }
 
         if (isPlatformBrowser(this.platformId)) {
-          setTimeout(() => window.scrollTo(0, 0));
+          setTimeout(() => window.scrollTo({ top: 0, behavior: 'instant' }));
         }
       },
     });
