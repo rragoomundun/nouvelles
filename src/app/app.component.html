@@ -1,10 +1,8 @@
-@if (showHeaderFooter) {
-  <app-header
-    (registerClick)="onRegisterClick()"
-    (loginCLick)="onLoginClick()"
-    (logoutClick)="onLogoutClick()"
-  ></app-header>
-}
+<app-header
+  (registerClick)="onRegisterClick()"
+  (loginCLick)="onLoginClick()"
+  (logoutClick)="onLogoutClick()"
+></app-header>
 
 @if (["success", "error"].includes(userSharedService.onGetUser)) {
   <main>
@@ -12,9 +10,7 @@
   </main>
 }
 
-@if (showHeaderFooter) {
-  <app-footer></app-footer>
-}
+<app-footer></app-footer>
 
 <app-register></app-register>
 <app-login></app-login>

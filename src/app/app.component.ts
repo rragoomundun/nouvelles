@@ -45,14 +45,6 @@ export class AppComponent implements OnInit {
     translate.use('fr');
   }
 
-  get showHeaderFooter(): boolean {
-    return (
-      this.router.url.startsWith('/inscription/confirmer/') === false &&
-      this.router.url !== '/auth/mot-de-passe-oublie' &&
-      this.router.url.startsWith('/auth/mot-de-passe/reinitialiser/') === false
-    );
-  }
-
   ngOnInit(): void {
     this.categorySharedService.setAllCategories();
     this.forumSharedService.setForums();
