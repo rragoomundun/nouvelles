@@ -52,4 +52,16 @@ export class ForumService {
       { withCredentials: true },
     );
   }
+
+  editMessage(
+    discussionId: number,
+    messageId: number,
+    params: any,
+  ): Observable<any> {
+    return this.http.put(
+      `${this.API_PREFIX}/discussion/${discussionId}/message/${messageId}`,
+      params,
+      { withCredentials: true },
+    );
+  }
 }

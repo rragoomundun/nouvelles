@@ -4,6 +4,7 @@ import {
   OnInit,
   Inject,
   PLATFORM_ID,
+  ViewChild,
 } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import {
@@ -22,6 +23,7 @@ import { filter } from 'rxjs/operators';
 
 import { PaginationComponent } from '../../../../shared/components/pagination/pagination.component';
 import { AnswerDiscussionComponent } from '../answer-discussion/answer-discussion.component';
+import { EditMessageComponent } from '../edit-message/edit-message.component';
 
 import { ForumService } from '../../services/forum/forum.service';
 import { UrlSharedService } from '../../../../shared/services/url/url-shared.service';
@@ -38,12 +40,15 @@ import { ForumSharedService } from '../../../../shared/services/forum/forum-shar
     TranslateModule,
     PaginationComponent,
     AnswerDiscussionComponent,
+    EditMessageComponent,
   ],
   templateUrl: './discussion.component.html',
   styleUrl: './discussion.component.scss',
 })
 export class DiscussionComponent implements OnInit, OnDestroy {
   readonly MESSAGES_PER_PAGE: number;
+
+  @ViewChild(EditMessageComponent) editMessageComponent: EditMessageComponent;
 
   routerEventsSubscription: Subscription;
   forum: string;
@@ -124,7 +129,7 @@ export class DiscussionComponent implements OnInit, OnDestroy {
         this.messages = value;
 
         for (const message of this.messages) {
-          message.content = <string>marked.parse(message.content);
+          message.contentFormatted = <string>marked.parse(message.content);
 
           const dateObj = new Date(message.date);
           message.dateFormatted = this.dateSharedService.dt
@@ -168,5 +173,30 @@ export class DiscussionComponent implements OnInit, OnDestroy {
     } else {
       this.getMessages(false);
     }
+  }
+
+  onEditMessage(editData: {
+    messageId: number;
+    message: string;
+    date: Date;
+  }): void {
+    const message = this.messages.find(
+      (message) => message.id === editData.messageId,
+    );
+
+    message.contentFormatted = <string>marked.parse(editData.message);
+    message.updatedDateFormatted = this.dateSharedService.dt
+      .set({
+        day: editData.date.getDate(),
+        month: editData.date.getMonth() + 1,
+        year: editData.date.getFullYear(),
+        hour: editData.date.getHours(),
+        minute: editData.date.getMinutes(),
+      })
+      .toFormat('dd MMMM yyyy, HH:mm');
+  }
+
+  onEditClick(messageId: number, message: string): void {
+    this.editMessageComponent.open(this.id, messageId, message);
   }
 }

@@ -1,0 +1,54 @@
+<ng-template #content let-modal>
+  <form [formGroup]="messageForm" (ngSubmit)="onSubmit()">
+    <div class="modal-header">
+      <h4 class="modal-title">
+        {{ "DISCUSSION_PAGE.EDIT_MESSAGE" | translate }}
+      </h4>
+      <button
+        type="button"
+        class="btn-close"
+        (click)="modal.dismiss()"
+      ></button>
+    </div>
+    <div class="modal-body">
+      <label for="message" class="form-label">
+        {{ "DISCUSSION_PAGE.MESSAGE" | translate }}
+      </label>
+      <textarea
+        id="message"
+        type="text"
+        class="form-control"
+        cols="30"
+        rows="10"
+        formControlName="message"
+        required
+      ></textarea>
+    </div>
+    <div class="modal-footer">
+      <div>
+        @if (["false", "success", "error"].includes(onEdit)) {
+          <button
+            [disabled]="isFormValid === false"
+            type="submit"
+            class="btn btn-primary"
+          >
+            {{ "DISCUSSION_PAGE.EDIT" | translate }}
+          </button>
+        }
+
+        @if (onEdit === "true") {
+          <button [disabled]="true" type="submit" class="btn btn-primary">
+            <span class="fa-solid fa-spinner fa-spin"></span>
+            {{ "DISCUSSION_PAGE.EDITING" | translate }}
+          </button>
+        }
+      </div>
+
+      @if (onEdit === "error") {
+        <div class="text-end text-danger mt-3">
+          <span>{{ "DISCUSSION_PAGE.ERRORS.EDIT" | translate }}</span>
+        </div>
+      }
+    </div>
+  </form>
+</ng-template>
