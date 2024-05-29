@@ -136,8 +136,13 @@
     "ANSWER_DISCUSSION": "Répondre à la conversation",
     "ANSWER": "Répondre",
     "ANSWERING": "Réponse...",
+    "EDIT": "Éditer",
+    "EDITING": "Édition...",
+    "EDIT_MESSAGE": "Éditer un message",
+    "MESSAGE": "Message",
     "ERRORS": {
-      "ANSWERING": "Impossible de répondre à la conversation"
+      "ANSWERING": "Impossible de répondre à la conversation",
+      "EDIT": "Impossible d'éditer le message"
     }
   },
   "NEW_DISCUSSION_PAGE": {

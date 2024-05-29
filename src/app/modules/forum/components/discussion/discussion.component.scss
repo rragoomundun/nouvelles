@@ -3,7 +3,7 @@
     margin-bottom: 1rem;
   }
 
-  .d-flex {
+  .message {
     .d-none.d-sm-block {
       a {
         text-decoration: none;
@@ -29,28 +29,45 @@
       }
     }
 
-    > div:nth-child(2) {
+    .message-box {
       border: 1px solid #ccc;
       border-radius: 0.5rem;
       margin-bottom: 1rem;
       padding: 0.5rem;
 
-      div:first-of-type {
+      .message-header {
         border-bottom: 1px solid #ccc;
         padding-bottom: 0.5rem;
         margin-bottom: 0.5rem;
       }
 
-      div:last-of-type {
-        text-align: end;
-        color: #666;
+      .message-footer {
+        display: flex;
 
-        .thumb {
-          cursor: pointer;
+        div {
+          width: 50%;
 
-          .fa-solid {
-            margin-right: 0.25rem;
-            margin-left: 0.5rem;
+          > span {
+            color: #555;
+          }
+
+          > span:hover {
+            text-decoration: underline;
+            cursor: pointer;
+          }
+        }
+
+        div:last-of-type {
+          text-align: end;
+          color: #666;
+
+          .thumb {
+            cursor: pointer;
+
+            .fa-solid {
+              margin-right: 0.25rem;
+              margin-left: 0.5rem;
+            }
           }
         }
       }

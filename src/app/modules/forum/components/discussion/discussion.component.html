@@ -2,7 +2,7 @@
   <h2>{{ name }}</h2>
 
   @for (message of messages; track message) {
-    <div class="d-flex">
+    <div class="d-flex message">
       <div class="d-none d-sm-block">
         <a
           [routerLink]="[
@@ -18,8 +18,8 @@
           }
         </a>
       </div>
-      <div>
-        <div>
+      <div class="message-box">
+        <div class="message-header">
           <a
             [routerLink]="[
               '/profile',
@@ -42,24 +42,40 @@
             </span>
           }
         </div>
-        <div [innerHTML]="message.content"></div>
-        <div>
-          <span class="thumb">
-            <span class="fa-solid fa-thumbs-up"></span>
-            <span>
-              @if (message.nbLikes) {
-                {{ message.nbLikes }}
-              }
+        <div
+          [innerHTML]="message.contentFormatted"
+          class="message-content"
+        ></div>
+        <div class="message-footer">
+          <div>
+            @if (
+              userSharedService.isLoggedIn &&
+              userSharedService.id === message.author.id
+            ) {
+              <span (click)="onEditClick(message.id, message.content)">
+                <span class="fa-solid fa-pen"></span>
+                <span>&nbsp;{{ "DISCUSSION_PAGE.EDIT" | translate }}</span>
+              </span>
+            }
+          </div>
+          <div>
+            <span class="thumb">
+              <span class="fa-solid fa-thumbs-up"></span>
+              <span>
+                @if (message.nbLikes) {
+                  {{ message.nbLikes }}
+                }
+              </span>
             </span>
-          </span>
-          <span class="thumb">
-            <span class="fa-solid fa-thumbs-down"></span>
-            <span>
-              @if (message.nbDislikes) {
-                {{ message.nbDislikes }}
-              }
+            <span class="thumb">
+              <span class="fa-solid fa-thumbs-down"></span>
+              <span>
+                @if (message.nbDislikes) {
+                  {{ message.nbDislikes }}
+                }
+              </span>
             </span>
-          </span>
+          </div>
         </div>
       </div>
     </div>
@@ -72,5 +88,6 @@
 
   @if (userSharedService.isLoggedIn) {
     <app-answer-discussion (answered)="onNewAnswer()"></app-answer-discussion>
+    <app-edit-message (modified)="onEditMessage($event)"></app-edit-message>
   }
 </div>
