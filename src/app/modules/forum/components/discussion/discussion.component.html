@@ -1,99 +1,105 @@
 <div class="container">
-  <h2>{{ name }}</h2>
+  @if (notFound) {
+    <app-not-found></app-not-found>
+  } @else if (notFound === false) {
+    <h2>{{ name }}</h2>
 
-  @for (message of messages; track message) {
-    <div class="d-flex message">
-      <div class="d-none d-sm-block">
-        <a
-          [routerLink]="[
-            '/profile',
-            message.author.id,
-            urlSharedService.toLowerURL(message.author.name)
-          ]"
-        >
-          @if (message.author.image) {
-            <img [src]="message.author.image" [alt]="message.author.name" />
-          } @else {
-            <span class="fa-regular fa-circle-user fa-2x"></span>
-          }
-        </a>
-      </div>
-      <div class="message-box">
-        <div class="message-header">
+    @for (message of messages; track message) {
+      <div class="d-flex message">
+        <div class="d-none d-sm-block">
           <a
             [routerLink]="[
               '/profile',
               message.author.id,
               urlSharedService.toLowerURL(message.author.name)
             ]"
-            class="content-link"
           >
-            {{ message.author.name }}
+            @if (message.author.image) {
+              <img [src]="message.author.image" [alt]="message.author.name" />
+            } @else {
+              <span class="fa-regular fa-circle-user fa-2x"></span>
+            }
           </a>
-
-          <span>&nbsp;·&nbsp;</span>
-          <span>{{ message.dateFormatted }}</span>
-
-          @if (message.updatedDateFormatted) {
-            <span class="d-none d-md-inline">&nbsp;·&nbsp;</span>
-            <span class="d-none d-md-inline"
-              >{{ "GENERAL.DATE.UPDATED" | translate }} :
-              {{ message.updatedDateFormatted }}
-            </span>
-          }
         </div>
-        <div
-          [innerHTML]="message.contentFormatted"
-          class="message-content"
-        ></div>
-        <div class="message-footer">
-          <div>
-            @if (
-              userSharedService.isLoggedIn &&
-              userSharedService.id === message.author.id
-            ) {
-              <span (click)="onEditClick(message.id, message.content)">
-                <span class="fa-solid fa-pen"></span>
-                <span>&nbsp;{{ "DISCUSSION_PAGE.EDIT" | translate }}</span>
+        <div class="message-box">
+          <div class="message-header">
+            <a
+              [routerLink]="[
+                '/profile',
+                message.author.id,
+                urlSharedService.toLowerURL(message.author.name)
+              ]"
+              class="content-link"
+            >
+              {{ message.author.name }}
+            </a>
+
+            <span>&nbsp;·&nbsp;</span>
+            <span>{{ message.dateFormatted }}</span>
+
+            @if (message.updatedDateFormatted) {
+              <span class="d-none d-md-inline">&nbsp;·&nbsp;</span>
+              <span class="d-none d-md-inline"
+                >{{ "GENERAL.DATE.UPDATED" | translate }} :
+                {{ message.updatedDateFormatted }}
               </span>
             }
           </div>
-          <div>
-            <span (click)="onThumbUpClick(message)" class="thumb">
-              <span
-                [class.text-success]="message.vote && message.vote === 'like'"
-                class="fa-solid fa-thumbs-up"
-              ></span>
-              <span>
-                @if (message.nbLikes) {
-                  {{ message.nbLikes }}
-                }
+          <div
+            [innerHTML]="message.contentFormatted"
+            class="message-content"
+          ></div>
+          <div class="message-footer">
+            <div>
+              @if (
+                userSharedService.isLoggedIn &&
+                userSharedService.id === message.author.id
+              ) {
+                <span (click)="onEditClick(message.id, message.content)">
+                  <span class="fa-solid fa-pen"></span>
+                  <span>&nbsp;{{ "DISCUSSION_PAGE.EDIT" | translate }}</span>
+                </span>
+              }
+            </div>
+            <div>
+              <span (click)="onThumbUpClick(message)" class="thumb">
+                <span
+                  [class.text-success]="message.vote && message.vote === 'like'"
+                  class="fa-solid fa-thumbs-up"
+                ></span>
+                <span>
+                  @if (message.nbLikes) {
+                    {{ message.nbLikes }}
+                  }
+                </span>
               </span>
-            </span>
-            <span (click)="onThumbDownClick(message)" class="thumb">
-              <span
-                [class.text-danger]="message.vote && message.vote === 'dislike'"
-                class="fa-solid fa-thumbs-down"
-              ></span>
-              <span>
-                @if (message.nbDislikes) {
-                  {{ message.nbDislikes }}
-                }
+              <span (click)="onThumbDownClick(message)" class="thumb">
+                <span
+                  [class.text-danger]="
+                    message.vote && message.vote === 'dislike'
+                  "
+                  class="fa-solid fa-thumbs-down"
+                ></span>
+                <span>
+                  @if (message.nbDislikes) {
+                    {{ message.nbDislikes }}
+                  }
+                </span>
               </span>
-            </span>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  }
+    }
 
-  @if (nbPages) {
-    <br />
-    <app-pagination [nbPages]="nbPages"></app-pagination>
-  }
+    @if (nbPages) {
+      <br />
+      <app-pagination [nbPages]="nbPages"></app-pagination>
+    }
 
-  @if (userSharedService.isLoggedIn) {
-    <app-answer-discussion (answered)="onNewAnswer()"></app-answer-discussion>
-    <app-edit-message (modified)="onEditMessage($event)"></app-edit-message>
+    @if (userSharedService.isLoggedIn) {
+      <app-answer-discussion (answered)="onNewAnswer()"></app-answer-discussion>
+      <app-edit-message (modified)="onEditMessage($event)"></app-edit-message>
+    }
   }
 </div>
