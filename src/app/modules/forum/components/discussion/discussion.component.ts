@@ -205,15 +205,47 @@ export class DiscussionComponent implements OnInit, OnDestroy {
   onThumbUpClick(message: any): void {
     if (this.userSharedService.isLoggedIn) {
       if (message.vote && message.vote === 'like') {
-        this.forumService.deleteVote(this.id, message.id).subscribe();
-
-        message.vote = null;
-        message.nbLikes--;
+        this.forumService.deleteVote(this.id, message.id).subscribe({
+          complete: () => {
+            message.vote = null;
+            message.nbLikes--;
+          },
+        });
       } else {
-        this.forumService.likeMessage(this.id, message.id).subscribe();
+        this.forumService.likeMessage(this.id, message.id).subscribe({
+          complete: () => {
+            if (message.vote && message.vote === 'dislike') {
+              message.nbDislikes--;
+            }
 
-        message.vote = 'like';
-        message.nbLikes++;
+            message.vote = 'like';
+            message.nbLikes++;
+          },
+        });
+      }
+    }
+  }
+
+  onThumbDownClick(message: any): void {
+    if (this.userSharedService.isLoggedIn) {
+      if (message.vote && message.vote === 'dislike') {
+        this.forumService.deleteVote(this.id, message.id).subscribe({
+          complete: () => {
+            message.vote = null;
+            message.nbDislikes--;
+          },
+        });
+      } else {
+        this.forumService.dislikeMessage(this.id, message.id).subscribe({
+          complete: () => {
+            if (message.vote && message.vote === 'like') {
+              message.nbLikes--;
+            }
+
+            message.vote = 'dislike';
+            message.nbDislikes++;
+          },
+        });
       }
     }
   }

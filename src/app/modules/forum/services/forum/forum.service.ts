@@ -73,6 +73,14 @@ export class ForumService {
     );
   }
 
+  dislikeMessage(discussionId: number, messageId: number): Observable<any> {
+    return this.http.put(
+      `${this.API_PREFIX}/discussion/${discussionId}/message/${messageId}/dislike`,
+      {},
+      { withCredentials: true },
+    );
+  }
+
   deleteVote(discussionId: number, messageId: number): Observable<any> {
     return this.http.delete(
       `${this.API_PREFIX}/discussion/${discussionId}/message/${messageId}/delete-vote`,

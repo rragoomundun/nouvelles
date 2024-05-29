@@ -70,7 +70,7 @@
                 }
               </span>
             </span>
-            <span class="thumb">
+            <span (click)="onThumbDownClick(message)" class="thumb">
               <span
                 [class.text-danger]="message.vote && message.vote === 'dislike'"
                 class="fa-solid fa-thumbs-down"
