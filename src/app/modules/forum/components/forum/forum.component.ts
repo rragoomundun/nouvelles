@@ -6,6 +6,7 @@ import { filter } from 'rxjs/operators';
 
 import { BreadcrumbComponent } from '../../../../shared/components/breadcrumb/breadcrumb.component';
 
+import { UserSharedService } from '../../../../shared/services/user/user-shared.service';
 import { ForumSharedService } from '../../../../shared/services/forum/forum-shared.service';
 import { ForumService } from '../../services/forum/forum.service';
 
@@ -22,6 +23,7 @@ export class ForumComponent implements OnInit, OnDestroy {
   constructor(
     private router: Router,
     private translateService: TranslateService,
+    public userSharedService: UserSharedService,
     public forumService: ForumService,
     public forumSharedService: ForumSharedService,
   ) {}

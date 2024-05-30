@@ -62,6 +62,17 @@ export class AppComponent implements OnInit {
 
         setTimeout(() => this.storageSharedService.clear());
         this.storageSharedService.deleteCookie('token', '/');
+
+        const nouvelleDiscussionRegex = new RegExp(
+          '/forum/[^/]+/discussion/nouvelle',
+        );
+
+        if (
+          this.router.url === '/article/nouveau' ||
+          nouvelleDiscussionRegex.test(this.router.url)
+        ) {
+          this.router.navigate(['/']);
+        }
       },
     });
   }
