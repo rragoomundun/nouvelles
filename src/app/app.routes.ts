@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
 
-import { isAdminOrRedactorGuard } from './core/guards/is-admin-or-redactor.guard';
+import { isAdminOrRedactorGuard } from './core/guards/is-admin-or-redactor-guard/is-admin-or-redactor.guard';
 
 export const routes: Routes = [
   {

@@ -7,6 +7,8 @@ import { DiscussionsComponent } from './components/discussions/discussions.compo
 import { NewDiscussionComponent } from './components/new-discussion/new-discussion.component';
 import { DiscussionComponent } from './components/discussion/discussion.component';
 
+import { authGuard } from '../../core/guards/auth/auth.guard';
+
 const routes: Routes = [
   {
     path: '',
@@ -29,6 +31,7 @@ const routes: Routes = [
               {
                 path: 'nouvelle',
                 component: NewDiscussionComponent,
+                canActivate: [authGuard],
               },
               {
                 path: ':discussionId/:discussionTitle',
