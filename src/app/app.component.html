@@ -4,11 +4,11 @@
   (logoutClick)="onLogoutClick()"
 ></app-header>
 
-@if (["success", "error"].includes(userSharedService.onGetUser)) {
-  <main>
+<main>
+  @if (["success", "error"].includes(userSharedService.onGetUser)) {
     <router-outlet />
-  </main>
-}
+  }
+</main>
 
 <app-footer></app-footer>
 
