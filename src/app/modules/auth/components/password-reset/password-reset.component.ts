@@ -43,11 +43,7 @@ export class PasswordResetComponent {
   }
 
   get isPasswordResetFormValid(): boolean {
-    return (
-      this.passwordResetForm.valid &&
-      this.passwordResetForm.controls['password'].value ===
-        this.passwordResetForm.controls['repeatPassword'].value
-    );
+    return this.passwordResetForm.valid;
   }
 
   onSubmit(): void {
@@ -55,6 +51,7 @@ export class PasswordResetComponent {
       this.activatedRoute.snapshot.paramMap.get('resetPasswordToken');
     const params = {
       password: this.passwordResetForm.value.password,
+      repeatedPassword: this.passwordResetForm.value.repeatPassword,
     };
 
     this.onPasswordReset = 'true';
