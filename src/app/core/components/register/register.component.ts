@@ -43,11 +43,7 @@ export class RegisterComponent {
   }
 
   get isRegisterFormValid(): boolean {
-    return (
-      this.registerForm.valid === true &&
-      this.registerForm.controls['password'].value ===
-        this.registerForm.controls['repeatPassword'].value
-    );
+    return this.registerForm.valid;
   }
 
   open() {
@@ -71,6 +67,7 @@ export class RegisterComponent {
       name: this.registerForm.value.name,
       email: this.registerForm.value.email,
       password: this.registerForm.value.password,
+      repeatedPassword: this.registerForm.value.repeatPassword,
     };
 
     this.onRegister = 'true';
