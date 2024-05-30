@@ -85,7 +85,7 @@
                 </li>
               } @else {
                 <li>
-                  <a class="dropdown-item" href="#">
+                  <a class="dropdown-item">
                     <span class="fa-regular fa-circle-user"></span>
                     {{ "HEADER.ACCOUNT.MY_ACCOUNT" | translate }}
                   </a>
@@ -106,13 +106,13 @@
                   </li>
                 }
                 <li>
-                  <a class="dropdown-item" href="#">
+                  <a class="dropdown-item">
                     <span class="fa-solid fa-gear"></span>
                     {{ "HEADER.ACCOUNT.SETTINGS" | translate }}
                   </a>
                 </li>
                 <li>
-                  <a (click)="onLogoutClick()" class="dropdown-item" href="#">
+                  <a (click)="onLogoutClick()" class="dropdown-item">
                     <span class="fa-solid fa-arrow-right-from-bracket"></span>
                     {{ "HEADER.ACCOUNT.LOUGOUT" | translate }}
                   </a>
