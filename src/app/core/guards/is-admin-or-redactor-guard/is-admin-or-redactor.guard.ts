@@ -5,12 +5,10 @@ import { isPlatformBrowser } from '@angular/common';
 import { Observable, of } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 
-import { UserSharedService } from '../../shared/services/user/user-shared.service';
-import { AuthSharedService } from '../../shared/services/auth/auth-shared.service';
+import { AuthSharedService } from '../../../shared/services/auth/auth-shared.service';
 
 export const isAdminOrRedactorGuard: CanActivateFn = (route, state) => {
   const router = inject(Router);
-  const userSharedService = inject(UserSharedService);
   const authSharedService = inject(AuthSharedService);
   const platformId = inject(PLATFORM_ID);
 
