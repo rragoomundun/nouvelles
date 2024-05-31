@@ -4,7 +4,7 @@
       <app-breadcrumb></app-breadcrumb>
     </div>
     <div class="col-auto text-sm-end">
-      @if (onDiscussions) {
+      @if (onDiscussions && userSharedService.isLoggedIn) {
         <a
           [routerLink]="[
             '/forum',

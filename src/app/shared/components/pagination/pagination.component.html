@@ -24,7 +24,7 @@
       }
     } @else {
       @if (page <= 3) {
-        @for (p of [1, 2, 3]; track p) {
+        @for (p of [1, 2, 3, 4]; track p) {
           <li [class.active]="p === page" class="page-item">
             <a
               [routerLink]="['./']"
@@ -36,9 +36,12 @@
           </li>
         }
 
-        <li class="page-item">
-          <a class="page-link">...</a>
-        </li>
+        @if (nbPages > 5) {
+          <li class="page-item">
+            <a class="page-link">...</a>
+          </li>
+        }
+
         <li class="page-item">
           <a
             [routerLink]="['./']"
@@ -58,9 +61,12 @@
             1
           </a>
         </li>
-        <li class="page-item">
-          <a class="page-link">...</a>
-        </li>
+
+        @if (nbPages > 5) {
+          <li class="page-item">
+            <a class="page-link">...</a>
+          </li>
+        }
 
         @for (p of pagesEnd; track p) {
           <li [class.active]="p === page" class="page-item">

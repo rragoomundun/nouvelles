@@ -38,7 +38,12 @@
       <div class="col">
         <div>
           <span>{{ discussion.nbMessages }}&nbsp;</span>
-          <span>{{ "FORUM_COMMON.MESSAGES" | translate }}</span>
+
+          @if (discussion.nbMessages === "1") {
+            <span>{{ "FORUM_COMMON.MESSAGE" | translate }}</span>
+          } @else {
+            <span>{{ "FORUM_COMMON.MESSAGES" | translate }}</span>
+          }
         </div>
         <div>
           <span>{{ "DISCUSSIONS_PAGE.LAST_MESSAGE" | translate }} :</span>

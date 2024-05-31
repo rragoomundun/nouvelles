@@ -34,6 +34,7 @@
       border-radius: 0.5rem;
       margin-bottom: 1rem;
       padding: 0.5rem;
+      width: 100%;
 
       .message-header {
         border-bottom: 1px solid #ccc;
@@ -52,7 +53,6 @@
           }
 
           > span:hover {
-            text-decoration: underline;
             cursor: pointer;
           }
         }

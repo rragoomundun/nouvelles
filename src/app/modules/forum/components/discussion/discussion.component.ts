@@ -31,6 +31,7 @@ import { DateSharedService } from '../../../../shared/services/date/date-shared.
 import { AppSharedService } from '../../../../shared/services/app/app-shared.service';
 import { UserSharedService } from '../../../../shared/services/user/user-shared.service';
 import { ForumSharedService } from '../../../../shared/services/forum/forum-shared.service';
+import { NotFoundComponent } from '../../../not-found/components/not-found/not-found.component';
 
 @Component({
   selector: 'app-discussion',
@@ -41,6 +42,7 @@ import { ForumSharedService } from '../../../../shared/services/forum/forum-shar
     PaginationComponent,
     AnswerDiscussionComponent,
     EditMessageComponent,
+    NotFoundComponent,
   ],
   templateUrl: './discussion.component.html',
   styleUrl: './discussion.component.scss',
@@ -56,6 +58,7 @@ export class DiscussionComponent implements OnInit, OnDestroy {
   name: string;
   nbPages: number;
   messages: any[];
+  notFound: boolean;
 
   constructor(
     private router: Router,
@@ -102,6 +105,8 @@ export class DiscussionComponent implements OnInit, OnDestroy {
         this.name = value.name;
         this.nbPages = value.nbPages;
 
+        this.notFound = false;
+
         this.appSharedService.setTitle(
           `${this.name} - ${this.translateService.instant('FORUM_PAGE.TITLE')}`,
           false,
@@ -121,6 +126,13 @@ export class DiscussionComponent implements OnInit, OnDestroy {
             link: this.router.url,
           },
         ];
+      },
+      error: (error) => {
+        const { type } = error.error;
+
+        if (type && type === 'DISCUSSION_INCORRECT') {
+          this.notFound = true;
+        }
       },
     });
   }
@@ -159,7 +171,7 @@ export class DiscussionComponent implements OnInit, OnDestroy {
         }
 
         if (isPlatformBrowser(this.platformId) && scrollTop) {
-          setTimeout(() => window.scrollTo(0, 0));
+          setTimeout(() => window.scrollTo({ top: 0, behavior: 'instant' }));
         }
       },
     });

@@ -92,7 +92,9 @@ export class CategoryComponent implements OnInit, OnDestroy {
             this.notFound = false;
 
             if (isPlatformBrowser(this.platformId)) {
-              setTimeout(() => window.scrollTo(0, 0));
+              setTimeout(() =>
+                window.scrollTo({ top: 0, behavior: 'instant' }),
+              );
             }
           } else {
             this.notFound = true;

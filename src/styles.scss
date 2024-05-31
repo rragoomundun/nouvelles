@@ -1,4 +1,11 @@
+app-root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 main {
+  width: 100%;
   max-width: 768px;
   margin: auto;
   margin-top: 100px;
@@ -51,18 +58,14 @@ a.content-link:hover {
   margin-bottom: 1rem;
 }
 
-/* Bootstrap */
-
-.pagination {
-  .page-item.active .page-link {
-    background-color: #009900;
-    border-color: #009900;
-  }
-
-  .page-item:not(.active):not(.disabled) .page-link {
-    color: #009900;
+/* Discussions */
+.message-content {
+  img {
+    max-width: 100%;
   }
 }
+
+/* Bootstrap */
 
 .dropdown-menu {
   .dropdown-item:hover {
