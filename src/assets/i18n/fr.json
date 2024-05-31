@@ -8,6 +8,10 @@
     "CATEGORY": "Catégorie",
     "NAME": "Nom",
     "MESSAGE": "Message",
+    "MESSAGE_LOWER": "message",
+    "MESSAGES_LOWER": "messages",
+    "DISCUSSION_LOWER": "discussion",
+    "DISCUSSIONS_LOWER": "discussions",
     "CREATE": "Créer",
     "CREATION": "Création...",
     "DATE": {
@@ -124,9 +128,6 @@
     }
   },
   "FORUM_COMMON": {
-    "DISCUSSIONS": "discussions",
-    "MESSAGES": "messages",
-    "MESSAGE": "message",
     "NEW_DISCUSSION": "Nouvelle discussion"
   },
   "FORUM_PAGE": {
@@ -156,6 +157,9 @@
     "ERRORS": {
       "CREATION": "Impossible de créer la discussion."
     }
+  },
+  "PROFILE_PAGE": {
+    "REGISTERED_SINCE": "Inscrit depuis : "
   },
   "404_PAGE": {
     "TITLE": "404 - Page introuvable",

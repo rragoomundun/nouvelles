@@ -5,6 +5,7 @@ import { TranslateModule } from '@ngx-translate/core';
 
 import { UserSharedService } from '../../../shared/services/user/user-shared.service';
 import { CategorySharedService } from '../../../shared/services/category/category-shared.service';
+import { UrlSharedService } from '../../../shared/services/url/url-shared.service';
 
 @Component({
   selector: 'app-header',
@@ -21,10 +22,19 @@ export class HeaderComponent {
   constructor(
     public userSharedService: UserSharedService,
     public categorySharedService: CategorySharedService,
+    public urlSharedService: UrlSharedService,
   ) {
     this.registerClick = new EventEmitter<void>();
     this.loginCLick = new EventEmitter<void>();
     this.logoutClick = new EventEmitter<void>();
+  }
+
+  get profileLink(): string | null {
+    if (this.userSharedService.isLoggedIn) {
+      return `/profile/${this.userSharedService.id}/${this.urlSharedService.toLowerURL(<string>this.userSharedService.name)}`;
+    }
+
+    return null;
   }
 
   onRegisterClick() {
