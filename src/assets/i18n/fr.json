@@ -7,9 +7,13 @@
     "USER_IMAGE": "Image de l'utilisateur",
     "CATEGORY": "Catégorie",
     "NAME": "Nom",
+    "BIOGRAPHY": "Biographie",
+    "ARTICLES": "Articles",
     "MESSAGE": "Message",
+    "MESSAGES": "Messages",
     "MESSAGE_LOWER": "message",
     "MESSAGES_LOWER": "messages",
+    "DISCUSSIONS": "Discussions",
     "DISCUSSION_LOWER": "discussion",
     "DISCUSSIONS_LOWER": "discussions",
     "CREATE": "Créer",
@@ -159,7 +163,8 @@
     }
   },
   "PROFILE_PAGE": {
-    "REGISTERED_SINCE": "Inscrit depuis : "
+    "REGISTERED_SINCE": "Inscrit depuis : ",
+    "NO_BIOGRAPHY": "Cet utilisateur n'a pas ajouté de biographie."
   },
   "404_PAGE": {
     "TITLE": "404 - Page introuvable",

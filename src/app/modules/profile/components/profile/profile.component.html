@@ -49,5 +49,26 @@
         </ul>
       </div>
     </div>
+
+    <hr />
+
+    <div class="row mt-3">
+      <div class="col-12 col-sm-3 mb-3">
+        <app-nav-panel [items]="navPanelLinks"></app-nav-panel>
+      </div>
+      <div class="col">
+        @if (onBiography) {
+          @if (biography) {
+            <div [innerHTML]="biography"></div>
+          } @else {
+            <p class="text-center">
+              {{ "PROFILE_PAGE.NO_BIOGRAPHY" | translate }}
+            </p>
+          }
+        } @else {
+          <router-outlet></router-outlet>
+        }
+      </div>
+    </div>
   }
 </div>
