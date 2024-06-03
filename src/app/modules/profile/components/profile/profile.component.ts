@@ -14,6 +14,7 @@ import { marked } from 'marked';
 import { NavPanelComponent } from '../../../../shared/components/nav-panel/nav-panel.component';
 import { NotFoundComponent } from '../../../not-found/components/not-found/not-found.component';
 
+import { ProfileService } from '../../services/profile/profile.service';
 import { UserService } from '../../services/user/user.service';
 import { DateSharedService } from '../../../../shared/services/date/date-shared.service';
 import { AppSharedService } from '../../../../shared/services/app/app-shared.service';
@@ -32,13 +33,12 @@ import { UrlSharedService } from '../../../../shared/services/url/url-shared.ser
   styleUrl: './profile.component.scss',
 })
 export class ProfileComponent implements OnInit, OnDestroy {
-  id: number;
   name: string;
   image: string;
-  biography: string | null;
   nbArticles: number;
   nbDiscussions: number;
   nbMessages: number;
+  biography: string | null;
   registrationDate: string;
   roles: string[];
 
@@ -51,6 +51,7 @@ export class ProfileComponent implements OnInit, OnDestroy {
     private activatedRoute: ActivatedRoute,
     private router: Router,
     private translateService: TranslateService,
+    public profileService: ProfileService,
     private userService: UserService,
     private dateSharedService: DateSharedService,
     private appSharedService: AppSharedService,
@@ -58,7 +59,7 @@ export class ProfileComponent implements OnInit, OnDestroy {
   ) {}
 
   get profileLink(): string {
-    return `/profile/${this.id}/${this.urlSharedService.toLowerURL(this.name)}`;
+    return `/profile/${this.profileService.userId}/${this.urlSharedService.toLowerURL(this.name)}`;
   }
 
   get navPanelLinks(): { link: string; title: string }[] {
@@ -123,10 +124,10 @@ export class ProfileComponent implements OnInit, OnDestroy {
   }
 
   loadProfile() {
-    this.id = this.activatedRoute.snapshot.params['userId'];
+    this.profileService.userId = this.activatedRoute.snapshot.params['userId'];
     this.onGetUserProfile = 'true';
 
-    this.userService.getUserProfile(this.id).subscribe({
+    this.userService.getUserProfile(this.profileService.userId).subscribe({
       next: (value) => {
         this.name = value.name;
         this.image = value.image;
@@ -134,6 +135,10 @@ export class ProfileComponent implements OnInit, OnDestroy {
         this.nbDiscussions = value.nbDiscussions;
         this.nbMessages = value.nbMessages;
         this.roles = value.roles;
+
+        this.profileService.articlesNbPages = value.articlesNbPages;
+        this.profileService.discussionsNbPages = value.discussionsNbPages;
+        this.profileService.messagesNbPages = value.messagesNbPages;
 
         if (value.biography) {
           this.biography = <string>marked.parse(value.biography);

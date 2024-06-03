@@ -15,4 +15,11 @@ export class UserService {
   getUserProfile(userId: number): Observable<any> {
     return this.http.get(`${this.API_PREFIX}/${userId}`);
   }
+
+  getUserArticles(userId: number, page: number): Observable<any> {
+    const url = `${this.API_PREFIX}/${userId}/article/all`;
+    const params = { page };
+
+    return this.http.get(url, { params });
+  }
 }

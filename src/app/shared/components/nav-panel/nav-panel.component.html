@@ -4,7 +4,7 @@
       <li>
         <a
           routerLink="{{ item.link }}"
-          [class.active]="item.link === router.url"
+          [class.active]="item.link === router.url.split('?')[0]"
         >
           {{ item.title }}
         </a>

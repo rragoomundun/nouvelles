@@ -1,1 +1,13 @@
-<p>profile-articles works!</p>
+@if (!articles || articles.length === 0) {
+  <p class="text-center">{{ "PROFILE_PAGE.NO_ARTICLES" | translate }}</p>
+} @else {
+  @for (article of articles; track article; let i = $index) {
+    <app-profile-articles-item [article]="article"></app-profile-articles-item>
+
+    <hr />
+  }
+
+  @if (profileService.articlesNbPages) {
+    <app-pagination [nbPages]="profileService.articlesNbPages"></app-pagination>
+  }
+}
