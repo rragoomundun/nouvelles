@@ -1,7 +1,7 @@
 @if (!articles || articles.length === 0) {
   <p class="text-center">{{ "PROFILE_PAGE.NO_ARTICLES" | translate }}</p>
 } @else {
-  @for (article of articles; track article; let i = $index) {
+  @for (article of articles; track article) {
     <app-profile-articles-item [article]="article"></app-profile-articles-item>
 
     <hr />

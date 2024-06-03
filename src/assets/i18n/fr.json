@@ -166,7 +166,8 @@
   "PROFILE_PAGE": {
     "REGISTERED_SINCE": "Inscrit depuis : ",
     "NO_BIOGRAPHY": "Cet utilisateur n'a pas ajouté de biographie.",
-    "NO_ARTICLES": "Cet utilisateur n'a pas écrit d'articles."
+    "NO_ARTICLES": "Cet utilisateur n'a pas écrit d'articles.",
+    "NO_DISCUSSIONS": "Cet utilisateur n'a jamais commencé de discussion."
   },
   "404_PAGE": {
     "TITLE": "404 - Page introuvable",

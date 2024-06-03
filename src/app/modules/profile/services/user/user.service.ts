@@ -22,4 +22,11 @@ export class UserService {
 
     return this.http.get(url, { params });
   }
+
+  getUserDiscussions(userId: number, page: number): Observable<any> {
+    const url = `${this.API_PREFIX}/${userId}/discussion/all`;
+    const params = { page };
+
+    return this.http.get(url, { params });
+  }
 }

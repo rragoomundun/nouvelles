@@ -1,0 +1,28 @@
+<div class="row">
+  <div class="col">
+    <a routerLink="{{ discussionLink }}">{{ discussion.name }}</a>
+
+    <br /><br />
+
+    <span>{{ discussion.dateFormatted }}</span>
+    <span>&nbsp;·&nbsp;</span>
+    <span>
+      {{ discussion.nbMessages }}
+
+      @if (discussion.nbMessages === 1) {
+        {{ "GENERAL.MESSAGE_LOWER" | translate }}
+      } @else {
+        {{ "GENERAL.MESSAGES_LOWER" | translate }}
+      }
+    </span>
+
+    <br />
+
+    <span>
+      {{ "GENERAL.IN" | translate }}
+      <a [routerLink]="['/forum', discussion.forum.label]">
+        {{ discussion.forum.name }}
+      </a>
+    </span>
+  </div>
+</div>
