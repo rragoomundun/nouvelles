@@ -33,6 +33,8 @@ export class ProfileDiscussionsItemComponent implements OnInit {
         day: dateObj.getDate(),
         month: dateObj.getMonth() + 1,
         year: dateObj.getFullYear(),
+        hour: dateObj.getHours(),
+        minute: dateObj.getMinutes(),
       })
       .toFormat('dd/LL/yyyy, HH:mm');
   }

@@ -29,4 +29,11 @@ export class UserService {
 
     return this.http.get(url, { params });
   }
+
+  getUserMessages(userId: number, page: number): Observable<any> {
+    const url = `${this.API_PREFIX}/${userId}/message/all`;
+    const params = { page };
+
+    return this.http.get(url, { params });
+  }
 }

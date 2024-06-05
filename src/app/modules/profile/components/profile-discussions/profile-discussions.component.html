@@ -1,17 +1,19 @@
-@if (!discussions || discussions.length === 0) {
-  <p class="text-center">{{ "PROFILE_PAGE.NO_DISCUSSIONS" | translate }}</p>
-} @else {
-  @for (discussion of discussions; track discussion) {
-    <app-profile-discussions-item
-      [discussion]="discussion"
-    ></app-profile-discussions-item>
+@if (discussions) {
+  @if (discussions.length === 0) {
+    <p class="text-center">{{ "PROFILE_PAGE.NO_DISCUSSIONS" | translate }}</p>
+  } @else {
+    @for (discussion of discussions; track discussion) {
+      <app-profile-discussions-item
+        [discussion]="discussion"
+      ></app-profile-discussions-item>
 
-    <hr />
-  }
+      <hr />
+    }
 
-  @if (profileService.discussionsNbPages) {
-    <app-pagination
-      [nbPages]="profileService.discussionsNbPages"
-    ></app-pagination>
+    @if (profileService.discussionsNbPages) {
+      <app-pagination
+        [nbPages]="profileService.discussionsNbPages"
+      ></app-pagination>
+    }
   }
 }

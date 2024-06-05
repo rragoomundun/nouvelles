@@ -12,15 +12,17 @@ export class UrlSharedService {
     return removeAccents(
       url
         .toLowerCase()
-        .replaceAll(' ', '-')
-        .replaceAll("'", '-')
-        .replaceAll('’', '-')
         .replaceAll('«', '')
         .replaceAll('»', '')
         .replaceAll(',', '')
         .replaceAll('(', '')
         .replaceAll(')', '')
         .replaceAll('.', '')
+        .replaceAll(' ?', '')
+        .replaceAll(' !', '')
+        .replaceAll(' ', '-')
+        .replaceAll("'", '-')
+        .replaceAll('’', '-')
         .replaceAll('-:-', '-')
         .replaceAll('--', '-'),
     );

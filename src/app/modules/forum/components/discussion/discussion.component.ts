@@ -170,8 +170,19 @@ export class DiscussionComponent implements OnInit, OnDestroy {
           }
         }
 
-        if (isPlatformBrowser(this.platformId) && scrollTop) {
-          setTimeout(() => window.scrollTo({ top: 0, behavior: 'instant' }));
+        if (isPlatformBrowser(this.platformId)) {
+          const anchor = this.router.url.split('#')[1];
+
+          if (anchor) {
+            setTimeout(() => {
+              document
+                .getElementById(anchor)
+                ?.scrollIntoView({ behavior: 'instant' });
+              window.scrollBy({ top: -70, behavior: 'instant' });
+            });
+          } else if (scrollTop) {
+            setTimeout(() => window.scrollTo({ top: 0, behavior: 'instant' }));
+          }
         }
       },
     });
