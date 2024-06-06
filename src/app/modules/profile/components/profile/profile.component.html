@@ -1,0 +1,74 @@
+<div class="container">
+  @if (onGetUserProfile === "error") {
+    <app-not-found></app-not-found>
+  } @else if (onGetUserProfile === "success") {
+    <div id="image" class="row">
+      <div class="col"></div>
+      <div class="col">
+        @if (image) {
+          <img [src]="image" alt="name" />
+        } @else {
+          <span class="fa-regular fa-circle-user fa-6x"></span>
+        }
+      </div>
+      <div class="col"></div>
+    </div>
+
+    <div id="name" class="row">
+      <div class="col"></div>
+      <div class="col">
+        <h3>{{ name }}</h3>
+      </div>
+      <div class="col"></div>
+    </div>
+
+    <div id="basic-infos" class="row">
+      <div class="col">
+        <ul>
+          @if (nbDiscussions === 1) {
+            <li>1 {{ "GENERAL.DISCUSSION_LOWER" | translate }}</li>
+          } @else {
+            <li>
+              {{ nbDiscussions }} {{ "GENERAL.DISCUSSIONS_LOWER" | translate }}
+            </li>
+          }
+
+          <li>&nbsp;·&nbsp;</li>
+
+          @if (nbMessages === 1) {
+            <li>1 {{ "GENERAL.MESSAGE_LOWER" | translate }}</li>
+          } @else {
+            <li>{{ nbMessages }} {{ "GENERAL.MESSAGES_LOWER" | translate }}</li>
+          }
+
+          <li>&nbsp;·&nbsp;</li>
+          <li>
+            {{ "PROFILE_PAGE.REGISTERED_SINCE" | translate }}
+            {{ registrationDate }}
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <hr />
+
+    <div class="row mt-3">
+      <div class="col-12 col-sm-3 mb-3">
+        <app-nav-panel [items]="navPanelLinks"></app-nav-panel>
+      </div>
+      <div class="col">
+        @if (onBiography) {
+          @if (biography) {
+            <div [innerHTML]="biography"></div>
+          } @else {
+            <p class="text-center">
+              {{ "PROFILE_PAGE.NO_BIOGRAPHY" | translate }}
+            </p>
+          }
+        } @else {
+          <router-outlet></router-outlet>
+        }
+      </div>
+    </div>
+  }
+</div>

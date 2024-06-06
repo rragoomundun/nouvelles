@@ -5,7 +5,7 @@
     <h2>{{ name }}</h2>
 
     @for (message of messages; track message) {
-      <div class="d-flex message">
+      <div [id]="'message-' + message.id" class="d-flex message">
         <div class="d-none d-sm-block">
           <a
             [routerLink]="[

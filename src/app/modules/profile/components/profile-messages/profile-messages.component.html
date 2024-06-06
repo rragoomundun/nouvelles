@@ -1,0 +1,19 @@
+@if (messages) {
+  @if (messages.length === 0) {
+    <p class="text-center">{{ "PROFILE_PAGE.NO_MESSAGES" | translate }}</p>
+  } @else {
+    @for (message of messages; track message) {
+      <app-profile-messages-item
+        [message]="message"
+      ></app-profile-messages-item>
+
+      <hr />
+    }
+
+    @if (profileService.messagesNbPages) {
+      <app-pagination
+        [nbPages]="profileService.messagesNbPages"
+      ></app-pagination>
+    }
+  }
+}

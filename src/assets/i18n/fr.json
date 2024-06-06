@@ -7,9 +7,18 @@
     "USER_IMAGE": "Image de l'utilisateur",
     "CATEGORY": "Catégorie",
     "NAME": "Nom",
+    "BIOGRAPHY": "Biographie",
+    "ARTICLES": "Articles",
     "MESSAGE": "Message",
+    "MESSAGES": "Messages",
+    "MESSAGE_LOWER": "message",
+    "MESSAGES_LOWER": "messages",
+    "DISCUSSIONS": "Discussions",
+    "DISCUSSION_LOWER": "discussion",
+    "DISCUSSIONS_LOWER": "discussions",
     "CREATE": "Créer",
     "CREATION": "Création...",
+    "IN": "Dans",
     "DATE": {
       "UPDATED": "Mis à jour"
     }
@@ -124,9 +133,6 @@
     }
   },
   "FORUM_COMMON": {
-    "DISCUSSIONS": "discussions",
-    "MESSAGES": "messages",
-    "MESSAGE": "message",
     "NEW_DISCUSSION": "Nouvelle discussion"
   },
   "FORUM_PAGE": {
@@ -156,6 +162,13 @@
     "ERRORS": {
       "CREATION": "Impossible de créer la discussion."
     }
+  },
+  "PROFILE_PAGE": {
+    "REGISTERED_SINCE": "Inscrit depuis : ",
+    "NO_BIOGRAPHY": "Cet utilisateur n'a pas ajouté de biographie.",
+    "NO_ARTICLES": "Cet utilisateur n'a pas écrit d'articles.",
+    "NO_DISCUSSIONS": "Cet utilisateur n'a jamais commencé de discussion.",
+    "NO_MESSAGES": "Cet utilisateur n'a posté aucun messages."
   },
   "404_PAGE": {
     "TITLE": "404 - Page introuvable",

@@ -11,16 +11,24 @@
 
       <div class="col">
         <div>
-          <span
-            >{{ forum.nbDiscussions }}
-            {{ "FORUM_COMMON.DISCUSSIONS" | translate }}</span
-          >
+          @if (forum.nbDiscussions === "1") {
+            <span> 1 {{ "GENERAL.DISCUSSION_LOWER" | translate }} </span>
+          } @else {
+            <span>
+              {{ forum.nbDiscussions }}
+              {{ "GENERAL.DISCUSSIONS_LOWER" | translate }}
+            </span>
+          }
         </div>
         <div>
-          <span
-            >{{ forum.nbMessages }}
-            {{ "FORUM_COMMON.MESSAGES" | translate }}</span
-          >
+          @if (forum.nbMessages === "1") {
+            <span> 1 {{ "GENERAL.MESSAGE_LOWER" | translate }} </span>
+          } @else {
+            <span>
+              {{ forum.nbMessages }}
+              {{ "GENERAL.MESSAGES_LOWER" | translate }}
+            </span>
+          }
         </div>
       </div>
     </div>

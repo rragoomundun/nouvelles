@@ -1,0 +1,27 @@
+<div class="row">
+  <div class="col-12 col-sm">
+    <a routerLink="{{ articleLink }}">
+      <img
+        [src]="article.image"
+        [alt]="article.title"
+        class="image-ratio-16x9"
+      />
+    </a>
+  </div>
+  <div class="col-8">
+    <a routerLink="{{ articleLink }}" class="title-link">
+      <h5>{{ article.title }}</h5>
+    </a>
+
+    <span>{{ article.dateFormatted }}</span>
+
+    <br />
+
+    <span
+      >{{ "GENERAL.IN" | translate }}
+      <a [routerLink]="['/categorie', article.category.label]">{{
+        article.category.name
+      }}</a>
+    </span>
+  </div>
+</div>

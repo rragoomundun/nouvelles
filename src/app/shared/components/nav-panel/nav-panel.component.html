@@ -1,0 +1,14 @@
+<nav>
+  <ul>
+    @for (item of items; track item) {
+      <li>
+        <a
+          routerLink="{{ item.link }}"
+          [class.active]="item.link === router.url.split('?')[0]"
+        >
+          {{ item.title }}
+        </a>
+      </li>
+    }
+  </ul>
+</nav>

@@ -39,6 +39,11 @@ export const routes: Routes = [
       import('./modules/forum/forum.module').then((m) => m.ForumModule),
   },
   {
+    path: 'profile',
+    loadChildren: () =>
+      import('./modules/profile/profile.module').then((m) => m.ProfileModule),
+  },
+  {
     path: '**',
     loadChildren: () =>
       import('./modules/not-found/not-found.module').then(
