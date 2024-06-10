@@ -21,4 +21,9 @@ export class UserService {
     const url = `${this.API_PREFIX}/${userId}/password`;
     return this.http.put(url, params, { withCredentials: true });
   }
+
+  updateBiography(userId: number, params: any): Observable<any> {
+    const url = `${this.API_PREFIX}/${userId}/biography`;
+    return this.http.put(url, params, { withCredentials: true });
+  }
 }
