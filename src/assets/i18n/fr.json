@@ -178,6 +178,7 @@
     "PROFILE_IMAGE": "Image de profil",
     "CHANGE_IMAGE": "Changer l'image",
     "PASSWORD_MODIFIED": "Le mot de passe a été modifié.",
+    "BIOGRAPHY_MODIFIED": "La biographie a été modifiée.",
     "ERRORS": {
       "PASSWORD_MIN_LENGTH": "Le mot de passe doit contenir au moins 12 caractères.",
       "REPEATED_PASSWORD_MIN_LENGTH": "Le mot de passe répété doit contenir au moins 12 caractères.",
