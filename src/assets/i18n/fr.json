@@ -22,6 +22,7 @@
     "UPDATING": "Mise à jour...",
     "MODIFY": "Modifier",
     "MODIFICATION": "Modification...",
+    "DELETION": "Suppression...",
     "DATE": {
       "UPDATED": "Mis à jour"
     }
@@ -179,6 +180,9 @@
     "CHANGE_IMAGE": "Changer l'image",
     "PASSWORD_MODIFIED": "Le mot de passe a été modifié.",
     "BIOGRAPHY_MODIFIED": "La biographie a été modifiée.",
+    "DELETE_ACCOUNT": "Supprimer le compte",
+    "DELETE_ACCOUNT_WARNING": "Attention cette action est irréversible. Vous allez perdre l'accès complet à votre compte. Le contenu publié sera anonymisé.",
+    "ACCOUNT_DELETED": "Compte supprimé. Vous allez être redirigé...",
     "ERRORS": {
       "PASSWORD_MIN_LENGTH": "Le mot de passe doit contenir au moins 12 caractères.",
       "REPEATED_PASSWORD_MIN_LENGTH": "Le mot de passe répété doit contenir au moins 12 caractères.",

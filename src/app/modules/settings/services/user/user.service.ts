@@ -26,4 +26,9 @@ export class UserService {
     const url = `${this.API_PREFIX}/${userId}/biography`;
     return this.http.put(url, params, { withCredentials: true });
   }
+
+  deleteUser(userId: number): Observable<any> {
+    const url = `${this.API_PREFIX}/${userId}`;
+    return this.http.delete(url, { withCredentials: true });
+  }
 }
