@@ -12,6 +12,7 @@ export class UserSharedService {
   name: string | null;
   email: string | null;
   image: string | null;
+  biography: string | null;
   roles: string[] | null;
 
   onGetUser: string;
@@ -38,6 +39,7 @@ export class UserSharedService {
         this.name = value.name;
         this.email = value.email;
         this.image = value.image;
+        this.biography = value.biography;
         this.roles = value.roles;
 
         this.onGetUser = 'success';
