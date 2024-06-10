@@ -20,6 +20,8 @@
     "CREATION": "Création...",
     "IN": "Dans",
     "UPDATING": "Mise à jour...",
+    "MODIFY": "Modifier",
+    "MODIFICATION": "Modification...",
     "DATE": {
       "UPDATED": "Mis à jour"
     }
@@ -174,7 +176,13 @@
   },
   "SETTINGS_PAGE": {
     "PROFILE_IMAGE": "Image de profil",
-    "CHANGE_IMAGE": "Changer l'image"
+    "CHANGE_IMAGE": "Changer l'image",
+    "PASSWORD_MODIFIED": "Le mot de passe a été modifié.",
+    "ERRORS": {
+      "PASSWORD_MIN_LENGTH": "Le mot de passe doit contenir au moins 12 caractères.",
+      "REPEATED_PASSWORD_MIN_LENGTH": "Le mot de passe répété doit contenir au moins 12 caractères.",
+      "REPEATED_PASSWORD_NO_MATCH": "Le mot de passe répété doit être égal au mot de passe"
+    }
   },
   "404_PAGE": {
     "TITLE": "404 - Page introuvable",
