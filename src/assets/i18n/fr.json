@@ -19,6 +19,7 @@
     "CREATE": "Créer",
     "CREATION": "Création...",
     "IN": "Dans",
+    "UPDATING": "Mise à jour...",
     "DATE": {
       "UPDATED": "Mis à jour"
     }
@@ -170,6 +171,10 @@
     "NO_DISCUSSIONS": "Cet utilisateur n'a jamais commencé de discussion.",
     "NO_MESSAGES": "Cet utilisateur n'a posté aucun messages.",
     "ANONYMOUS_USER": "Ce compte a été supprimé et est maintenant anonyme."
+  },
+  "SETTINGS_PAGE": {
+    "PROFILE_IMAGE": "Image de profil",
+    "CHANGE_IMAGE": "Changer l'image"
   },
   "404_PAGE": {
     "TITLE": "404 - Page introuvable",

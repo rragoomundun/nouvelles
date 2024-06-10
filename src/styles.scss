@@ -73,5 +73,9 @@ a.content-link:hover {
   }
 }
 
+legend {
+  font-size: 1.25rem !important;
+}
+
 /* Importing Bootstrap SCSS file. */
 @import "bootstrap/scss/bootstrap";
