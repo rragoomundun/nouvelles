@@ -1,9 +1,10 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Router } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 
 import { DateTime } from 'luxon';
 
+import { UserSharedService } from '../../../../shared/services/user/user-shared.service';
 import { UrlSharedService } from '../../../../shared/services/url/url-shared.service';
 import { DateSharedService } from '../../../../shared/services/date/date-shared.service';
 
@@ -17,7 +18,11 @@ import { DateSharedService } from '../../../../shared/services/date/date-shared.
 export class ProfileArticlesItemComponent implements OnInit {
   @Input() article: any;
 
+  showEditButton: boolean;
+
   constructor(
+    private router: Router,
+    private userSharedService: UserSharedService,
     private urlSharedService: UrlSharedService,
     private dateSharedService: DateSharedService,
   ) {}
@@ -27,6 +32,10 @@ export class ProfileArticlesItemComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    const profileId = Number(this.router.url.split('/')[2]);
+
+    this.showEditButton = profileId === this.userSharedService.id;
+
     const dateObj = new Date(this.article.date);
     this.article.dateFormatted = this.dateSharedService.dt
       .set({
