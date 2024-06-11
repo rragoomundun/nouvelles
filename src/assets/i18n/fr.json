@@ -79,13 +79,13 @@
     "VALIDATION": "Validation..."
   },
   "REGISTER_CONFIRM_PAGE": {
-    "ERRORS": {
-      "CONFIRMATION_FAILED": "Impossible de confirmer le compte."
-    },
     "TITLE": "Confirmation du compte",
     "CONFIRM": "Confirmation du compte",
     "CLICK_CONFIRM": "Cliquez pour confirmer votre compte",
-    "CONFIRMED": "Compte confirmé. Vous allez être redirigé..."
+    "CONFIRMED": "Compte confirmé. Vous allez être redirigé...",
+    "ERRORS": {
+      "CONFIRMATION_FAILED": "Impossible de confirmer le compte."
+    }
   },
   "PASSWORD_FORGOTTEN_PAGE": {
     "ERRORS": {
