@@ -37,9 +37,11 @@ export class RegisterConfirmComponent {
     this.authService.registerConfirm(confirmationToken).subscribe({
       complete: () => {
         this.onRegisterConfirm = 'success';
-        this.userSharedService.setUser();
 
-        setTimeout(() => this.router.navigate(['/']), 3000);
+        setTimeout(() => {
+          this.userSharedService.setUser();
+          this.router.navigate(['/']);
+        }, 3000);
       },
       error: () => {
         this.onRegisterConfirm = 'error';

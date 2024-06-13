@@ -1,0 +1,44 @@
+<form>
+  <fieldset>
+    <legend>{{ "SETTINGS_PAGE.PROFILE_IMAGE" | translate }}</legend>
+
+    <hr />
+
+    <div id="image" class="text-center">
+      @if (userSharedService.image) {
+        <div class="text-end">
+          <img [src]="userSharedService.image" [alt]="userSharedService.name" />
+
+          @if (onImageChange !== "true") {
+            <span
+              (click)="onDeleteImageClick()"
+              id="delete-image"
+              class="fa-regular fa-circle-xmark"
+            ></span>
+          }
+        </div>
+      } @else {
+        <span id="user-icon" class="fa-regular fa-circle-user fa-6x"></span>
+      }
+    </div>
+    <div [class.mt-3]="!userSharedService.image" class="text-center">
+      @if (onImageChange === "true") {
+        <button class="btn btn-outline-primary" disabled="true">
+          {{ "GENERAL.UPDATING" | translate }}
+        </button>
+      } @else {
+        <label for="file" class="btn btn-outline-primary">
+          {{ "SETTINGS_PAGE.CHANGE_IMAGE" | translate }}
+        </label>
+        <input
+          (change)="onFileSelected($event)"
+          id="file"
+          type="file"
+          autocomplete="off"
+          required
+          hidden
+        />
+      }
+    </div>
+  </fieldset>
+</form>

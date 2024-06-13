@@ -19,6 +19,11 @@
     "CREATE": "Créer",
     "CREATION": "Création...",
     "IN": "Dans",
+    "UPDATING": "Mise à jour...",
+    "MODIFY": "Modifier",
+    "MODIFICATION": "Modification...",
+    "DELETION": "Suppression...",
+    "EDIT": "Éditer",
     "DATE": {
       "UPDATED": "Mis à jour"
     }
@@ -75,13 +80,13 @@
     "VALIDATION": "Validation..."
   },
   "REGISTER_CONFIRM_PAGE": {
-    "ERRORS": {
-      "CONFIRMATION_FAILED": "Impossible de confirmer le compte."
-    },
     "TITLE": "Confirmation du compte",
     "CONFIRM": "Confirmation du compte",
     "CLICK_CONFIRM": "Cliquez pour confirmer votre compte",
-    "CONFIRMED": "Compte confirmé. Vous allez être redirigé..."
+    "CONFIRMED": "Compte confirmé. Vous allez être redirigé...",
+    "ERRORS": {
+      "CONFIRMATION_FAILED": "Impossible de confirmer le compte."
+    }
   },
   "PASSWORD_FORGOTTEN_PAGE": {
     "ERRORS": {
@@ -168,7 +173,22 @@
     "NO_BIOGRAPHY": "Cet utilisateur n'a pas ajouté de biographie.",
     "NO_ARTICLES": "Cet utilisateur n'a pas écrit d'articles.",
     "NO_DISCUSSIONS": "Cet utilisateur n'a jamais commencé de discussion.",
-    "NO_MESSAGES": "Cet utilisateur n'a posté aucun messages."
+    "NO_MESSAGES": "Cet utilisateur n'a posté aucun messages.",
+    "ANONYMOUS_USER": "Ce compte a été supprimé et est maintenant anonyme."
+  },
+  "SETTINGS_PAGE": {
+    "PROFILE_IMAGE": "Image de profil",
+    "CHANGE_IMAGE": "Changer l'image",
+    "PASSWORD_MODIFIED": "Le mot de passe a été modifié.",
+    "BIOGRAPHY_MODIFIED": "La biographie a été modifiée.",
+    "DELETE_ACCOUNT": "Supprimer le compte",
+    "DELETE_ACCOUNT_WARNING": "Attention cette action est irréversible. Vous allez perdre l'accès complet à votre compte. Le contenu publié sera anonymisé.",
+    "ACCOUNT_DELETED": "Compte supprimé. Vous allez être redirigé...",
+    "ERRORS": {
+      "PASSWORD_MIN_LENGTH": "Le mot de passe doit contenir au moins 12 caractères.",
+      "REPEATED_PASSWORD_MIN_LENGTH": "Le mot de passe répété doit contenir au moins 12 caractères.",
+      "REPEATED_PASSWORD_NO_MATCH": "Le mot de passe répété doit être égal au mot de passe"
+    }
   },
   "404_PAGE": {
     "TITLE": "404 - Page introuvable",

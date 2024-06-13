@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { RouterOutlet, Router } from '@angular/router';
+import { RouterOutlet } from '@angular/router';
 
 import { TranslateService } from '@ngx-translate/core';
 
@@ -11,7 +11,6 @@ import { LoginComponent } from './core/components/login/login.component';
 import { CategorySharedService } from './shared/services/category/category-shared.service';
 import { UserSharedService } from './shared/services/user/user-shared.service';
 import { AuthSharedService } from './shared/services/auth/auth-shared.service';
-import { StorageSharedService } from './shared/services/storage/storage-shared.service';
 import { ForumSharedService } from './shared/services/forum/forum-shared.service';
 
 @Component({
@@ -33,12 +32,10 @@ export class AppComponent implements OnInit {
 
   constructor(
     public translate: TranslateService,
-    private router: Router,
     private categorySharedService: CategorySharedService,
     private forumSharedService: ForumSharedService,
     public userSharedService: UserSharedService,
     private authSharedService: AuthSharedService,
-    private storageSharedService: StorageSharedService,
   ) {
     translate.addLangs(['fr']);
     translate.setDefaultLang('fr');
@@ -52,29 +49,7 @@ export class AppComponent implements OnInit {
   }
 
   logout(): void {
-    this.authSharedService.logout().subscribe({
-      complete: () => {
-        this.userSharedService.id = null;
-        this.userSharedService.name = null;
-        this.userSharedService.email = null;
-        this.userSharedService.image = null;
-        this.userSharedService.roles = null;
-
-        setTimeout(() => this.storageSharedService.clear());
-        this.storageSharedService.deleteCookie('token', '/');
-
-        const nouvelleDiscussionRegex = new RegExp(
-          '/forum/[^/]+/discussion/nouvelle',
-        );
-
-        if (
-          this.router.url === '/article/nouveau' ||
-          nouvelleDiscussionRegex.test(this.router.url)
-        ) {
-          this.router.navigate(['/']);
-        }
-      },
-    });
+    this.authSharedService.doLogout();
   }
 
   onRegisterClick(): void {

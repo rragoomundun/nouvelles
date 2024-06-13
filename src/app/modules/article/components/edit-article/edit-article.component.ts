@@ -10,7 +10,7 @@ import { TranslateModule } from '@ngx-translate/core';
 
 import { AppSharedService } from '../../../../shared/services/app/app-shared.service';
 import { CategorySharedService } from '../../../../shared/services/category/category-shared.service';
-import { UploadSharedService } from '../../../../shared/services/file/upload-shared.service';
+import { FileSharedService } from '../../../../shared/services/file/file-shared.service';
 import { ArticleSharedService } from '../../../../shared/services/article/article-shared.service';
 import { ArticleService } from '../../services/article/article.service';
 import { UrlSharedService } from '../../../../shared/services/url/url-shared.service';
@@ -38,7 +38,7 @@ export class EditArticleComponent implements OnInit {
     private appSharedService: AppSharedService,
     private articleSharedService: ArticleSharedService,
     private articleService: ArticleService,
-    private uploadSharedService: UploadSharedService,
+    private fileSharedService: FileSharedService,
     private urlSharedService: UrlSharedService,
     public categorySharedService: CategorySharedService,
   ) {}
@@ -134,7 +134,7 @@ export class EditArticleComponent implements OnInit {
         },
       });
     } else {
-      this.uploadSharedService.upload(<File>this.file).subscribe({
+      this.fileSharedService.upload(<File>this.file).subscribe({
         next: (value: any) => {
           data.image = value.file;
 

@@ -23,5 +23,14 @@
         article.category.name
       }}</a>
     </span>
+
+    @if (showEditButton) {
+      <br /><br />
+
+      <a [routerLink]="['/article', article.id, 'editer']">
+        <span class="fa-solid fa-pen"></span>
+        {{ "GENERAL.EDIT" | translate }}
+      </a>
+    }
   </div>
 </div>

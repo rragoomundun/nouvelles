@@ -58,6 +58,11 @@ a.content-link:hover {
   margin-bottom: 1rem;
 }
 
+/* Article */
+app-article #content img {
+  max-width: 100%;
+}
+
 /* Discussions */
 .message-content {
   img {
@@ -71,6 +76,10 @@ a.content-link:hover {
   .dropdown-item:hover {
     cursor: pointer;
   }
+}
+
+legend {
+  font-size: 1.25rem !important;
 }
 
 /* Importing Bootstrap SCSS file. */

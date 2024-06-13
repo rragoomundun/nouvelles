@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
 
+import { authGuard } from './core/guards/auth/auth.guard';
 import { isAdminOrRedactorGuard } from './core/guards/is-admin-or-redactor-guard/is-admin-or-redactor.guard';
 
 export const routes: Routes = [
@@ -42,6 +43,14 @@ export const routes: Routes = [
     path: 'profile',
     loadChildren: () =>
       import('./modules/profile/profile.module').then((m) => m.ProfileModule),
+  },
+  {
+    path: 'settings',
+    loadChildren: () =>
+      import('./modules/settings/settings.module').then(
+        (m) => m.SettingsModule,
+      ),
+    canActivate: [authGuard],
   },
   {
     path: '**',
