@@ -1,1 +1,20 @@
-<p>search-discussions works!</p>
+@if (messages && messages.length) {
+  @for (message of messages; track message) {
+    <div class="row">
+      <div class="col">
+        <app-search-discussions-item
+          [message]="message"
+        ></app-search-discussions-item>
+      </div>
+    </div>
+  }
+} @else if (messages !== undefined) {
+  <p>{{ "SEARCH_PAGE.ERRORS.NO_MESSAGES" | translate }}</p>
+} @else if (!query) {
+  <p>{{ "SEARCH_PAGE.ERRORS.NO_MESSAGES_NO_SEARCH" | translate }}</p>
+}
+
+@if (nbPages) {
+  <br />
+  <app-pagination [nbPages]="nbPages"></app-pagination>
+}
