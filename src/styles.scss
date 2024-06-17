@@ -71,6 +71,11 @@ app-article #content img {
 }
 
 /* Bootstrap */
+@media (min-width: 576px) {
+  .container {
+    max-width: 100% !important;
+  }
+}
 
 .dropdown-menu {
   .dropdown-item:hover {

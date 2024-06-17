@@ -9,6 +9,7 @@
     "NAME": "Nom",
     "BIOGRAPHY": "Biographie",
     "ARTICLES": "Articles",
+    "FORUM": "Forum",
     "MESSAGE": "Message",
     "MESSAGES": "Messages",
     "MESSAGE_LOWER": "message",
@@ -29,7 +30,6 @@
     }
   },
   "HEADER": {
-    "FORUM": "Forum",
     "ACCOUNT": {
       "ACCOUNT": "Compte",
       "MY_ACCOUNT": "Mon Compte",
@@ -188,6 +188,14 @@
       "PASSWORD_MIN_LENGTH": "Le mot de passe doit contenir au moins 12 caractères.",
       "REPEATED_PASSWORD_MIN_LENGTH": "Le mot de passe répété doit contenir au moins 12 caractères.",
       "REPEATED_PASSWORD_NO_MATCH": "Le mot de passe répété doit être égal au mot de passe"
+    }
+  },
+  "SEARCH_PAGE": {
+    "TITLE": "Recherche",
+    "SEARCH_IN": "Rechercher dans",
+    "ERRORS": {
+      "NO_ARTICLES": "Aucun article trouvé pour cette recherche.",
+      "NO_ARTICLES_NO_SEARCH": "Veuillez entrer un terme pour trouver des articles."
     }
   },
   "404_PAGE": {

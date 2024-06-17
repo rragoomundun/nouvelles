@@ -4,6 +4,7 @@
       <a
         [routerLink]="['./']"
         [queryParams]="{ page: page - 1 }"
+        [queryParamsHandling]="'merge'"
         class="page-link"
       >
         {{ "UTILS.PREVIOUS" | translate }}
@@ -16,6 +17,7 @@
           <a
             [routerLink]="['./']"
             [queryParams]="{ page: p }"
+            [queryParamsHandling]="'merge'"
             class="page-link"
           >
             {{ p }}
@@ -29,6 +31,7 @@
             <a
               [routerLink]="['./']"
               [queryParams]="{ page: p }"
+              [queryParamsHandling]="'merge'"
               class="page-link"
             >
               {{ p }}
@@ -46,6 +49,7 @@
           <a
             [routerLink]="['./']"
             [queryParams]="{ page: nbPages }"
+            [queryParamsHandling]="'merge'"
             class="page-link"
           >
             {{ nbPages }}
@@ -56,6 +60,7 @@
           <a
             [routerLink]="['./']"
             [queryParams]="{ page: 1 }"
+            [queryParamsHandling]="'merge'"
             class="page-link"
           >
             1
@@ -73,6 +78,7 @@
             <a
               [routerLink]="['./']"
               [queryParams]="{ page: p }"
+              [queryParamsHandling]="'merge'"
               class="page-link"
             >
               {{ p }}
@@ -84,6 +90,7 @@
           <a
             [routerLink]="['./']"
             [queryParams]="{ page: 1 }"
+            [queryParamsHandling]="'merge'"
             class="page-link"
           >
             1
@@ -99,6 +106,7 @@
             <a
               [routerLink]="['./']"
               [queryParams]="{ page: p }"
+              [queryParamsHandling]="'merge'"
               class="page-link"
             >
               {{ p }}
@@ -114,6 +122,7 @@
           <a
             [routerLink]="['./']"
             [queryParams]="{ page: nbPages }"
+            [queryParamsHandling]="'merge'"
             class="page-link"
           >
             {{ nbPages }}
@@ -126,6 +135,7 @@
       <a
         [routerLink]="['./']"
         [queryParams]="{ page: page + 1 }"
+        [queryParamsHandling]="'merge'"
         class="page-link"
       >
         {{ "UTILS.NEXT" | translate }}

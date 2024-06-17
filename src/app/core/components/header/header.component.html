@@ -15,7 +15,7 @@
       >
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+      <div class="collapse navbar-collapse">
         <ul class="navbar-nav mb-2 mb-lg-0">
           @for (category of categorySharedService.categories; track category) {
             <li class="nav-item">
@@ -29,11 +29,18 @@
           }
 
           <li class="nav-item">
-            <form id="search-bar" class="d-flex" role="search">
+            <form
+              [formGroup]="searchForm"
+              (submit)="onSearchSubmit($event)"
+              id="search-bar"
+              class="d-flex"
+              role="search"
+            >
               <input
                 class="form-control"
                 type="search"
                 placeholder="{{ 'GENERAL.SEARCH' | translate }}"
+                formControlName="query"
               />
               <button class="btn" type="submit">
                 <i class="fa-solid fa-magnifying-glass"></i>
@@ -45,7 +52,7 @@
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
           <li class="nav-item">
             <a routerLink="forum" class="nav-link">
-              {{ "HEADER.FORUM" | translate }}</a
+              {{ "GENERAL.FORUM" | translate }}</a
             >
           </li>
 
@@ -106,7 +113,7 @@
                   </li>
                 }
                 <li>
-                  <a routerLink="/settings" class="dropdown-item">
+                  <a routerLink="/parametres" class="dropdown-item">
                     <span class="fa-solid fa-gear"></span>
                     {{ "HEADER.ACCOUNT.SETTINGS" | translate }}
                   </a>

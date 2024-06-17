@@ -1,13 +1,7 @@
 <div class="row">
   <div class="col">
     <p class="message">
-      <a
-        [routerLink]="[discussionLink]"
-        [queryParams]="{ page: message.discussion.page }"
-        [fragment]="fragment"
-      >
-        {{ message.content }}
-      </a>
+      {{ message.content }}
     </p>
 
     <span>{{ message.dateFormatted }}</span>
@@ -16,7 +10,12 @@
 
     <span>
       {{ "GENERAL.IN" | translate }}
-      <a routerLink="{{ discussionLink }}">{{ message.discussion.name }}</a>
+      <a
+        routerLink="{{ discussionLink }}"
+        [queryParams]="{ page: message.discussion.page }"
+        [fragment]="fragment"
+        >{{ message.discussion.name }}</a
+      >
     </span>
   </div>
 </div>
