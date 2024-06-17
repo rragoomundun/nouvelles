@@ -1,0 +1,19 @@
+<div>
+  <a
+    [routerLink]="[
+      '/forum',
+      message.forum.label,
+      'discussion',
+      message.discussion.id,
+      urlSharedService.toLowerURL(message.discussion.name)
+    ]"
+    [queryParams]="{ page: message.discussion.page }"
+    [fragment]="'message-' + message.id"
+  >
+    {{ message.discussion.name }}
+  </a>
+
+  <p>{{ message.content }}</p>
+
+  <span>{{ message.dateFormatted }}</span>
+</div>

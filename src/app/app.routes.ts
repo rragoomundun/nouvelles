@@ -45,12 +45,17 @@ export const routes: Routes = [
       import('./modules/profile/profile.module').then((m) => m.ProfileModule),
   },
   {
-    path: 'settings',
+    path: 'parametres',
     loadChildren: () =>
       import('./modules/settings/settings.module').then(
         (m) => m.SettingsModule,
       ),
     canActivate: [authGuard],
+  },
+  {
+    path: 'rechercher',
+    loadChildren: () =>
+      import('./modules/search/search.module').then((m) => m.SearchModule),
   },
   {
     path: '**',

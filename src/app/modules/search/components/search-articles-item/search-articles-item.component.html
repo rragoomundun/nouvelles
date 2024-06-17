@@ -1,0 +1,13 @@
+<a
+  [routerLink]="[
+    '/categorie',
+    article.category,
+    'article',
+    article.id,
+    urlSharedService.toLowerURL(article.title)
+  ]"
+  class="title-link"
+>
+  <img [src]="article.image" [alt]="article.title" class="image-ratio-16x9" />
+  <h5>{{ article.title }}</h5>
+</a>

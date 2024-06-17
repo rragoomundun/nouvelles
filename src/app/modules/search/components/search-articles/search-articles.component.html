@@ -1,0 +1,20 @@
+@if (articles && articles.length) {
+  <div class="row">
+    @for (article of articles; track article) {
+      <div class="col-12 col-sm-6">
+        <app-search-articles-item
+          [article]="article"
+        ></app-search-articles-item>
+      </div>
+    }
+  </div>
+} @else if (articles !== undefined) {
+  <p>{{ "SEARCH_PAGE.ERRORS.NO_ARTICLES" | translate }}</p>
+} @else if (!query) {
+  <p>{{ "SEARCH_PAGE.ERRORS.NO_ARTICLES_NO_SEARCH" | translate }}</p>
+}
+
+@if (nbPages) {
+  <br />
+  <app-pagination [nbPages]="nbPages"></app-pagination>
+}
