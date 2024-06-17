@@ -59,7 +59,7 @@ export class AuthSharedService {
         setTimeout(() => this.storageSharedService.clear());
         this.storageSharedService.deleteCookie('token', '/');
 
-        const disabledRoutes = ['/article/nouveau', '/settings'];
+        const disabledRoutes = ['/article/nouveau', '/parametres'];
         const nouvelleDiscussionRegex = new RegExp(
           '/forum/[^/]+/discussion/nouvelle',
         );

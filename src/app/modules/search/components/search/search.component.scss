@@ -1,0 +1,18 @@
+#search-bar {
+  input {
+    border-right: none;
+  }
+
+  button {
+    border: var(--bs-border-width) solid var(--bs-border-color);
+    border-left: none;
+  }
+}
+
+#search-area {
+  display: flex;
+
+  .form-check {
+    margin-left: 0.5rem;
+  }
+}

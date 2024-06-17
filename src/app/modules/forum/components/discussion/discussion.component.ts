@@ -178,7 +178,7 @@ export class DiscussionComponent implements OnInit, OnDestroy {
               document
                 .getElementById(anchor)
                 ?.scrollIntoView({ behavior: 'instant' });
-              window.scrollBy({ top: -70, behavior: 'instant' });
+              window.scrollBy({ top: -100, behavior: 'instant' });
             });
           } else if (scrollTop) {
             setTimeout(() => window.scrollTo({ top: 0, behavior: 'instant' }));

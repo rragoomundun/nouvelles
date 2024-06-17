@@ -1,0 +1,60 @@
+<div class="container">
+  <form [formGroup]="searchForm" (submit)="onSubmit($event)">
+    <div class="mt-3">
+      <label for="search" class="form-label">
+        {{ "GENERAL.SEARCH" | translate }}
+      </label>
+
+      <div id="search-bar" class="input-group">
+        <input type="text" class="form-control" formControlName="query" />
+        <button class="btn">
+          <span class="fa-solid fa-magnifying-glass"></span>
+        </button>
+      </div>
+    </div>
+
+    <div id="search-area" class="mt-3">
+      <label class="form-label">
+        {{ "SEARCH_PAGE.SEARCH_IN" | translate }} :
+      </label>
+
+      <div class="form-check">
+        <input
+          (change)="onSearchAreaChange()"
+          id="search-area-1"
+          name="searchArea"
+          type="radio"
+          value="articles"
+          class="form-check-input"
+          formControlName="searchArea"
+        />
+        <label class="form-check-label" for="search-area-1">
+          {{ "GENERAL.ARTICLES" | translate }}
+        </label>
+      </div>
+
+      <div class="form-check">
+        <input
+          (change)="onSearchAreaChange()"
+          id="search-area-2"
+          name="searchArea"
+          type="radio"
+          value="forum"
+          class="form-check-input"
+          formControlName="searchArea"
+        />
+        <label class="form-check-label" for="search-area-2">
+          {{ "GENERAL.FORUM" | translate }}
+        </label>
+      </div>
+    </div>
+  </form>
+
+  <hr />
+
+  @if (searchAreaControl === "articles") {
+    <app-search-articles [query]="queryControl"></app-search-articles>
+  } @else {
+    <app-search-discussions></app-search-discussions>
+  }
+</div>
