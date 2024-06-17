@@ -81,6 +81,6 @@ export class SearchComponent implements OnInit {
   @HostListener('document:headerSearch', ['$event'])
   onHeaderSearch(event: any) {
     this.searchForm.controls['query'].setValue(event.detail.query);
-    this.load();
+    setTimeout(() => this.load());
   }
 }
