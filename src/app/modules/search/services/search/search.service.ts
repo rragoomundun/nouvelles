@@ -19,4 +19,12 @@ export class SearchService {
   searchArticlesMeta(params: any): Observable<any> {
     return this.http.get(`${this.API_PREFIX}/articles/meta`, { params });
   }
+
+  searchDiscussions(params: any): Observable<any> {
+    return this.http.get(`${this.API_PREFIX}/discussions`, { params });
+  }
+
+  searchDiscussionsMeta(params: any): Observable<any> {
+    return this.http.get(`${this.API_PREFIX}/discussions/meta`, { params });
+  }
 }

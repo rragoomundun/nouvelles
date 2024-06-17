@@ -195,7 +195,9 @@
     "SEARCH_IN": "Rechercher dans",
     "ERRORS": {
       "NO_ARTICLES": "Aucun article trouvé pour cette recherche.",
-      "NO_ARTICLES_NO_SEARCH": "Veuillez entrer un terme pour trouver des articles."
+      "NO_ARTICLES_NO_SEARCH": "Veuillez entrer un terme pour trouver des articles.",
+      "NO_MESSAGES": "Aucun message trouvé pour cette recherche.",
+      "NO_MESSAGES_NO_SEARCH": "Veuillez entrer un terme pour trouver des messages sur le forum."
     }
   },
   "404_PAGE": {

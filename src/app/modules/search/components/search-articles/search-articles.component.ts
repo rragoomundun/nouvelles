@@ -74,7 +74,7 @@ export class SearchArticlesComponent implements OnInit, OnDestroy {
     const params = { query: this.query };
 
     this.searchService.searchArticlesMeta(params).subscribe({
-      next: (value) => {
+      next: (value: any) => {
         this.nbPages = value.nbPages;
       },
     });

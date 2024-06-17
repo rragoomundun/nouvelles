@@ -55,6 +55,6 @@
   @if (searchAreaControl === "articles") {
     <app-search-articles [query]="queryControl"></app-search-articles>
   } @else {
-    <app-search-discussions></app-search-discussions>
+    <app-search-discussions [query]="queryControl"></app-search-discussions>
   }
 </div>
