@@ -8,6 +8,7 @@ import {
 } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
+import { isPlatformBrowser } from '@angular/common';
 import { Subscription } from 'rxjs';
 
 import { SearchDiscussionsItemComponent } from '../search-discussions-item/search-discussions-item.component';
@@ -65,6 +66,10 @@ export class SearchDiscussionsComponent implements OnInit, OnDestroy {
     this.searchService.searchDiscussions(params).subscribe({
       next: (value: any[]) => {
         this.messages = value;
+
+        if (isPlatformBrowser(this.platformId)) {
+          setTimeout(() => window.scrollTo({ top: 0, behavior: 'instant' }));
+        }
       },
     });
   }
