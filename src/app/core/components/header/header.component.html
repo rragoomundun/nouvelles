@@ -8,14 +8,14 @@
         class="navbar-toggler"
         type="button"
         data-bs-toggle="collapse"
-        data-bs-target="#navbarTogglerDemo02"
-        aria-controls="navbarTogglerDemo02"
+        data-bs-target="#navbar-toggler"
+        aria-controls="navbar-toggler"
         aria-expanded="false"
         aria-label="Toggle navigation"
       >
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse">
+      <div id="navbar-toggler" class="collapse navbar-collapse">
         <ul class="navbar-nav mb-2 mb-lg-0">
           @for (category of categorySharedService.categories; track category) {
             <li class="nav-item">
