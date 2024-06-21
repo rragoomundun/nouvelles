@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import removeAccents from 'remove-accents';
+import slugify from 'slugify';
 
 @Injectable({
   providedIn: 'root',
@@ -8,23 +8,12 @@ import removeAccents from 'remove-accents';
 export class UrlSharedService {
   constructor() {}
 
-  toLowerURL(url: string): string {
-    return removeAccents(
-      url
-        .toLowerCase()
-        .replaceAll('«', '')
-        .replaceAll('»', '')
-        .replaceAll(',', '')
-        .replaceAll('(', '')
-        .replaceAll(')', '')
-        .replaceAll('.', '')
-        .replaceAll(' ?', '')
-        .replaceAll(' !', '')
-        .replaceAll(' ', '-')
-        .replaceAll("'", '-')
-        .replaceAll('’', '-')
-        .replaceAll('-:-', '-')
-        .replaceAll('--', '-'),
-    );
+  toLowerURL(str: string): string {
+    const slug = slugify(str, {
+      strict: true,
+      lower: true,
+    });
+
+    return slug;
   }
 }
