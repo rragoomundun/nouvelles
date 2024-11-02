@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  API_URL: 'https://api-nouvelles.r3tests.net/v1',
+  API_URL: 'http://52.208.85.133:5000/v1',
 };
