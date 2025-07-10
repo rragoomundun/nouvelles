@@ -21,6 +21,7 @@
             <li class="nav-item">
               <a
                 [routerLink]="['/categorie/' + category.label]"
+                (click)="hideHamburgerMenu()"
                 class="nav-link"
               >
                 {{ category.name }}
@@ -51,7 +52,11 @@
 
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a routerLink="forum" class="nav-link">
+            <a
+              (click)="hideHamburgerMenu()"
+              routerLink="forum"
+              class="nav-link"
+            >
               {{ "GENERAL.FORUM" | translate }}</a
             >
           </li>
@@ -81,18 +86,28 @@
             <ul class="dropdown-menu">
               @if (userSharedService.isLoggedIn === false) {
                 <li>
-                  <a (click)="onRegisterClick()" class="dropdown-item">
+                  <a
+                    (click)="onRegisterClick(); hideHamburgerMenu()"
+                    class="dropdown-item"
+                  >
                     {{ "GENERAL.REGISTER" | translate }}
                   </a>
                 </li>
                 <li>
-                  <a (click)="onLoginClick()" class="dropdown-item">
+                  <a
+                    (click)="onLoginClick(); hideHamburgerMenu()"
+                    class="dropdown-item"
+                  >
                     {{ "GENERAL.LOGIN" | translate }}
                   </a>
                 </li>
               } @else {
                 <li>
-                  <a routerLink="{{ profileLink }}" class="dropdown-item">
+                  <a
+                    (click)="hideHamburgerMenu()"
+                    routerLink="{{ profileLink }}"
+                    class="dropdown-item"
+                  >
                     <span class="fa-regular fa-circle-user"></span>
                     {{ "HEADER.ACCOUNT.MY_ACCOUNT" | translate }}
                   </a>
@@ -105,6 +120,7 @@
                   <li>
                     <a
                       [routerLink]="['/article/nouveau']"
+                      (click)="hideHamburgerMenu()"
                       class="dropdown-item"
                     >
                       <span class="fa-solid fa-pen-to-square"></span>
@@ -113,7 +129,11 @@
                   </li>
                 }
                 <li>
-                  <a routerLink="/parametres" class="dropdown-item">
+                  <a
+                    (click)="hideHamburgerMenu()"
+                    routerLink="/parametres"
+                    class="dropdown-item"
+                  >
                     <span class="fa-solid fa-gear"></span>
                     {{ "HEADER.ACCOUNT.SETTINGS" | translate }}
                   </a>

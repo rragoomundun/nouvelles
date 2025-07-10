@@ -47,6 +47,16 @@ export class HeaderComponent implements OnInit {
     });
   }
 
+  hideHamburgerMenu(): void {
+    const navbarTogglerEl = <HTMLButtonElement>(
+      document.querySelector('.navbar-toggler')
+    );
+
+    if (navbarTogglerEl) {
+      navbarTogglerEl.click();
+    }
+  }
+
   onRegisterClick() {
     this.registerClick.emit();
   }
@@ -57,6 +67,7 @@ export class HeaderComponent implements OnInit {
 
   onLogoutClick() {
     this.logoutClick.emit();
+    this.hideHamburgerMenu();
   }
 
   onSearchSubmit(event: any) {
@@ -77,6 +88,7 @@ export class HeaderComponent implements OnInit {
         document.dispatchEvent(event);
       } else {
         this.router.navigate(['/rechercher'], { queryParams: { query } });
+        this.hideHamburgerMenu();
       }
 
       this.searchForm.controls['query'].setValue('');
