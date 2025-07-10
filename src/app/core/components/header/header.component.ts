@@ -1,4 +1,10 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  Output,
+  EventEmitter,
+  HostListener,
+} from '@angular/core';
 import { RouterLink, Router } from '@angular/router';
 
 import { TranslateModule } from '@ngx-translate/core';
@@ -54,6 +60,15 @@ export class HeaderComponent implements OnInit {
 
     if (navbarTogglerEl) {
       navbarTogglerEl.click();
+    }
+  }
+
+  @HostListener('window:click', ['$event'])
+  onWindowClick(event: any): void {
+    const header = document.querySelector('header');
+
+    if (header?.contains(event.target) === false) {
+      this.hideHamburgerMenu();
     }
   }
 
