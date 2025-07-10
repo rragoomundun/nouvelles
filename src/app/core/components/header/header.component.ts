@@ -66,8 +66,11 @@ export class HeaderComponent implements OnInit {
   @HostListener('window:click', ['$event'])
   onWindowClick(event: any): void {
     const header = document.querySelector('header');
+    const navbarTogglerEl = document.querySelector(
+      '.navbar-collapse.collapse.show',
+    );
 
-    if (header?.contains(event.target) === false) {
+    if (header?.contains(event.target) === false && navbarTogglerEl) {
       this.hideHamburgerMenu();
     }
   }
