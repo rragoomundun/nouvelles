@@ -75,7 +75,10 @@ export class HeaderComponent implements OnInit {
       navbarTogglerEl &&
       window.innerWidth < 992
     ) {
+      console.log('HIDE HAMBURGER MENU');
       this.hideHamburgerMenu();
+    } else {
+      console.log('DONT HIDE HAMBURGER MENU');
     }
   }
 
