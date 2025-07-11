@@ -58,7 +58,7 @@ export class HeaderComponent implements OnInit {
       document.querySelector('.navbar-toggler')
     );
 
-    if (navbarTogglerEl) {
+    if (navbarTogglerEl && window.innerWidth < 992) {
       navbarTogglerEl.click();
     }
   }
@@ -70,11 +70,7 @@ export class HeaderComponent implements OnInit {
       '.navbar-collapse.collapse.show',
     );
 
-    if (
-      header?.contains(event.target) === false &&
-      navbarTogglerEl &&
-      window.innerWidth < 992
-    ) {
+    if (header?.contains(event.target) === false && navbarTogglerEl) {
       this.hideHamburgerMenu();
     }
   }
