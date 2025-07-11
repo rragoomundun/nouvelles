@@ -70,7 +70,11 @@ export class HeaderComponent implements OnInit {
       '.navbar-collapse.collapse.show',
     );
 
-    if (header?.contains(event.target) === false && navbarTogglerEl) {
+    if (
+      header?.contains(event.target) === false &&
+      navbarTogglerEl &&
+      window.innerWidth < 992
+    ) {
       this.hideHamburgerMenu();
     }
   }
