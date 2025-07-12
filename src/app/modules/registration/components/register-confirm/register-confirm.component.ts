@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, RouterLink } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 
@@ -7,12 +7,12 @@ import { AuthService } from '../../../auth/services/auth/auth.service';
 import { UserSharedService } from '../../../../shared/services/user/user-shared.service';
 
 @Component({
-    selector: 'app-register-confirm',
-    imports: [TranslateModule, RouterLink],
-    templateUrl: './register-confirm.component.html',
-    styleUrl: './register-confirm.component.scss'
+  selector: 'app-register-confirm',
+  imports: [TranslateModule, RouterLink],
+  templateUrl: './register-confirm.component.html',
+  styleUrl: './register-confirm.component.scss',
 })
-export class RegisterConfirmComponent {
+export class RegisterConfirmComponent implements OnInit {
   onRegisterConfirm: string;
 
   constructor(
@@ -27,7 +27,7 @@ export class RegisterConfirmComponent {
     this.onRegisterConfirm = 'false';
   }
 
-  onRegisterConfirmClick() {
+  ngOnInit(): void {
     const confirmationToken =
       this.activatedRoute.snapshot.paramMap.get('confirmationToken');
 
