@@ -1,15 +1,15 @@
 {
-  "routes": [
-    "/",
-    "/article",
-    "/article/nouveau",
-    "/auth",
-    "/auth/mot-de-passe-oublie",
-    "/categorie",
-    "/forum",
-    "/inscription",
-    "/parametres",
-    "/profile",
-    "/rechercher"
-  ]
+  "routes": {
+    "/": {},
+    "/article": {},
+    "/article/nouveau": {},
+    "/auth": {},
+    "/auth/mot-de-passe-oublie": {},
+    "/categorie": {},
+    "/forum": {},
+    "/inscription": {},
+    "/parametres": {},
+    "/profile": {},
+    "/rechercher": {}
+  }
 }
