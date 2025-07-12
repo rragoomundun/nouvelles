@@ -14,17 +14,16 @@ import { AuthSharedService } from './shared/services/auth/auth-shared.service';
 import { ForumSharedService } from './shared/services/forum/forum-shared.service';
 
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [
-    RouterOutlet,
-    HeaderComponent,
-    FooterComponent,
-    RegisterComponent,
-    LoginComponent,
-  ],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss',
+    selector: 'app-root',
+    imports: [
+        RouterOutlet,
+        HeaderComponent,
+        FooterComponent,
+        RegisterComponent,
+        LoginComponent,
+    ],
+    templateUrl: './app.component.html',
+    styleUrl: './app.component.scss'
 })
 export class AppComponent implements OnInit {
   @ViewChild(RegisterComponent) registerComponent!: RegisterComponent;

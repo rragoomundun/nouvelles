@@ -13,11 +13,10 @@ import { AppSharedService } from '../../../../shared/services/app/app-shared.ser
 import { AuthService } from '../../services/auth/auth.service';
 
 @Component({
-  selector: 'app-password-forgotten',
-  standalone: true,
-  imports: [ReactiveFormsModule, RouterLink, TranslateModule],
-  templateUrl: './password-forgotten.component.html',
-  styleUrl: './password-forgotten.component.scss',
+    selector: 'app-password-forgotten',
+    imports: [ReactiveFormsModule, RouterLink, TranslateModule],
+    templateUrl: './password-forgotten.component.html',
+    styleUrl: './password-forgotten.component.scss'
 })
 export class PasswordForgottenComponent {
   passwordForgottenForm: FormGroup;

@@ -15,11 +15,10 @@ import { CategorySharedService } from '../../../../shared/services/category/cate
 import { UrlSharedService } from '../../../../shared/services/url/url-shared.service';
 
 @Component({
-  selector: 'app-new-article',
-  standalone: true,
-  imports: [TranslateModule, ReactiveFormsModule, RouterModule],
-  templateUrl: './new-article.component.html',
-  styleUrl: './new-article.component.scss',
+    selector: 'app-new-article',
+    imports: [TranslateModule, ReactiveFormsModule, RouterModule],
+    templateUrl: './new-article.component.html',
+    styleUrl: './new-article.component.scss'
 })
 export class NewArticleComponent implements OnInit {
   title: string;

@@ -11,11 +11,10 @@ import { ForumSharedService } from '../../../../shared/services/forum/forum-shar
 import { ForumService } from '../../services/forum/forum.service';
 
 @Component({
-  selector: 'app-forum',
-  standalone: true,
-  imports: [RouterModule, TranslateModule, BreadcrumbComponent],
-  templateUrl: './forum.component.html',
-  styleUrl: './forum.component.scss',
+    selector: 'app-forum',
+    imports: [RouterModule, TranslateModule, BreadcrumbComponent],
+    templateUrl: './forum.component.html',
+    styleUrl: './forum.component.scss'
 })
 export class ForumComponent implements OnInit, OnDestroy {
   routerEventsSubscription: Subscription;

@@ -19,11 +19,10 @@ import {
 import { ForumService } from '../../services/forum/forum.service';
 
 @Component({
-  selector: 'app-edit-message',
-  standalone: true,
-  imports: [TranslateModule, ReactiveFormsModule],
-  templateUrl: './edit-message.component.html',
-  styleUrl: './edit-message.component.scss',
+    selector: 'app-edit-message',
+    imports: [TranslateModule, ReactiveFormsModule],
+    templateUrl: './edit-message.component.html',
+    styleUrl: './edit-message.component.scss'
 })
 export class EditMessageComponent implements OnInit {
   @ViewChild('content', { read: TemplateRef })

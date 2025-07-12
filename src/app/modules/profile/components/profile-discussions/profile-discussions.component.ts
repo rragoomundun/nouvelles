@@ -17,15 +17,14 @@ import { ProfileService } from '../../services/profile/profile.service';
 import { UserService } from '../../services/user/user.service';
 
 @Component({
-  selector: 'app-profile-discussions',
-  standalone: true,
-  imports: [
-    TranslateModule,
-    ProfileDiscussionsItemComponent,
-    PaginationComponent,
-  ],
-  templateUrl: './profile-discussions.component.html',
-  styleUrl: './profile-discussions.component.scss',
+    selector: 'app-profile-discussions',
+    imports: [
+        TranslateModule,
+        ProfileDiscussionsItemComponent,
+        PaginationComponent,
+    ],
+    templateUrl: './profile-discussions.component.html',
+    styleUrl: './profile-discussions.component.scss'
 })
 export class ProfileDiscussionsComponent implements OnInit, OnDestroy {
   discussions: any[];

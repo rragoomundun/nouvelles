@@ -16,11 +16,10 @@ import { ArticleService } from '../../services/article/article.service';
 import { UrlSharedService } from '../../../../shared/services/url/url-shared.service';
 
 @Component({
-  selector: 'app-edit-article',
-  standalone: true,
-  imports: [TranslateModule, RouterModule, ReactiveFormsModule],
-  templateUrl: './edit-article.component.html',
-  styleUrl: './edit-article.component.scss',
+    selector: 'app-edit-article',
+    imports: [TranslateModule, RouterModule, ReactiveFormsModule],
+    templateUrl: './edit-article.component.html',
+    styleUrl: './edit-article.component.scss'
 })
 export class EditArticleComponent implements OnInit {
   id: number;

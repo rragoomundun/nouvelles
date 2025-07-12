@@ -21,16 +21,15 @@ import { AppSharedService } from '../../../../shared/services/app/app-shared.ser
 import { UrlSharedService } from '../../../../shared/services/url/url-shared.service';
 
 @Component({
-  selector: 'app-profile',
-  standalone: true,
-  imports: [
-    TranslateModule,
-    RouterModule,
-    NavPanelComponent,
-    NotFoundComponent,
-  ],
-  templateUrl: './profile.component.html',
-  styleUrl: './profile.component.scss',
+    selector: 'app-profile',
+    imports: [
+        TranslateModule,
+        RouterModule,
+        NavPanelComponent,
+        NotFoundComponent,
+    ],
+    templateUrl: './profile.component.html',
+    styleUrl: './profile.component.scss'
 })
 export class ProfileComponent implements OnInit, OnDestroy {
   name: string;

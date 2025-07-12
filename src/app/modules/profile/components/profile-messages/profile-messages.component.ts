@@ -17,11 +17,10 @@ import { ProfileService } from '../../services/profile/profile.service';
 import { UserService } from '../../services/user/user.service';
 
 @Component({
-  selector: 'app-profile-messages',
-  standalone: true,
-  imports: [TranslateModule, ProfileMessagesItemComponent, PaginationComponent],
-  templateUrl: './profile-messages.component.html',
-  styleUrl: './profile-messages.component.scss',
+    selector: 'app-profile-messages',
+    imports: [TranslateModule, ProfileMessagesItemComponent, PaginationComponent],
+    templateUrl: './profile-messages.component.html',
+    styleUrl: './profile-messages.component.scss'
 })
 export class ProfileMessagesComponent implements OnInit, OnDestroy {
   messages: any[];

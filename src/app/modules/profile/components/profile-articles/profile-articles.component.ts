@@ -17,11 +17,10 @@ import { UserService } from '../../services/user/user.service';
 import { ProfileService } from '../../services/profile/profile.service';
 
 @Component({
-  selector: 'app-profile-articles',
-  standalone: true,
-  imports: [TranslateModule, ProfileArticlesItemComponent, PaginationComponent],
-  templateUrl: './profile-articles.component.html',
-  styleUrl: './profile-articles.component.scss',
+    selector: 'app-profile-articles',
+    imports: [TranslateModule, ProfileArticlesItemComponent, PaginationComponent],
+    templateUrl: './profile-articles.component.html',
+    styleUrl: './profile-articles.component.scss'
 })
 export class ProfileArticlesComponent implements OnInit, OnDestroy {
   articles: any[];

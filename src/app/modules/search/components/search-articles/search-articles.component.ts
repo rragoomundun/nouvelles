@@ -17,11 +17,10 @@ import { PaginationComponent } from '../../../../shared/components/pagination/pa
 import { SearchService } from '../../services/search/search.service';
 
 @Component({
-  selector: 'app-search-articles',
-  standalone: true,
-  imports: [TranslateModule, SearchArticlesItemComponent, PaginationComponent],
-  templateUrl: './search-articles.component.html',
-  styleUrl: './search-articles.component.scss',
+    selector: 'app-search-articles',
+    imports: [TranslateModule, SearchArticlesItemComponent, PaginationComponent],
+    templateUrl: './search-articles.component.html',
+    styleUrl: './search-articles.component.scss'
 })
 export class SearchArticlesComponent implements OnInit, OnDestroy {
   @Input() query: string;

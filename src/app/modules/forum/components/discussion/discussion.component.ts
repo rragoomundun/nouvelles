@@ -34,18 +34,17 @@ import { ForumSharedService } from '../../../../shared/services/forum/forum-shar
 import { NotFoundComponent } from '../../../not-found/components/not-found/not-found.component';
 
 @Component({
-  selector: 'app-discussion',
-  standalone: true,
-  imports: [
-    RouterModule,
-    TranslateModule,
-    PaginationComponent,
-    AnswerDiscussionComponent,
-    EditMessageComponent,
-    NotFoundComponent,
-  ],
-  templateUrl: './discussion.component.html',
-  styleUrl: './discussion.component.scss',
+    selector: 'app-discussion',
+    imports: [
+        RouterModule,
+        TranslateModule,
+        PaginationComponent,
+        AnswerDiscussionComponent,
+        EditMessageComponent,
+        NotFoundComponent,
+    ],
+    templateUrl: './discussion.component.html',
+    styleUrl: './discussion.component.scss'
 })
 export class DiscussionComponent implements OnInit, OnDestroy {
   readonly MESSAGES_PER_PAGE: number;

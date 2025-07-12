@@ -12,11 +12,10 @@ import { TranslateModule } from '@ngx-translate/core';
 import { AuthSharedService } from '../../../shared/services/auth/auth-shared.service';
 
 @Component({
-  selector: 'app-register',
-  standalone: true,
-  imports: [ReactiveFormsModule, TranslateModule],
-  templateUrl: './register.component.html',
-  styleUrl: './register.component.scss',
+    selector: 'app-register',
+    imports: [ReactiveFormsModule, TranslateModule],
+    templateUrl: './register.component.html',
+    styleUrl: './register.component.scss'
 })
 export class RegisterComponent {
   @ViewChild('registerModalTemplate') registerModalTemplate!: TemplateRef<any>;

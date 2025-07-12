@@ -26,11 +26,10 @@ import { AppSharedService } from '../../../../shared/services/app/app-shared.ser
 import { UrlSharedService } from '../../../../shared/services/url/url-shared.service';
 
 @Component({
-  selector: 'app-discussions',
-  standalone: true,
-  imports: [PaginationComponent, TranslateModule, RouterModule],
-  templateUrl: './discussions.component.html',
-  styleUrl: './discussions.component.scss',
+    selector: 'app-discussions',
+    imports: [PaginationComponent, TranslateModule, RouterModule],
+    templateUrl: './discussions.component.html',
+    styleUrl: './discussions.component.scss'
 })
 export class DiscussionsComponent implements OnInit, OnDestroy {
   routerEventsSubscription: Subscription;

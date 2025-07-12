@@ -11,11 +11,10 @@ import { TranslateModule } from '@ngx-translate/core';
 import { ForumService } from '../../services/forum/forum.service';
 
 @Component({
-  selector: 'app-answer-discussion',
-  standalone: true,
-  imports: [TranslateModule, ReactiveFormsModule],
-  templateUrl: './answer-discussion.component.html',
-  styleUrl: './answer-discussion.component.scss',
+    selector: 'app-answer-discussion',
+    imports: [TranslateModule, ReactiveFormsModule],
+    templateUrl: './answer-discussion.component.html',
+    styleUrl: './answer-discussion.component.scss'
 })
 export class AnswerDiscussionComponent implements OnInit {
   answerForm: FormGroup;

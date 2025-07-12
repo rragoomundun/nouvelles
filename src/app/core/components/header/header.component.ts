@@ -15,11 +15,10 @@ import { CategorySharedService } from '../../../shared/services/category/categor
 import { UrlSharedService } from '../../../shared/services/url/url-shared.service';
 
 @Component({
-  selector: 'app-header',
-  standalone: true,
-  imports: [TranslateModule, ReactiveFormsModule, RouterLink],
-  templateUrl: './header.component.html',
-  styleUrl: './header.component.scss',
+    selector: 'app-header',
+    imports: [TranslateModule, ReactiveFormsModule, RouterLink],
+    templateUrl: './header.component.html',
+    styleUrl: './header.component.scss'
 })
 export class HeaderComponent implements OnInit {
   @Output() registerClick: EventEmitter<void>;

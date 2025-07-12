@@ -9,16 +9,15 @@ import { SearchDiscussionsComponent } from '../search-discussions/search-discuss
 import { AppSharedService } from '../../../../shared/services/app/app-shared.service';
 
 @Component({
-  selector: 'app-search',
-  standalone: true,
-  imports: [
-    TranslateModule,
-    ReactiveFormsModule,
-    SearchArticlesComponent,
-    SearchDiscussionsComponent,
-  ],
-  templateUrl: './search.component.html',
-  styleUrl: './search.component.scss',
+    selector: 'app-search',
+    imports: [
+        TranslateModule,
+        ReactiveFormsModule,
+        SearchArticlesComponent,
+        SearchDiscussionsComponent,
+    ],
+    templateUrl: './search.component.html',
+    styleUrl: './search.component.scss'
 })
 export class SearchComponent implements OnInit {
   searchForm: FormGroup;

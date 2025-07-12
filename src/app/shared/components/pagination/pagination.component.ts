@@ -3,11 +3,10 @@ import { ActivatedRoute, RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
-  selector: 'app-pagination',
-  standalone: true,
-  imports: [RouterModule, TranslateModule],
-  templateUrl: './pagination.component.html',
-  styleUrl: './pagination.component.scss',
+    selector: 'app-pagination',
+    imports: [RouterModule, TranslateModule],
+    templateUrl: './pagination.component.html',
+    styleUrl: './pagination.component.scss'
 })
 export class PaginationComponent {
   @Input() nbPages: number;

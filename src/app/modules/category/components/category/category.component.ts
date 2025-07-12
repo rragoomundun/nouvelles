@@ -24,16 +24,15 @@ import { AppSharedService } from '../../../../shared/services/app/app-shared.ser
 import { UrlSharedService } from '../../../../shared/services/url/url-shared.service';
 
 @Component({
-  selector: 'app-category',
-  standalone: true,
-  imports: [
-    RouterLink,
-    TranslateModule,
-    PaginationComponent,
-    NotFoundComponent,
-  ],
-  templateUrl: './category.component.html',
-  styleUrl: './category.component.scss',
+    selector: 'app-category',
+    imports: [
+        RouterLink,
+        TranslateModule,
+        PaginationComponent,
+        NotFoundComponent,
+    ],
+    templateUrl: './category.component.html',
+    styleUrl: './category.component.scss'
 })
 export class CategoryComponent implements OnInit, OnDestroy {
   routerEventsSubscription: Subscription;

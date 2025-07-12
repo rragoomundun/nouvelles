@@ -6,11 +6,10 @@ import { FileSharedService } from '../../../../shared/services/file/file-shared.
 import { UserService } from '../../services/user/user.service';
 
 @Component({
-  selector: 'app-settings-image',
-  standalone: true,
-  imports: [TranslateModule],
-  templateUrl: './settings-image.component.html',
-  styleUrl: './settings-image.component.scss',
+    selector: 'app-settings-image',
+    imports: [TranslateModule],
+    templateUrl: './settings-image.component.html',
+    styleUrl: './settings-image.component.scss'
 })
 export class SettingsImageComponent implements OnInit {
   onImageChange: string;

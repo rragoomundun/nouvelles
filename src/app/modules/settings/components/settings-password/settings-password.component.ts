@@ -12,11 +12,10 @@ import { UserService } from '../../services/user/user.service';
 import { UserSharedService } from '../../../../shared/services/user/user-shared.service';
 
 @Component({
-  selector: 'app-settings-password',
-  standalone: true,
-  imports: [TranslateModule, ReactiveFormsModule],
-  templateUrl: './settings-password.component.html',
-  styleUrl: './settings-password.component.scss',
+    selector: 'app-settings-password',
+    imports: [TranslateModule, ReactiveFormsModule],
+    templateUrl: './settings-password.component.html',
+    styleUrl: './settings-password.component.scss'
 })
 export class SettingsPasswordComponent implements OnInit {
   passwordForm: FormGroup;

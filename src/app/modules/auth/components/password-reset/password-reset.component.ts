@@ -13,11 +13,10 @@ import { AuthService } from '../../services/auth/auth.service';
 import { UserSharedService } from '../../../../shared/services/user/user-shared.service';
 
 @Component({
-  selector: 'app-password-reset',
-  standalone: true,
-  imports: [RouterLink, ReactiveFormsModule, TranslateModule],
-  templateUrl: './password-reset.component.html',
-  styleUrl: './password-reset.component.scss',
+    selector: 'app-password-reset',
+    imports: [RouterLink, ReactiveFormsModule, TranslateModule],
+    templateUrl: './password-reset.component.html',
+    styleUrl: './password-reset.component.scss'
 })
 export class PasswordResetComponent {
   passwordResetForm: FormGroup;

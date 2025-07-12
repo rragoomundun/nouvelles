@@ -14,11 +14,10 @@ import { AuthSharedService } from '../../../shared/services/auth/auth-shared.ser
 import { UserSharedService } from '../../../shared/services/user/user-shared.service';
 
 @Component({
-  selector: 'app-login',
-  standalone: true,
-  imports: [ReactiveFormsModule, TranslateModule, RouterLink],
-  templateUrl: './login.component.html',
-  styleUrl: './login.component.scss',
+    selector: 'app-login',
+    imports: [ReactiveFormsModule, TranslateModule, RouterLink],
+    templateUrl: './login.component.html',
+    styleUrl: './login.component.scss'
 })
 export class LoginComponent {
   @ViewChild('loginModalTemplate') loginModalTemplate!: TemplateRef<any>;

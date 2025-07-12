@@ -7,11 +7,10 @@ import { AuthService } from '../../../auth/services/auth/auth.service';
 import { UserSharedService } from '../../../../shared/services/user/user-shared.service';
 
 @Component({
-  selector: 'app-register-confirm',
-  standalone: true,
-  imports: [TranslateModule, RouterLink],
-  templateUrl: './register-confirm.component.html',
-  styleUrl: './register-confirm.component.scss',
+    selector: 'app-register-confirm',
+    imports: [TranslateModule, RouterLink],
+    templateUrl: './register-confirm.component.html',
+    styleUrl: './register-confirm.component.scss'
 })
 export class RegisterConfirmComponent {
   onRegisterConfirm: string;

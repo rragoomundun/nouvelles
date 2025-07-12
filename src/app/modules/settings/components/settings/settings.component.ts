@@ -10,17 +10,16 @@ import { UserSharedService } from '../../../../shared/services/user/user-shared.
 import { AppSharedService } from '../../../../shared/services/app/app-shared.service';
 
 @Component({
-  selector: 'app-settings',
-  standalone: true,
-  imports: [
-    TranslateModule,
-    SettingsImageComponent,
-    SettingsPasswordComponent,
-    SettingsBiographyComponent,
-    SettingsDeleteComponent,
-  ],
-  templateUrl: './settings.component.html',
-  styleUrl: './settings.component.scss',
+    selector: 'app-settings',
+    imports: [
+        TranslateModule,
+        SettingsImageComponent,
+        SettingsPasswordComponent,
+        SettingsBiographyComponent,
+        SettingsDeleteComponent,
+    ],
+    templateUrl: './settings.component.html',
+    styleUrl: './settings.component.scss'
 })
 export class SettingsComponent implements OnInit {
   constructor(

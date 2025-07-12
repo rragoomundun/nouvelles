@@ -17,15 +17,14 @@ import { PaginationComponent } from '../../../../shared/components/pagination/pa
 import { SearchService } from '../../services/search/search.service';
 
 @Component({
-  selector: 'app-search-discussions',
-  standalone: true,
-  imports: [
-    TranslateModule,
-    SearchDiscussionsItemComponent,
-    PaginationComponent,
-  ],
-  templateUrl: './search-discussions.component.html',
-  styleUrl: './search-discussions.component.scss',
+    selector: 'app-search-discussions',
+    imports: [
+        TranslateModule,
+        SearchDiscussionsItemComponent,
+        PaginationComponent,
+    ],
+    templateUrl: './search-discussions.component.html',
+    styleUrl: './search-discussions.component.scss'
 })
 export class SearchDiscussionsComponent implements OnInit, OnDestroy {
   @Input() query: string;

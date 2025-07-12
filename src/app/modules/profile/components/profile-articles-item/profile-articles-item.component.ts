@@ -9,11 +9,10 @@ import { UrlSharedService } from '../../../../shared/services/url/url-shared.ser
 import { DateSharedService } from '../../../../shared/services/date/date-shared.service';
 
 @Component({
-  selector: 'app-profile-articles-item',
-  standalone: true,
-  imports: [RouterModule, TranslateModule],
-  templateUrl: './profile-articles-item.component.html',
-  styleUrl: './profile-articles-item.component.scss',
+    selector: 'app-profile-articles-item',
+    imports: [RouterModule, TranslateModule],
+    templateUrl: './profile-articles-item.component.html',
+    styleUrl: './profile-articles-item.component.scss'
 })
 export class ProfileArticlesItemComponent implements OnInit {
   @Input() article: any;

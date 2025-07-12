@@ -6,11 +6,10 @@ import { UserSharedService } from '../../../../shared/services/user/user-shared.
 import { UserService } from '../../services/user/user.service';
 
 @Component({
-  selector: 'app-settings-biography',
-  standalone: true,
-  imports: [TranslateModule, ReactiveFormsModule],
-  templateUrl: './settings-biography.component.html',
-  styleUrl: './settings-biography.component.scss',
+    selector: 'app-settings-biography',
+    imports: [TranslateModule, ReactiveFormsModule],
+    templateUrl: './settings-biography.component.html',
+    styleUrl: './settings-biography.component.scss'
 })
 export class SettingsBiographyComponent implements OnInit {
   biographyForm: FormGroup;

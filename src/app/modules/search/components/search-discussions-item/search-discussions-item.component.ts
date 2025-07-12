@@ -7,11 +7,10 @@ import { UrlSharedService } from '../../../../shared/services/url/url-shared.ser
 import { DateSharedService } from '../../../../shared/services/date/date-shared.service';
 
 @Component({
-  selector: 'app-search-discussions-item',
-  standalone: true,
-  imports: [RouterModule],
-  templateUrl: './search-discussions-item.component.html',
-  styleUrl: './search-discussions-item.component.scss',
+    selector: 'app-search-discussions-item',
+    imports: [RouterModule],
+    templateUrl: './search-discussions-item.component.html',
+    styleUrl: './search-discussions-item.component.scss'
 })
 export class SearchDiscussionsItemComponent implements OnInit {
   readonly MAX_MESSAGE_CHARACTERS;

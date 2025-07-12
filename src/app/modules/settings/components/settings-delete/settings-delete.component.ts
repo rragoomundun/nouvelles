@@ -7,11 +7,10 @@ import { UserSharedService } from '../../../../shared/services/user/user-shared.
 import { UserService } from '../../services/user/user.service';
 
 @Component({
-  selector: 'app-settings-delete',
-  standalone: true,
-  imports: [TranslateModule, ReactiveFormsModule],
-  templateUrl: './settings-delete.component.html',
-  styleUrl: './settings-delete.component.scss',
+    selector: 'app-settings-delete',
+    imports: [TranslateModule, ReactiveFormsModule],
+    templateUrl: './settings-delete.component.html',
+    styleUrl: './settings-delete.component.scss'
 })
 export class SettingsDeleteComponent implements OnInit {
   onDelete: string;

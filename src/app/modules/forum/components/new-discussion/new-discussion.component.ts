@@ -14,11 +14,10 @@ import { UrlSharedService } from '../../../../shared/services/url/url-shared.ser
 import { ForumSharedService } from '../../../../shared/services/forum/forum-shared.service';
 
 @Component({
-  selector: 'app-new-discussion',
-  standalone: true,
-  imports: [TranslateModule, ReactiveFormsModule],
-  templateUrl: './new-discussion.component.html',
-  styleUrl: './new-discussion.component.scss',
+    selector: 'app-new-discussion',
+    imports: [TranslateModule, ReactiveFormsModule],
+    templateUrl: './new-discussion.component.html',
+    styleUrl: './new-discussion.component.scss'
 })
 export class NewDiscussionComponent implements OnInit {
   discussionForm: FormGroup;

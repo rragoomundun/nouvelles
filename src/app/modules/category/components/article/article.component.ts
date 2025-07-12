@@ -15,11 +15,10 @@ import { UrlSharedService } from '../../../../shared/services/url/url-shared.ser
 import { AppSharedService } from '../../../../shared/services/app/app-shared.service';
 
 @Component({
-  selector: 'app-article',
-  standalone: true,
-  imports: [RouterLink, TranslateModule, NotFoundComponent],
-  templateUrl: './article.component.html',
-  styleUrl: './article.component.scss',
+    selector: 'app-article',
+    imports: [RouterLink, TranslateModule, NotFoundComponent],
+    templateUrl: './article.component.html',
+    styleUrl: './article.component.scss'
 })
 export class ArticleComponent implements OnInit {
   notFound: boolean;

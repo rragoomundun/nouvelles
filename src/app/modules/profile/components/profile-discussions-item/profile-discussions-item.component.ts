@@ -8,11 +8,10 @@ import { UrlSharedService } from '../../../../shared/services/url/url-shared.ser
 import { DateSharedService } from '../../../../shared/services/date/date-shared.service';
 
 @Component({
-  selector: 'app-profile-discussions-item',
-  standalone: true,
-  imports: [RouterModule, TranslateModule],
-  templateUrl: './profile-discussions-item.component.html',
-  styleUrl: './profile-discussions-item.component.scss',
+    selector: 'app-profile-discussions-item',
+    imports: [RouterModule, TranslateModule],
+    templateUrl: './profile-discussions-item.component.html',
+    styleUrl: './profile-discussions-item.component.scss'
 })
 export class ProfileDiscussionsItemComponent implements OnInit {
   @Input() discussion: any;

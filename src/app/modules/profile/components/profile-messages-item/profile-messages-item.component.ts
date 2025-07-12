@@ -8,11 +8,10 @@ import { UrlSharedService } from '../../../../shared/services/url/url-shared.ser
 import { DateSharedService } from '../../../../shared/services/date/date-shared.service';
 
 @Component({
-  selector: 'app-profile-messages-item',
-  standalone: true,
-  imports: [RouterModule, TranslateModule],
-  templateUrl: './profile-messages-item.component.html',
-  styleUrl: './profile-messages-item.component.scss',
+    selector: 'app-profile-messages-item',
+    imports: [RouterModule, TranslateModule],
+    templateUrl: './profile-messages-item.component.html',
+    styleUrl: './profile-messages-item.component.scss'
 })
 export class ProfileMessagesItemComponent implements OnInit {
   readonly MAX_MESSAGE_CHARACTERS;
