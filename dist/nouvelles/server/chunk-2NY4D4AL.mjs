@@ -1,0 +1,2 @@
+import './polyfills.server.mjs';
+import{Gb as p,u as a,x as s}from"./chunk-XTWWG7JS.mjs";var h=(()=>{let t=class t{constructor(e){this.http=e,this.API_PREFIX="file"}upload(e,i){let o=new FormData;if(o.append("file",e),i)for(let n in i)o.append(n,i[n]);return this.http.post(this.API_PREFIX,o,{withCredentials:!0})}delete(e){return this.http.delete(this.API_PREFIX,{body:e,withCredentials:!0})}};t.\u0275fac=function(i){return new(i||t)(s(p))},t.\u0275prov=a({token:t,factory:t.\u0275fac,providedIn:"root"});let r=t;return r})();export{h as a};
